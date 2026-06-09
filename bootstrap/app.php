@@ -13,43 +13,37 @@ return Application::configure(basePath: dirname(__DIR__))
         api: __DIR__.'/../routes/api.php',
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
-        apiPrefix: '',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->alias([
-            'api.key' => \App\Http\Middleware\ApiKeyAuth::class,
-            'workspace.rate-limit' => \App\Http\Middleware\WorkspaceRateLimit::class,
-            'idempotency' => \App\Http\Middleware\IdempotencyKey::class,
-        ]);
-
-        // Trust EC2's own NAT + Cloudflare's published ranges for X-Forwarded-For
-        // so per-IP rate limit reads the real client IP, not the proxy IP.
-        // Cloudflare ranges are refreshed via the `inkwell:refresh-trusted-proxies`
-        // command (Phase 6 wiring).
+        // Trust EC2's NAT and any Apache-fronted proxy for X-Forwarded-For so
+        // per-IP rate limit reads the real client IP. Cloudflare is not in
+        // front of codex.* — direct A record to EC2 — so the proxy set is
+        // currently just the Apache loopback path.
         $middleware->trustProxies(at: '*');
     })
     ->withExceptions(function (Exceptions $exceptions): void {
+        // RFC 7807 problem+json for any /api/* request or anything that
+        // sends Accept: application/json. Phase 5 wires the full handler
+        // and adds the unknown-filter-key + visibility-scope shapes.
         $exceptions->shouldRenderJsonWhen(
-            fn (Request $request) => $request->is('v1/*') || $request->expectsJson(),
+            fn (Request $request) => $request->is('api/*') || $request->expectsJson(),
         );
 
-        // Validation errors get a 400 problem+json with field-level errors.
         $exceptions->render(function (ValidationException $e, Request $request) {
-            if (! ($request->is('v1/*') || $request->expectsJson())) {
+            if (! ($request->is('api/*') || $request->expectsJson())) {
                 return null;
             }
 
             return new ProblemResponse(
-                status: 400,
+                status: 422,
                 title: 'Invalid request',
                 detail: 'The request body failed validation.',
                 errors: $e->errors(),
             );
         });
 
-        // Everything else maps via ProblemResponse::for.
         $exceptions->render(function (\Throwable $e, Request $request) {
-            if (! ($request->is('v1/*') || $request->expectsJson())) {
+            if (! ($request->is('api/*') || $request->expectsJson())) {
                 return null;
             }
 

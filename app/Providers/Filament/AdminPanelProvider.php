@@ -27,7 +27,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->login()
-            ->brandName('Inkwell')
+            ->brandName('Codex')
             ->colors([
                 'primary' => Color::Indigo,
             ])

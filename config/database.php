@@ -54,13 +54,28 @@ return [
             'password' => env('DB_PASSWORD', ''),
             'unix_socket' => env('DB_SOCKET', ''),
             'charset' => env('DB_CHARSET', 'utf8mb4'),
-            'collation' => env('DB_COLLATION', 'utf8mb4_unicode_ci'),
+            'collation' => env('DB_COLLATION', 'utf8mb4_0900_ai_ci'),
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
+            // sql_mode pinned (per plan §"MySQL discipline"); a server-side
+            // sql_mode default change in a future MySQL minor version can't
+            // silently relax constraints.
+            'modes' => [
+                'STRICT_TRANS_TABLES',
+                'NO_ZERO_DATE',
+                'NO_ZERO_IN_DATE',
+                'ERROR_FOR_DIVISION_BY_ZERO',
+                'NO_ENGINE_SUBSTITUTION',
+            ],
             'engine' => null,
+            // READ COMMITTED isolation set per-connection via MYSQL_ATTR_INIT_COMMAND.
+            // REPEATABLE READ (MySQL default) takes gap locks under SELECT … FOR
+            // UPDATE that block concurrent inserts to unrelated pivot rows — the
+            // SetPrimaryTag action depends on READ COMMITTED for clean locking.
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 Mysql::ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
+                Mysql::ATTR_INIT_COMMAND => "SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED",
             ]) : [],
         ],
 
