@@ -9,9 +9,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('capabilities', function (Blueprint $table) {
-            $table->char('id', 26)->primary()->collation('utf8mb4_bin');
+            $table->char('id', 26)->primary()->collation(\App\Support\BinaryCollation::name());
             $table->string('name', 120);
-            $table->string('slug', 120)->collation('utf8mb4_bin');
+            $table->string('slug', 120)->collation(\App\Support\BinaryCollation::name());
             // User Mgmt, Commerce, Marketing, Content, Analytics, Integrations,
             // Automation, AI, Infrastructure
             $table->string('category', 60);
@@ -28,7 +28,7 @@ return new class extends Migration
             // canonical row deletion doesn't break aliased history — but
             // RESTRICT on the pivot side means deletion can't actually fire
             // while tagged.
-            $table->char('canonical_id', 26)->nullable()->collation('utf8mb4_bin');
+            $table->char('canonical_id', 26)->nullable()->collation(\App\Support\BinaryCollation::name());
             $table->timestamps();
 
             $table->unique('slug');

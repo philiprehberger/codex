@@ -9,9 +9,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('project_deliverables', function (Blueprint $table) {
-            $table->char('id', 26)->primary()->collation('utf8mb4_bin');
-            $table->char('project_id', 26)->collation('utf8mb4_bin');
-            $table->char('deliverable_id', 26)->collation('utf8mb4_bin');
+            $table->char('id', 26)->primary()->collation(\App\Support\BinaryCollation::name());
+            $table->char('project_id', 26)->collation(\App\Support\BinaryCollation::name());
+            $table->char('deliverable_id', 26)->collation(\App\Support\BinaryCollation::name());
             $table->timestamps();
 
             $table->unique(['project_id', 'deliverable_id']);

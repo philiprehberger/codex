@@ -9,9 +9,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('technologies', function (Blueprint $table) {
-            $table->char('id', 26)->primary()->collation('utf8mb4_bin');
+            $table->char('id', 26)->primary()->collation(\App\Support\BinaryCollation::name());
             $table->string('name', 120);
-            $table->string('slug', 120)->collation('utf8mb4_bin');
+            $table->string('slug', 120)->collation(\App\Support\BinaryCollation::name());
             // language, framework, cms, database, infrastructure, cloud, tooling, api, library
             $table->string('category', 60);
             $table->string('icon_url', 500)->nullable();

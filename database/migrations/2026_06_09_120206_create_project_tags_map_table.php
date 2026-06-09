@@ -11,9 +11,9 @@ return new class extends Migration
         // The _map suffix avoids the name collision with the project_tags
         // lookup table (load-bearing — not drift).
         Schema::create('project_tags_map', function (Blueprint $table) {
-            $table->char('id', 26)->primary()->collation('utf8mb4_bin');
-            $table->char('project_id', 26)->collation('utf8mb4_bin');
-            $table->char('project_tag_id', 26)->collation('utf8mb4_bin');
+            $table->char('id', 26)->primary()->collation(\App\Support\BinaryCollation::name());
+            $table->char('project_id', 26)->collation(\App\Support\BinaryCollation::name());
+            $table->char('project_tag_id', 26)->collation(\App\Support\BinaryCollation::name());
             $table->timestamps();
 
             $table->unique(['project_id', 'project_tag_id']);
