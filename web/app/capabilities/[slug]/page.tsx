@@ -46,7 +46,9 @@ export default async function CapabilityDetailPage({ params }: { params: Promise
                 ) : null}
                 <p className="mt-4 max-w-3xl text-(--color-ink-dim)">{cap.description}</p>
                 <div className="mt-3 text-sm text-(--color-ink-dim)">
-                    {cap.project_count} project{cap.project_count === 1 ? '' : 's'} carry this capability.
+                    {cap.project_count} project{cap.project_count === 1 ? '' : 's'}
+                    {cap.package_count > 0 && ` and ${cap.package_count} package${cap.package_count === 1 ? '' : 's'}`}
+                    {' '}carry this capability.
                 </div>
             </header>
 
@@ -74,6 +76,33 @@ export default async function CapabilityDetailPage({ params }: { params: Promise
                     ))}
                 </ul>
             </section>
+
+            {cap.packages.length > 0 ? (
+                <section>
+                    <h2 className="text-lg font-semibold text-(--color-ink) mb-3">
+                        Packages{' '}
+                        <span className="text-sm font-normal text-(--color-ink-dim)">({cap.packages.length})</span>
+                    </h2>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        {cap.packages.map((pkg) => (
+                            <li key={pkg.slug}>
+                                <Link
+                                    href={`/packages/${pkg.slug}`}
+                                    className="block rounded border border-(--color-paper-dim) bg-(--color-paper) p-3 no-underline hover:border-(--color-accent)"
+                                >
+                                    <div className="flex items-baseline justify-between gap-2">
+                                        <div className="text-(--color-ink) font-medium font-mono text-sm">{pkg.name}</div>
+                                        <span className="text-xs text-(--color-ink-dim) shrink-0">
+                                            {pkg.language}
+                                        </span>
+                                    </div>
+                                    <p className="mt-1 text-sm text-(--color-ink-dim)">{pkg.short_description}</p>
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </section>
+            ) : null}
 
             {cap.aliases.length ? (
                 <section>

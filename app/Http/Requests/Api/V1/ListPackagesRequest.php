@@ -23,7 +23,7 @@ class ListPackagesRequest extends FormRequest
             'capability' => ['nullable', 'string', 'alpha_dash', 'max:120'],
             'status' => ['nullable', 'string', 'in:active,archived'],
             'cursor' => ['nullable', 'string', 'max:255'],
-            'per_page' => ['nullable', 'integer', 'between:1,100'],
+            'per_page' => ['nullable', 'integer', 'between:1,1000'],
         ];
     }
 

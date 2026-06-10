@@ -142,6 +142,16 @@ export type CapabilityDetail = {
         shipped_date: string | null;
     }>;
     project_count: number;
+    packages: Array<{
+        slug: string;
+        name: string;
+        language: string;
+        registry: string;
+        short_description: string;
+        repo_url: string | null;
+        is_primary: boolean;
+    }>;
+    package_count: number;
 };
 
 export type GapReport = {
@@ -159,6 +169,32 @@ export type ResumeBullets = {
     by_capability: Array<{ capability_slug: string; capability_name: string; count: number; bullet: string }>;
     by_industry: Array<{ industry_slug: string; industry_name: string; count: number; bullet: string }>;
     by_architecture: Array<{ architecture_slug: string; architecture_name: string; count: number; bullet: string }>;
+};
+
+export type PackageSummary = {
+    id: string;
+    slug: string;
+    name: string;
+    language: string;
+    registry: string;
+    status: 'active' | 'archived';
+    short_description: string;
+    repo_url: string | null;
+    registry_url: string | null;
+    docs_url: string | null;
+    shipped_date: string | null;
+    capabilities: Array<{ slug: string; name: string; is_primary: boolean }>;
+};
+
+export type PackageDetail = Omit<PackageSummary, 'capabilities'> & {
+    long_description: string | null;
+    capabilities: Array<{
+        slug: string;
+        name: string;
+        category: string;
+        canonical_slug: string;
+        is_primary: boolean;
+    }>;
 };
 
 const STANDARD_TAGS = ['codex:heatmap', 'codex:reports:gaps', 'codex:reports:bullets', 'codex:search:index'];
@@ -198,6 +234,19 @@ export async function getGapReport() {
 export async function getResumeBullets() {
     return codexFetch<{ data: ResumeBullets }>(
         '/api/v1/reports/resume-bullets',
+        { tags: STANDARD_TAGS },
+    );
+}
+
+export async function listPackages(query: Record<string, string> = {}) {
+    const search = new URLSearchParams(query).toString();
+    const path = `/api/v1/packages${search ? `?${search}` : ''}`;
+    return codexFetch<Paginated<PackageSummary>>(path, { tags: STANDARD_TAGS });
+}
+
+export async function getPackage(slug: string) {
+    return codexFetch<{ data: PackageDetail }>(
+        `/api/v1/packages/${slug}`,
         { tags: STANDARD_TAGS },
     );
 }
