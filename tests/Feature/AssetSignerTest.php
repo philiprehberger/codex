@@ -63,7 +63,7 @@ class AssetSignerTest extends TestCase
         $this->assertNotSame($appKeySig, $signed['sig'], 'codex key must produce a different signature than APP_KEY');
         $this->assertFalse(
             $signer->verify('01HASSETULID0000000000000Z', $signed['exp'], $appKeySig),
-            'APP_KEY-signed payload must NOT verify against the codex key'
+            'APP_KEY-signed payload must NOT verify against the codex key',
         );
     }
 
@@ -79,7 +79,7 @@ class AssetSignerTest extends TestCase
         $signer = new AssetSigner;
         $this->assertTrue(
             $signer->verify('01HASSETULID0000000000000Z', $signed['exp'], $signed['sig']),
-            'In-flight signatures from the old key must verify during rotation'
+            'In-flight signatures from the old key must verify during rotation',
         );
     }
 }

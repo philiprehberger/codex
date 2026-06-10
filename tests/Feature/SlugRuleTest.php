@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Rules\SlugRule;
+use Illuminate\Support\Facades\Validator;
 use Tests\TestCase;
 
 class SlugRuleTest extends TestCase
@@ -38,7 +39,6 @@ class SlugRuleTest extends TestCase
 
     public function test_rejects_reserved_first_segments(): void
     {
-        // Hard-coded fallback list.
         $this->assertFailsValidation('admin');
         $this->assertFailsValidation('api');
         $this->assertFailsValidation('heatmap');
@@ -48,7 +48,7 @@ class SlugRuleTest extends TestCase
 
     public function test_accepts_slugs_that_only_collide_after_a_hyphen(): void
     {
-        // "admin-portal" is distinct from "admin" — the reserved-word check
+        // 'admin-portal' is distinct from 'admin' — the reserved-word check
         // is exact-match, not prefix-match.
         $this->assertValidates('admin-portal');
         $this->assertValidates('api-store');
@@ -66,15 +66,13 @@ class SlugRuleTest extends TestCase
 
     private function assertValidates(string $slug): void
     {
-        $err = null;
-        (new SlugRule)->validate('slug', $slug, function ($msg) use (&$err) { $err = $msg; });
-        $this->assertNull($err, "expected '{$slug}' to pass; got: {$err}");
+        $validator = Validator::make(['slug' => $slug], ['slug' => [new SlugRule]]);
+        $this->assertFalse($validator->fails(), "expected '{$slug}' to pass; errors: ".json_encode($validator->errors()->all()));
     }
 
     private function assertFailsValidation(string $slug): void
     {
-        $err = null;
-        (new SlugRule)->validate('slug', $slug, function ($msg) use (&$err) { $err = $msg; });
-        $this->assertNotNull($err, "expected '{$slug}' to fail validation but it passed");
+        $validator = Validator::make(['slug' => $slug], ['slug' => [new SlugRule]]);
+        $this->assertTrue($validator->fails(), "expected '{$slug}' to fail validation but it passed");
     }
 }

@@ -29,6 +29,7 @@ class SchemaCollationTest extends TestCase
             // PRAGMA table_info doesn't expose collation directly; fall
             // back to a SELECT name FROM sqlite_master CREATE TABLE parse.
             $this->assertSqliteBinaryColumns();
+
             return;
         }
 
@@ -50,7 +51,7 @@ class SchemaCollationTest extends TestCase
                 $row = DB::selectOne(
                     'SELECT COLLATION_NAME FROM information_schema.COLUMNS
                      WHERE TABLE_SCHEMA = DATABASE() AND TABLE_NAME = ? AND COLUMN_NAME = ?',
-                    [$table, $column]
+                    [$table, $column],
                 );
                 $this->assertNotNull($row, "column {$table}.{$column} missing");
                 $this->assertSame('utf8mb4_bin', $row->COLLATION_NAME,
@@ -64,11 +65,11 @@ class SchemaCollationTest extends TestCase
         // sqlite_master.sql contains the original CREATE TABLE statement;
         // we look for `collate 'BINARY'` patterns on each declared column.
         $tables = ['projects', 'capabilities', 'technologies', 'industries',
-                   'architectures', 'deliverables', 'design_styles',
-                   'project_tags', 'audit_log'];
+            'architectures', 'deliverables', 'design_styles',
+            'project_tags', 'audit_log'];
 
         foreach ($tables as $table) {
-            $row = DB::selectOne("SELECT sql FROM sqlite_master WHERE name = ?", [$table]);
+            $row = DB::selectOne('SELECT sql FROM sqlite_master WHERE name = ?', [$table]);
             $this->assertNotNull($row, "table {$table} missing");
             // Every CREATE TABLE for a Codex table should reference BINARY
             // on at least the id column.

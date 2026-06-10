@@ -1,0 +1,54 @@
+# Codex cron entries.
+#
+# Install on the EC2 box with:
+#   sudo crontab -u ubuntu -e
+# then paste this block. Every job hits a BetterStack heartbeat URL on
+# success — cron silence becomes an observable event (Phase 8 §10).
+#
+# Heartbeat URLs are placeholders; replace with real BetterStack monitor
+# IDs after creating the monitors. The hb_<job> aliases keep the cron
+# entries grep-friendly when one fails and you need to find its monitor.
+
+# Environment
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+MAILTO=""
+
+# Codex root + heartbeat base
+CODEX=/var/www/codex/current
+HB=https://uptime.betterstack.com/api/v1/heartbeat
+
+# ──────────────────────────────────────────────── nightly invariant + audit checks
+# 02:00 local — one-primary-per-dimension drift, slug-route shadowing
+0 2 * * * cd $CODEX && php artisan codex:assert-invariants > /tmp/codex-assert-invariants.log 2>&1 && curl -fsS $HB/REPLACE_ME_ASSERT_INVARIANTS
+15 2 * * * cd $CODEX && php artisan codex:audit-slug-collisions > /tmp/codex-slug-collisions.log 2>&1 && curl -fsS $HB/REPLACE_ME_SLUG_COLLISIONS
+
+# ──────────────────────────────────────────────── nightly portfolio export → S3
+# 02:30 local — JSON catalogue; CI-safe fallback if the API goes down
+30 2 * * * cd $CODEX && php artisan codex:export-portfolio > /tmp/codex-export.log 2>&1 && aws s3 cp $CODEX/storage/app/private/exports/codex-$(date +\%F).json s3://codex-backups/exports/ && curl -fsS $HB/REPLACE_ME_EXPORT
+
+# ──────────────────────────────────────────────── nightly mysqldump → S3
+# 03:00 local
+0 3 * * * /var/www/codex/current/infra/backup/mysqldump-to-s3.sh > /tmp/codex-mysqldump.log 2>&1 && curl -fsS $HB/REPLACE_ME_MYSQLDUMP
+
+# ──────────────────────────────────────────────── nightly Apache access-log → S3
+# 03:30 local — 90-day retention bucket
+30 3 * * * find /var/log/apache2 -name '*.log.*.gz' -mtime -1 -exec aws s3 cp {} s3://codex-backups/access-logs/ \\; && curl -fsS $HB/REPLACE_ME_LOG_SHIPPING
+
+# ──────────────────────────────────────────────── monthly audit-log archive
+# 04:00 on the 1st of each month — JSONL.gz + S3 + delete > 90 days
+0 4 1 * * cd $CODEX && php artisan codex:archive-audit-log > /tmp/codex-archive-audit.log 2>&1 && curl -fsS $HB/REPLACE_ME_AUDIT_ARCHIVE
+
+# ──────────────────────────────────────────────── monthly Lighthouse trend
+# 05:00 on the 1st — append to perf/lighthouse-history.jsonl + commit
+0 5 1 * * /var/www/codex/current/scripts/monthly-lighthouse.sh > /tmp/codex-lighthouse.log 2>&1 && curl -fsS $HB/REPLACE_ME_LIGHTHOUSE
+
+# ──────────────────────────────────────────────── asset-root drift check
+# 04:30 every day — confirms no visibility=redacted project has files
+# under storage/app/public
+30 4 * * * cd $CODEX && php artisan codex:audit-asset-roots > /tmp/codex-asset-roots.log 2>&1 && curl -fsS $HB/REPLACE_ME_ASSET_ROOTS
+
+# ──────────────────────────────────────────────── Laravel scheduler
+# Runs the in-app schedule (routes/console.php) — currently empty but
+# Phase 9+ will wire up app-side scheduled tasks.
+* * * * * cd $CODEX && php artisan schedule:run >> /tmp/codex-schedule.log 2>&1
