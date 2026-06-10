@@ -33,31 +33,55 @@ class ReportGapsController extends Controller
         return response()->json(['data' => $payload]);
     }
 
-    /** @return array<int, array<string, mixed>> */
+    /**
+     * Gap = a capability with <=2 projects AND <=2 packages. The combined
+     * filter keeps the buyer-honest signal honest: a capability with 0
+     * projects but 20 packages is well-demonstrated, not a gap. Sorted
+     * by combined coverage so the truly empty entries surface first.
+     *
+     * Project + package counts are independent aggregates joined back
+     * onto the capability via COALESCE(canonical_id, id) for alias
+     * rollup; soft-deleted rows filtered on both sides.
+     *
+     * @return array<int, array<string, mixed>>
+     */
     private function capabilityGaps(): array
     {
-        $rows = DB::table('capabilities AS c')
-            ->leftJoin('project_capabilities AS pc',
-                fn ($j) => $j->on(DB::raw('COALESCE(c.canonical_id, c.id)'), '=', 'pc.capability_id'),
-            )
-            ->leftJoin('projects AS p', function ($j) {
+        $projectCounts = DB::table('project_capabilities AS pc')
+            ->join('projects AS p', function ($j) {
                 $j->on('p.id', '=', 'pc.project_id')->whereNull('p.deleted_at');
             })
+            ->select('pc.capability_id', DB::raw('COUNT(DISTINCT p.id) AS n'))
+            ->groupBy('pc.capability_id');
+
+        $packageCounts = DB::table('package_capabilities AS pkc')
+            ->join('packages AS pk', function ($j) {
+                $j->on('pk.id', '=', 'pkc.package_id')->whereNull('pk.deleted_at');
+            })
+            ->select('pkc.capability_id', DB::raw('COUNT(DISTINCT pk.id) AS n'))
+            ->groupBy('pkc.capability_id');
+
+        $rows = DB::table('capabilities AS c')
+            ->leftJoinSub($projectCounts, 'proj', fn ($j) => $j->on('proj.capability_id', '=', DB::raw('COALESCE(c.canonical_id, c.id)')))
+            ->leftJoinSub($packageCounts, 'pkg', fn ($j) => $j->on('pkg.capability_id', '=', DB::raw('COALESCE(c.canonical_id, c.id)')))
             ->whereNull('c.canonical_id')
-            ->groupBy('c.id', 'c.slug', 'c.name', 'c.category')
-            ->havingRaw('COUNT(DISTINCT p.id) <= 2')
-            ->orderByRaw('COUNT(DISTINCT p.id) ASC')
+            ->whereRaw('COALESCE(proj.n, 0) <= 2')
+            ->whereRaw('COALESCE(pkg.n, 0) <= 2')
+            ->orderByRaw('COALESCE(proj.n, 0) + COALESCE(pkg.n, 0) ASC')
             ->orderBy('c.name')
             ->get([
                 'c.id', 'c.slug', 'c.name', 'c.category',
-                DB::raw('COUNT(DISTINCT p.id) AS count'),
+                DB::raw('COALESCE(proj.n, 0) AS project_count'),
+                DB::raw('COALESCE(pkg.n, 0) AS package_count'),
             ]);
 
         return $rows->map(fn ($r) => [
             'slug' => $r->slug,
             'name' => $r->name,
             'category' => $r->category,
-            'count' => (int) $r->count,
+            'count' => (int) $r->project_count,
+            'project_count' => (int) $r->project_count,
+            'package_count' => (int) $r->package_count,
         ])->all();
     }
 

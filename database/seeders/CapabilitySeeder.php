@@ -485,6 +485,80 @@ class CapabilitySeeder extends BaseSeeder
                 'icon' => 'beaker',
                 'description' => 'Test data factories with builder DSLs, faker-style realistic value generation (names, addresses, emails, UUIDs, dates), trait inheritance for variant fixtures, snapshot-testing helpers, and HTTP mocking for integration tests. The Day-One layer underneath every codebase\'s ~80 PHPUnit / Pest / Vitest tests so each test only declares what differs from the baseline.',
             ],
+
+            // ──────────────────────────────────────────────── Phase 8.7 primitives
+            [
+                'slug' => 'object-collection-ops',
+                'name' => 'Object & Collection Operations',
+                'category' => 'Infrastructure',
+                'icon' => 'squares-2x2',
+                'description' => 'Deep clone with cycle detection, deep merge with configurable conflict strategies, deep freeze for immutability, deep equality checks, plus the standard collection helpers (groupBy / chunk / zip / partition / pick / omit / flatten / unflatten). The toolkit underneath any normalisation, caching, or state-sync layer where the wrong reference comparison bricks the whole flow.',
+            ],
+            [
+                'slug' => 'filesystem-utilities',
+                'name' => 'Filesystem Utilities',
+                'category' => 'Infrastructure',
+                'icon' => 'folder-open',
+                'description' => 'Filesystem event watchers with debounced callbacks, rule-based file organisers (sort by extension / age / pattern), atomic file writes via temp-file + rename for crash-safe persistence, and path manipulation helpers. The "I need to watch a directory and react to changes" or "I need to write a file without leaving it half-written" layer.',
+            ],
+            [
+                'slug' => 'diff-tracking',
+                'name' => 'Diff & Change Tracking',
+                'category' => 'Infrastructure',
+                'icon' => 'arrows-pointing-out',
+                'description' => 'Structural diffing of strings (character-level), arrays, and typed objects with unified/HTML/JSON output formats. Eloquent-style model-diff capture so an admin can see exactly which fields changed between two saves. The toolkit for audit trails, optimistic concurrency, undo/redo, and human-readable change reports.',
+            ],
+
+            // ──────────────────────────────────────────────── Phase 8.8 primitives
+            [
+                'slug' => 'type-enum-utilities',
+                'name' => 'Type System & Enum Utilities',
+                'category' => 'Infrastructure',
+                'icon' => 'tag',
+                'description' => 'Type-safe enums with ordinals, display names, custom values, and pattern matching; strongly-typed value objects with built-in validation; runtime type guards and inference; safe parsers that coerce strings into booleans / numbers / dates / enums without throwing. The "make the type system carry more weight at runtime" layer so business code can stop asserting on raw strings.',
+            ],
+            [
+                'slug' => 'concurrency-primitives',
+                'name' => 'Concurrency Primitives',
+                'category' => 'Infrastructure',
+                'icon' => 'bolt',
+                'description' => 'Async locks, counting semaphores, object pools with idle timeout, parallel iteration helpers (par_map / promise-pool / parallel-each), abortable signals with race + timeout, graceful-shutdown orchestrators, panic-free channel utilities, run-once + singleton decorators. The toolkit underneath any service that does more than one thing at a time without corrupting shared state.',
+            ],
+            [
+                'slug' => 'data-structures',
+                'name' => 'Data Structures',
+                'category' => 'Infrastructure',
+                'icon' => 'rectangle-stack',
+                'description' => 'Trees with traversal + serialization, directed/undirected graphs with topological sort + shortest path, ring buffers, sorted arrays with binary search, bloom filters, interval types with arithmetic, bit fields with named flags, frequency counters. The "I need the right shape, not the right framework" layer for performance-sensitive code paths.',
+            ],
+            [
+                'slug' => 'http-middleware',
+                'name' => 'HTTP Middleware & Headers',
+                'category' => 'Infrastructure',
+                'icon' => 'arrow-path-rounded-square',
+                'description' => 'Strongly-typed HTTP header parsing and construction, CORS middleware with preflight, ETag generation + conditional-request helpers, cookie parsing/serialisation, typed HTTP error classes with factory methods, composable client middleware. The layer between the framework and the wire — works regardless of whether the framework on top is Rails, Express, ASP.NET, or bare Go.',
+            ],
+            [
+                'slug' => 'string-text-formatting',
+                'name' => 'String, Text & Formatting',
+                'category' => 'Infrastructure',
+                'icon' => 'language',
+                'description' => 'Case conversion (camel / snake / kebab / pascal / title) with deep object support, English inflection (pluralize / singularize), natural sorting ("file2" before "file10"), word-wrap with ANSI awareness, byte-size formatting in SI + binary units, human-friendly time-ago, terminal table rendering with alignment + Unicode borders. The "make text legible" layer for CLI tools, logs, dashboards, and exports.',
+            ],
+            [
+                'slug' => 'ui-component-primitives',
+                'name' => 'UI Component Primitives',
+                'category' => 'Frontend',
+                'icon' => 'puzzle-piece',
+                'description' => 'Accessible React component primitives (Button / Alert / Card / Page layouts), reusable hooks (scroll lock, focus trap, swipe gestures, debounced state), Framer Motion animation presets and variants, dark/light/system theme providers with localStorage persistence. The package layer underneath every demo dashboard or marketing site so the same micro-interactions ship everywhere without copy-paste drift.',
+            ],
+            [
+                'slug' => 'geospatial',
+                'name' => 'Geospatial',
+                'category' => 'Infrastructure',
+                'icon' => 'globe-alt',
+                'description' => 'Distance calculations between coordinates (Haversine / Vincenty), point-in-polygon checks, bounding boxes, radius queries, and geohash neighbour lookups. The "I need to do something with lat/lng without pulling in PostGIS" layer for delivery-radius logic, nearby-listing search, and store-locator features.',
+            ],
         ];
     }
 }

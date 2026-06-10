@@ -5,8 +5,8 @@
   --color-ink-dim: #404252;
   --color-paper: #f7f6f3;
   --color-paper-dim: #e8e6e0;
-  --color-accent: #6366f1;
-  --color-accent-soft: #c7d2fe;
+  --color-accent: #4338ca;
+  --color-accent-soft: #e0e7ff;
   --color-good: #16a34a;
   --color-warn: #d97706;
   --color-bad: #dc2626;
@@ -22,8 +22,14 @@ html, body {
   -webkit-font-smoothing: antialiased;
 }
 code, pre { font-family: var(--font-mono); }
-a { color: var(--color-accent); }
-a:hover { text-decoration: underline; }
+/* Must live in @layer base — unlayered rules ALWAYS beat layered
+   ones in CSS cascade, regardless of specificity. Tailwind utilities
+   live in @layer utilities (declared after base), so utility classes
+   like text-white now correctly win over this default link color. */
+@layer base {
+  a { color: var(--color-accent); }
+  a:hover { text-decoration: underline; }
+}
 
 .prose { max-width: 70ch; line-height: 1.65; }
 .prose h2 { font-size: 1.5rem; margin-top: 2.5rem; font-weight: 700; }

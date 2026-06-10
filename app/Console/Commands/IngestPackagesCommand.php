@@ -53,19 +53,19 @@ class IngestPackagesCommand extends Command
 
     /** @var array<string, array<int, string>> capability slug → name patterns */
     private const CAPABILITY_PATTERNS = [
-        'caching' => ['cache', 'memo', 'memoize', 'lru', 'ttl-store'],
-        'rate-limiting' => ['rate-limit', 'throttle', 'token-bucket', 'sliding-window', 'debounce'],
+        'caching' => ['cache', 'memo', 'memoize', 'lru', 'ttl-store', 'local-storage'],
+        'rate-limiting' => ['rate-limit', 'rate-limiter', 'ratelimit', 'throttle', 'token-bucket', 'sliding-window', 'debounce'],
         'webhook-delivery' => ['webhook', 'signing-helper'],
         'webhook-receiving' => ['webhook-receiver', 'hmac-verify'],
-        'rest-api' => ['api-client', 'api-kit', 'api-builder', 'api-error', 'api-versioning', 'fetch', 'http-retry', 'http-client', 'http-helper', 'http-status', 'rest', 'jsonrpc', 'graphql-client', 'http-mock', 'http-debug', 'http-handler', 'url-builder', 'url-clean', 'url-encode', 'middleware', 'response-macros', 'laravel-api-versioning'],
+        'rest-api' => ['api-client', 'api-kit', 'api-builder', 'api-error', 'api-versioning', 'api-response', 'fetch', 'http-retry', 'http-client', 'http-helper', 'http-status', 'rest', 'jsonrpc', 'graphql-client', 'http-mock', 'http-debug', 'http-handler', 'url-builder', 'url-clean', 'url-encode', 'middleware', 'response-macros', 'laravel-api-versioning', 'net-kit', 'typed-router', 'path-pattern', 'glob-match', 'glob-matcher', 'glob-kit'],
         'oauth-connectors' => ['oauth', 'auth-kit', 'token-kit'],
-        'authentication' => ['auth', 'jwt', 'session-kit', 'password', 'totp', 'csrf', 'secure-store', 'credential'],
+        'authentication' => ['auth', 'jwt', 'session-kit', 'password', 'totp', 'csrf', 'secure-store', 'credential', 'keychain'],
         'authorization' => ['rbac', 'policy', 'gate-kit', 'permission'],
-        'observability' => ['log', 'audit', 'metric', 'tracing', 'sentry', 'observability', 'correlation', 'healthcheck', 'circuit', 'retry', 'clock', 'change-tracker', 'tracker', 'inspector', 'profiler', 'timer', 'ip-range', 'ip-addr', 'ip-kit', 'security-headers', 'model-diff'],
-        'background-queue' => ['queue', 'worker', 'job-kit', 'async-batcher', 'async-queue', 'batch-processor', 'batch'],
+        'observability' => ['log', 'audit', 'metric', 'tracing', 'sentry', 'observability', 'correlation', 'healthcheck', 'health-check', 'health-check-kit', 'service-health', 'circuit', 'retry', 'clock', 'change-tracker', 'tracker', 'inspector', 'profiler', 'timer', 'ip-range', 'ip-addr', 'ip-kit', 'ip-utils', 'security-headers', 'exception-reporter', 'stopwatch', 'dev-console', 'git-analyzer', 'server-monitor', 'net-scanner', 'portcheck', 'port-check', 'req-check', 'errstack', 'rate-counter', 'rate-window', 'bench-utils'],
+        'background-queue' => ['queue', 'worker', 'job-kit', 'async-batcher', 'async-queue', 'batch-processor', 'batch', 'background-jobs', 'outbox'],
         'scheduled-jobs' => ['cron', 'scheduler', 'schedule-kit'],
-        'workflow-engine' => ['workflow', 'state-machine', 'fsm', 'sync-engine', 'task-graph', 'task-runner', 'task-dependency', 'pipeline'],
-        'rule-engine' => ['rule', 'feature-flag', 'flag-kit', 'validator', 'validation', 'guard-clause', 'precondition'],
+        'workflow-engine' => ['workflow', 'state-machine', 'fsm', 'sync-engine', 'task-graph', 'task-runner', 'task-dependency', 'pipeline', 'state-kit', 'ts-pipe', 'rb-pipe', 'kt-pipe'],
+        'rule-engine' => ['rule', 'feature-flag', 'featureflag', 'flag-kit', 'validator', 'validation', 'guard-clause', 'precondition'],
         'document-generation' => ['pdf', 'docx', 'render', 'template', 'markdown-render', 'csv-render'],
         'cms' => ['cms-helper', 'block-kit', 'page-builder'],
         'media-library' => ['cloudinary', 'image', 'media', 'thumbnail', 'photo'],
@@ -73,18 +73,18 @@ class IngestPackagesCommand extends Command
         'search' => ['search', 'fuzzy', 'index-kit'],
         'event-tracking' => ['analytics', 'event-tracker', 'plausible'],
         'dashboards' => ['dashboard-kit', 'widget-kit', 'chart-kit', 'sparkline'],
-        'reporting' => ['csv', 'export', 'reporting', 'xlsx', 'parquet'],
+        'reporting' => ['csv', 'export', 'reporting', 'xlsx', 'parquet', 'math-kit'],
         'crm-sync' => ['hubspot', 'salesforce', 'crm-sync', 'pipedrive'],
         'notifications' => ['notification', 'slack', 'discord', 'pushover', 'twilio', 'webhook-notify'],
         'email-campaigns' => ['mail', 'email', 'mailgun', 'postmark', 'mailchimp', 'sendgrid', 'resend'],
-        'lead-capture' => ['form', 'lead', 'submission'],
+        'lead-capture' => ['form', 'lead', 'submission', 'phone', 'locale-kit'],
         'payments' => ['stripe', 'paddle', 'payment', 'credit-card', 'iban'],
         'subscriptions' => ['subscription', 'billing-cycle'],
         'invoicing' => ['invoice'],
         'cart-checkout' => ['cart', 'checkout'],
         'gdpr-compliance' => ['gdpr', 'pii', 'data-subject', 'erasure', 'mask', 'redact'],
-        'data-export' => ['export-kit', 'sql-dump', 'backup-kit', 'dump'],
-        'real-time-sync' => ['sse', 'websocket', 'realtime', 'pubsub', 'event-emitter', 'event-bus', 'signal-kit', 'observable', 'reactive'],
+        'data-export' => ['export-kit', 'sql-dump', 'backup-kit', 'dump', 'tar', 'zip-archive'],
+        'real-time-sync' => ['sse', 'websocket', 'realtime', 'pubsub', 'event-emitter', 'event-bus', 'signal-kit', 'observable', 'reactive', 'mqtt'],
         'file-upload-pipeline' => ['upload', 'multipart', 'file-kit', 'file-size', 'filesize'],
         'virus-scanning' => ['clamav', 'virus'],
         'atomic-deploys' => ['deploy', 'release-kit', 'rolling-update'],
@@ -100,34 +100,36 @@ class IngestPackagesCommand extends Command
         'third-party-sync' => ['sync-kit', 'integration-kit'],
 
         // ──────────────────────────────────────────────── Phase 8.4 primitives
-        'error-handling' => ['result-type', 'result', 'either', 'option-type', 'maybe', 'safe-json', 'try-kit', 'fallback', 'guard'],
-        'id-generation' => ['ulid', 'nanoid', 'snowflake', 'uuid', 'cuid', 'slug', 'id-gen', 'id-generator', 'prefixed-id', 'compact-id'],
+        'error-handling' => ['result-type', 'result', 'either', 'option-type', 'maybe', 'safe-json', 'safe-parse', 'safe-timeout', 'safe-regex', 'safe-file-writer', 'try-kit', 'rb-try', 'fallback', 'guard', 'exception-handler', 'operation-result', 'func-timeout', 'timeout-kit', 'deprecate', 'stacktrace-fmt'],
+        'id-generation' => ['ulid', 'nanoid', 'snowflake', 'uuid', 'cuid', 'slug', 'id-gen', 'id-generator', 'prefixed-id', 'compact-id', 'ts-uid'],
         'money-currency' => ['money', 'currency', 'iso-4217', 'allocator', 'monetary'],
-        'date-time-utilities' => ['date', 'duration', 'time-zone', 'timezone', 'business-day', 'relative-time', 'time-ago', 'cron-expression', 'db-expressions'],
-        'cli-tools' => ['cli', 'terminal', 'prompt-kit', 'spinner', 'progress-bar', 'ansi', 'tty'],
-        'configuration-loading' => ['config', 'env-file', 'env-validator', 'env-expand', 'env-loader', 'dotenv', 'config-diff', 'config-kit', 'config-loader', 'config-validator', 'settings'],
-        'json-processing' => ['json-merge', 'json-patch', 'json-flatten', 'flatten-json', 'json-path', 'json-diff', 'json-schema', 'json-kit'],
-        'string-manipulation' => ['string-ext', 'string-similarity', 'string-kit', 'case-convert', 'case-kit', 'levenshtein', 'jaro', 'humanize', 'truncate', 'titlecase'],
+        'date-time-utilities' => ['date', 'duration', 'time-zone', 'timezone', 'business-day', 'relative-time', 'cron-expression', 'db-expressions', 'timeutil', 'time-util'],
+        'cli-tools' => ['cli-', 'docstring-cli', 'rb-cli', 'terminal', 'prompt-kit', 'prompt-builder', 'spinner', 'progress-bar', 'progress', 'ansi', 'tty', 'install-doctor', 'doctor', 'dev-docs-kit', 'sql-print', 'web-scraper', 'make-service', 'clipboard'],
+        'configuration-loading' => ['config', 'env-file', 'env-validator', 'env-expand', 'env-loader', 'dotenv', 'dart-env', 'config-diff', 'config-kit', 'config-loader', 'config-validator', 'settings', 'expression-evaluator'],
+        'json-processing' => ['json-merge', 'json-patch', 'json-flatten', 'flatten-json', 'json-path', 'jsonpath', 'json-schema', 'json-kit', 'ini-parser', 'toml-kit', 'toml-parse'],
+        'string-manipulation' => ['string-ext', 'string-similarity', 'string-kit', 'case-convert', 'case-kit', 'levenshtein', 'jaro', 'humanize', 'truncate', 'titlecase', 'regex-kit', 'regex-lib', 'regex-builder'],
         'pagination' => ['pagination', 'cursor-paginate', 'paged-result'],
         'color-utilities' => ['color', 'palette', 'wcag', 'contrast', 'design-token'],
 
         // ──────────────────────────────────────────────── Phase 8.5 primitives
-        'cryptography' => ['hash', 'hmac', 'sha-256', 'sha-512', 'md5', 'crc32', 'base-encoding', 'base-convert', 'mime-detect', 'mime-type', 'magic-bytes', 'safe-yaml', 'safe-exec', 'safe-shutdown', 'encrypt', 'decrypt'],
+        'cryptography' => ['hash', 'hmac', 'sha-256', 'sha-512', 'md5', 'crc32', 'base-encoding', 'base-convert', 'mime-detect', 'mime-type', 'magic-bytes', 'safe-yaml', 'safe-exec', 'safe-shutdown', 'encrypt', 'decrypt', 'crypt', 'argon2', 'base64-url', 'rb-hex', 'obfuscator', 'checksum', 'signed-payload'],
         'version-management' => ['semver', 'version-compare', 'version-bump', 'semantic-version'],
-        'testing-utilities' => ['test-factory', 'test-data', 'test-utils', 'snapshot-test', 'data-faker', 'data-factory', 'fake-data', 'fixture-kit'],
-    ];
+        'testing-utilities' => ['test-factory', 'test-data', 'test-utils', 'snapshot-test', 'snapshot-kit', 'snapshot', 'data-faker', 'data-factory', 'fake-data', 'fixture-kit', 'fixture', 'http-test', 'mock-server', 'rs-bench'],
 
-    /**
-     * Capabilities whose patterns we want REMOVED from earlier entries
-     * because they fit a more specific Phase 8.5 capability. Applied
-     * after first-match classification — packages tagged with a removed
-     * pattern are re-classified into the more specific bucket.
-     *
-     * (Currently empty — we handled the relevant moves by editing the
-     * pattern arrays directly above. Left as a hook for the next
-     * refactor that needs cross-cap moves.)
-     */
-    private const RECLASSIFY = [];
+        // ──────────────────────────────────────────────── Phase 8.7 primitives
+        'object-collection-ops' => ['deep-clone', 'deep-merge', 'deep-freeze', 'deep-equal', 'deep-diff', 'flatten', 'unflatten', 'pick', 'omit', 'group-by', 'chunk-list', 'zip-array', 'partition', 'collection-ext', 'array-query', 'array-utils', 'map-utils', 'dict-merge', 'dotpath', 'dot-access', 'safeget', 'sliceutil', 'maputil', 'list-chunk', 'data-mapper'],
+        'filesystem-utilities' => ['file-watcher', 'file-organizer', 'file-walker', 'path-kit', 'fs-utils', 'file-tree', 'directory-walker', 'safe-file-writer', 'safe-write', 'fswatch', 'fs-watch', 'pathname-kit', 'temp-file', 'duplicate-finder', 'temp-env', 'embedded-resource'],
+        'diff-tracking' => ['diff-strings', 'diff-kit', 'diff-lib', 'model-diff', 'change-set', 'json-diff', 'php-diff', 'text-diff', 'object-diff', 'struct-diff', 'structdiff', 'differ', 'env-diff', 'schema-diff'],
+
+        // ──────────────────────────────────────────────── Phase 8.8 primitives
+        'type-enum-utilities' => ['enum-kit', 'enum-tools', 'enum-toolkit', 'enum-utils', 'enum-ext', 'rich-enum', 'ts-enum', 'rb-enum', 'type-parse', 'type-check', 'type-conv', 'typeconv', 'typeguard', 'value-of', 'value-object', 'invariant', 'predicate', 'specification', 'pattern-match', 'match-ts', 'micro-schema', 'schema-infer', 'zod-defaults', 'approx', 'mapper', 'dto-mapper'],
+        'concurrency-primitives' => ['async-lock', 'semaphore', 'mutex', 'promise-pool', 'disposable-pool', 'object-pool', 'parallel-each', 'run-parallel', 'progress-map', 'parallel-map', 'parallel', 'abort-kit', 'abort-controller', 'graceful', 'graceful-shutdown', 'disposer', 'safechan', 'safe-channel', 'once', 'singleton', 'di-container', 'py-di', 'state-bag', 'polling', 'poll-until', 'lock-run', 'lock-kit', 'rs-pool', 'rb-pool', 'job-meter'],
+        'data-structures' => ['tree-structure', 'tree-kit', 'graph', 'dependency-graph', 'ring-buffer', 'bloom-filter', 'bit-flags', 'bit-field', 'sorted-array', 'interval', 'counter', 'expiring-map', 'timeout-map', 'tiny-store', 'event-store', 'secret-store', 'struct-kit', 'rb-tree', 'dn-tree-structure'],
+        'http-middleware' => ['cors', 'etag', 'header-kit', 'typed-headers', 'cookie-ts', 'cookie-kit', 'http-error', 'http-errors', 'httputil', 'respond', 'query-string-ts', 'uri-kit', 'web-vitals', 'next-layout', 'cookie'],
+        'string-text-formatting' => ['str-case', 'case-conv', 'ts-case', 'inflector', 'pluralize', 'pluralizer', 'natural-sort', 'word-wrap', 'human-size', 'byte-fmt', 'bytes-ts', 'text-table', 'table-fmt', 'rb-table', 'timeago', 'time-ago', 'str-utils', 'core-utils', 'unit-converter', 'badge-generator', 'random-readable-string', 'randstr', 'random-data', 'html-builder', 'xml-builder', 'encoding-kit', 'hex-dump', 'word-stem', 'sql-print', 'stacktrace'],
+        'ui-component-primitives' => ['react-hooks', 'react-ui-kit', 'react-ui-primitives', 'react-theme-provider', 'react-motion-components', 'framer-motion-presets', 'next-layout-components', 'flutter-animation-kit', 'design-system', 'ui-kit', 'theme-provider', 'animation-kit', 'motion'],
+        'geospatial' => ['geo', 'geolocation', 'geo-point', 'geohash', 'haversine', 'lat-lng'],
+    ];
 
     public function handle(): int
     {
@@ -165,7 +167,7 @@ class IngestPackagesCommand extends Command
 
                 $slug = $this->slugFor($language, $name);
                 $description = $this->extractDescription($pkgDir->getRealPath(), $language, $name);
-                $capabilities = $this->classifyCapabilities($name);
+                $capabilities = $this->classifyCapabilities($name, $description);
 
                 $rows[] = [
                     'slug' => $slug,
@@ -333,7 +335,36 @@ class IngestPackagesCommand extends Command
     }
 
     /** @return array<int, string> */
-    private function classifyCapabilities(string $name): array
+    /**
+     * Phrases scanned against the package's short_description that, when
+     * present, attach a *secondary* capability beyond what the slug
+     * patterns matched. Kept narrow on purpose — only signals that a
+     * one-line description reliably contains when the package genuinely
+     * serves a second domain. Phrases are case-insensitive substrings.
+     */
+    private const DESCRIPTION_PATTERNS = [
+        'concurrency-primitives' => ['async-aware', 'thread-safe', 'concurren', 'parallel', 'stream transformer', 'await', 'channel-aware', 'condition variable', 'long-poll'],
+        'error-handling' => ['retry with', 'exponential backoff', 'circuit breaker', 'fallback support', 'guard claus', 'parameter valid', 'panic-free', 'recovery'],
+        'observability' => ['audit log', 'audit trail', 'log every', 'instrument', 'metrics', 'tracing', 'profiling'],
+        'cryptography' => ['encryption', 'pbkdf2', 'argon2', 'aes-256', 'hmac', 'hash-based', 'cryptographic'],
+        'authentication' => ['jwt token', 'oauth', 'session token', 'csrf', 'credential storage'],
+        'http-middleware' => ['middleware', 'asp.net core', 'rack middleware', 'delegatinghandler', 'http header'],
+        'diff-tracking' => ['diff for', 'detect added', 'detect changes', 'property changes', 'change track'],
+        'filesystem-utilities' => ['file path', 'directory', 'on disk', 'atomic write', 'file system event'],
+        'data-structures' => ['ring buffer', 'sliding window', 'topological sort', 'tree traversal', 'bloom filter'],
+        'object-collection-ops' => ['deep merge', 'deep clone', 'object-to-object', 'group by', 'configurable strategies'],
+        'string-text-formatting' => ['url-safe', 'base32', 'base62', 'base64url', 'human-readable', 'pluraliz', 'natural sort'],
+        'ui-component-primitives' => ['react component', 'react hook', 'flutter widget', 'design tokens', 'theme switching', 'debug overlay'],
+        'real-time-sync' => ['conflict resol', 'offline-first', 'sync engine', 'event-driven'],
+        'background-queue' => ['dead-letter', 'job queue', 'background task'],
+        'id-generation' => ['obfuscat', 'sortable id', 'url-safe public id'],
+        'rate-limiting' => ['throttle', 'debounce', 'rate-limit', 'leading/trailing'],
+    ];
+
+    /**
+     * @return list<string>
+     */
+    private function classifyCapabilities(string $name, ?string $description = null): array
     {
         $matched = [];
         foreach (self::CAPABILITY_PATTERNS as $capabilitySlug => $patterns) {
@@ -342,6 +373,26 @@ class IngestPackagesCommand extends Command
                     $matched[] = $capabilitySlug;
 
                     break; // one capability per pattern group
+                }
+            }
+        }
+
+        // Description-level pass — only fires if a one-line summary
+        // exists. Adds *additional* capability tags when the description
+        // contains a strong dual-purpose signal (e.g. "middleware",
+        // "exponential backoff", "JWT token"). Never replaces the
+        // slug-derived primary.
+        if ($description !== null && $description !== '') {
+            foreach (self::DESCRIPTION_PATTERNS as $capabilitySlug => $phrases) {
+                if (in_array($capabilitySlug, $matched, true)) {
+                    continue;
+                }
+                foreach ($phrases as $phrase) {
+                    if (stripos($description, $phrase) !== false) {
+                        $matched[] = $capabilitySlug;
+
+                        break;
+                    }
                 }
             }
         }

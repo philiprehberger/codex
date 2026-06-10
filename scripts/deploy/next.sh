@@ -47,13 +47,20 @@ cd "$(dirname "$0")/../../web"
 
 info "npm ci + npm run build"
 npm ci --no-audit --no-fund
+# Clear Next.js fetch-cache so SSG queries fresh data each build.
+# Without this, a build that runs after a backend shape change reuses
+# the prior URL→response cache and renders pages with stale fields.
+rm -rf .next/cache
 npm run build
 
 info "preparing rsync staging dir"
 STAGING=".deploy-staging"
 rm -rf "$STAGING"
 mkdir -p "$STAGING"
-cp -r .next/standalone/. "$STAGING/"
+# Next.js standalone nests the runtime under web/ because the app source
+# lives at web/ inside the monorepo. PM2 expects server.js at the
+# deploy root (cwd: /var/www/codex-web), so flatten web/ to root.
+cp -r .next/standalone/web/. "$STAGING/"
 cp -r .next/static "$STAGING/.next/"
 [ -d public ] && cp -r public "$STAGING/"
 # Belt-and-braces: drop any .env that snuck into standalone/.
@@ -79,7 +86,8 @@ info "rsync → $REMOTE:$REMOTE_PATH  (excludes .env)"
 rsync -avz --delete --exclude=.env -e "ssh $SSH_OPTS" "$STAGING/" "$REMOTE:$REMOTE_PATH/"
 
 info "pm2 reload $PM2_PROCESS --update-env"
-ssh $SSH_OPTS "$REMOTE" "pm2 reload $PM2_PROCESS --update-env || pm2 start /var/www/ecosystem.config.js --only $PM2_PROCESS"
+# pm2 lives under nvm on the remote; non-login ssh sessions don't source it.
+ssh $SSH_OPTS "$REMOTE" "export PATH=\$(ls -d /home/ubuntu/.nvm/versions/node/*/bin 2>/dev/null | tail -1):\$PATH; pm2 reload $PM2_PROCESS --update-env || pm2 start /var/www/ecosystem.config.js --only $PM2_PROCESS"
 
 rm -rf "$STAGING"
 echo "✓ Next.js deploy complete"

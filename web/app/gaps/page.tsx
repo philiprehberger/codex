@@ -45,13 +45,18 @@ export default async function GapsPage() {
                 <h2 className="text-xl font-semibold text-(--color-ink) mb-3">
                     Underused capabilities ({gaps.capability_gaps.length})
                 </h2>
+                <p className="text-sm text-(--color-ink-dim) mb-4">
+                    Capabilities with at most two projects <em>and</em> at most two packages — both surfaces are thin.
+                </p>
                 <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
                     {gaps.capability_gaps.map((cap) => (
                         <li key={cap.slug} className="rounded border border-(--color-paper-dim) bg-(--color-paper) p-4">
                             <div className="text-xs text-(--color-ink-dim)">{cap.category}</div>
                             <div className="font-medium text-(--color-ink)">{cap.name}</div>
                             <div className="text-xs text-(--color-ink-dim) mt-1">
-                                {cap.count === 0 ? 'No projects yet.' : `${cap.count} project${cap.count === 1 ? '' : 's'} so far.`}
+                                {cap.project_count} project{cap.project_count === 1 ? '' : 's'}
+                                {' · '}
+                                {cap.package_count} package{cap.package_count === 1 ? '' : 's'}
                             </div>
                         </li>
                     ))}

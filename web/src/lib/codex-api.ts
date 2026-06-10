@@ -120,6 +120,7 @@ export type CapabilityListItem = {
     description: string;
     icon: string | null;
     project_count: number;
+    package_count: number;
 };
 
 export type CapabilityDetail = {
@@ -155,7 +156,14 @@ export type CapabilityDetail = {
 };
 
 export type GapReport = {
-    capability_gaps: Array<{ slug: string; name: string; category: string; count: number }>;
+    capability_gaps: Array<{
+        slug: string;
+        name: string;
+        category: string;
+        count: number;
+        project_count: number;
+        package_count: number;
+    }>;
     tech_industry_coverage: Array<{
         technology_slug: string;
         technology_name: string;

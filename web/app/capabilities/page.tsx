@@ -41,6 +41,8 @@ export default async function CapabilitiesPage() {
                                     </Link>
                                     <span className="text-xs text-(--color-ink-dim) shrink-0">
                                         {cap.project_count} project{cap.project_count === 1 ? '' : 's'}
+                                        {' · '}
+                                        {cap.package_count} package{cap.package_count === 1 ? '' : 's'}
                                     </span>
                                 </div>
                                 <p className="mt-2 text-sm text-(--color-ink-dim) max-w-3xl">{cap.description}</p>
