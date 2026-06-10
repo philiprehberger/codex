@@ -63,6 +63,19 @@ class AppServiceProvider extends ServiceProvider
         RateLimiter::for('codex.api', fn (Request $r) => Limit::perMinute(60)->by($r->ip()));
         RateLimiter::for('codex.api-heavy', fn (Request $r) => Limit::perMinute(20)->by($r->ip()));
 
+        // Queue heartbeat — codex-queue (the PM2 worker) writes the
+        // current timestamp into the cache on every poll iteration.
+        // /up/queue reads this key (TTL 5min) so BetterStack can detect
+        // worker death within the next ping cycle. The looping listener
+        // only fires inside `queue:work`, never on web requests.
+        \Illuminate\Support\Facades\Queue::looping(function () {
+            \Illuminate\Support\Facades\Cache::put(
+                'codex:queue:heartbeat',
+                now()->toIso8601String(),
+                600,
+            );
+        });
+
         $this->registerRevalidationObservers();
         $this->registerRevalidationFlush();
     }
