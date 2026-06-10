@@ -77,6 +77,12 @@ class ProblemResponse extends JsonResponse
         if ($e instanceof \Illuminate\Validation\ValidationException) {
             return Response::HTTP_BAD_REQUEST;
         }
+        // Catch-all for any HttpException variant (abort(403, …), abort(410, …),
+        // 405 Method Not Allowed not caught above on subclasses, etc) — defer
+        // to the exception's own status code rather than collapsing to 500.
+        if ($e instanceof \Symfony\Component\HttpKernel\Exception\HttpException) {
+            return $e->getStatusCode();
+        }
 
         return Response::HTTP_INTERNAL_SERVER_ERROR;
     }

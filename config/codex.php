@@ -112,6 +112,51 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Revalidation — Filament observer → Next.js dashboard
+    |--------------------------------------------------------------------------
+    |
+    | Comma-separated list of HMAC secrets. The FIRST entry is the active
+    | write key; all entries are accepted on the verifier side (the
+    | Next.js /api/revalidate handler) for no-flap rotation. See
+    | infra/RECOVERY.md (Phase 8) for the two-step rotation procedure.
+    |
+    | next_revalidate_url targets the Next.js dashboard origin (loopback
+    | in production via Apache + Host header injection per Phase 5/6).
+    | Phase 6 will set this to http://127.0.0.1:<port> when the dashboard
+    | comes up; Phase 1-3 leaves it null and the RevalidateClient becomes
+    | a no-op (logs a warning), which is correct behaviour.
+    |
+    | queue_threshold: bulk operations beyond this tag count get pushed
+    | onto the database queue (codex-queue PM2 process) instead of
+    | inline-fired during the request lifecycle.
+    |
+    */
+    'revalidate' => [
+        'secrets' => env('CODEX_REVALIDATE_SECRETS'),
+        'next_revalidate_url' => env('CODEX_NEXT_REVALIDATE_URL'),
+        'queue_threshold' => env('CODEX_REVALIDATE_QUEUE_THRESHOLD', 10),
+    ],
+
+    'next_revalidate_url' => env('CODEX_NEXT_REVALIDATE_URL'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Asset signing (Phase 3/5/6)
+    |--------------------------------------------------------------------------
+    |
+    | Comma-separated list of HMAC secrets, same shape as the revalidate
+    | secrets but a SEPARATE rotation path so leaking a signature doesn't
+    | force an APP_KEY rotation (which would invalidate sessions + every
+    | encrypted-at-rest column).
+    |
+    */
+    'asset_signing' => [
+        'keys' => env('CODEX_ASSET_SIGNING_KEYS'),
+        'ttl' => env('CODEX_ASSET_SIGNING_TTL', 7200), // 2h — exceeds revalidate=3600 SSR cache window
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | API strict-query-keys (Phase 5)
     |--------------------------------------------------------------------------
     |

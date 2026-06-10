@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use App\Http\Middleware\AdminCspMiddleware;
 use Filament\Auth\MultiFactor\App\AppAuthentication;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -40,6 +41,7 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 AccountWidget::class,
+                \App\Filament\Widgets\CapabilityHeatmapWidget::class,
             ])
             // Phase 3 Day-1 spike picked Filament v5's first-party MFA
             // (TOTP "App" provider + recovery codes). Forced enrolment at
@@ -63,6 +65,7 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
+                AdminCspMiddleware::class,
             ])
             ->authMiddleware([
                 Authenticate::class,
