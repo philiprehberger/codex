@@ -1,61 +1,73 @@
+export const metadata = {
+    title: 'About — Codex',
+    description: 'How Codex is built and what the heatmap is and isn\'t.',
+};
+
 export default function AboutPage() {
-  return (
-    <article className="prose pb-20">
-      <h1 className="text-3xl font-bold tracking-tight">About this demo</h1>
+    return (
+        <article className="prose">
+            <h1>About Codex</h1>
 
-      <p>
-        Inkwell is a portfolio demonstration by{' '}
-        <a href="https://philiprehberger.com">Philip Rehberger</a>. It is not a production service.
-        Don't point real production traffic at it; the live demo's form endpoints are sandboxed and
-        the database wipes daily.
-      </p>
+            <p>
+                Codex is a portfolio intelligence dashboard. Every project Philip
+                Rehberger has built — demos, packages, client engagements — is
+                catalogued in one place, tagged along five axes (capability,
+                technology, industry, architecture, deliverable), and rendered as a
+                heatmap + gap report.
+            </p>
 
-      <h2>Why this exists</h2>
-      <p>
-        Most engineering portfolios stop at the README. A buyer evaluating a freelancer for a "buy
-        vs build" decision on form-submission infrastructure has to extrapolate from "built a thing
-        on GitHub" to "can run a real form backend with spam filtering, multi-destination fan-out,
-        and a Filament admin where I'd actually want to live." The extrapolation is expensive.
-        Inkwell exists to shorten it.
-      </p>
-      <p>
-        Where my sibling projects sell to API teams (
-        <a href="https://github.com/philiprehberger/webhook-relay">webhook-relay</a>) or product
-        teams (<a href="https://github.com/philiprehberger/pennant">pennant</a>), Inkwell is shaped
-        for small businesses, marketing teams, and indie devs running a Webflow / Eleventy / static
-        site who need a backend just for their contact form. The buyer profile is wider, the
-        infrastructure flair is lighter, and the admin is a first-class artifact rather than a
-        shell.
-      </p>
+            <h2>Why capability-led, not technology-led</h2>
+            <p>
+                Buyers don&apos;t hire freelancers for a stack — they hire for a job.
+                &quot;I need a customer portal with reporting and payments&quot; sells
+                better than &quot;I need Laravel.&quot; The capability vocabulary
+                (Authentication, Payments, Search, Reporting, Real-time, Document
+                Generation, Multi-tenant, …) is the load-bearing layer. Technologies
+                are how; capabilities are what.
+            </p>
 
-      <h2>What's "production-shaped" mean?</h2>
-      <p>
-        The architecture is the architecture a real form backend would use: rate-limited public
-        endpoint, JSON Schema validation, composable spam-scoring pipeline with explicit decision
-        rules, multi-destination fan-out via Horizon, idempotency-keyed delivery jobs, audit log,
-        compliance endpoints. But this is one person working on a portfolio — there is no on-call
-        rotation, no five-nines SLA, no SOC2 audit. <em>Production-shaped, not production-grade.</em>
-      </p>
+            <h2>What the heatmap is, and isn&apos;t</h2>
+            <p>
+                It&apos;s a portfolio map. Each cell means &quot;this project carries
+                this capability.&quot; The count next to each capability is the project
+                count — concentration of shipped work, not a skills certification or a
+                ranking.
+            </p>
+            <p>
+                Client work is redacted by client identity (RedactedScope on the
+                Laravel side) but tagged at full fidelity. Industry stays visible
+                because that&apos;s the proof-of-portfolio shape; the client&apos;s
+                name is private to the engagement.
+            </p>
 
-      <h2>What I'd build for you</h2>
-      <p>
-        If your team is debating buy vs build on a form backend, or you need a form-submission
-        product that integrates with your existing stack (Zapier, Slack, CRM, sheets, …), the
-        artifacts on this site are the kind of thing you'd be paying for. Contact me at{' '}
-        <a href="https://philiprehberger.com">philiprehberger.com</a> or via{' '}
-        <a href="https://www.upwork.com/freelancers/philiprehberger">Upwork</a>.
-      </p>
+            <h2>About the package representation</h2>
+            <p>
+                Philip&apos;s open-source library covers ~630 packages across PHP,
+                TypeScript, Python, and Go. Listing each as its own row would drown
+                the heatmap. Codex represents the package collection as
+                cluster-per-language rows (PHP / Laravel — Feature Flags, TypeScript
+                — Caching, Go — Resilience, …) — about 25 rows. The full list lives
+                at{' '}
+                <a href="https://philiprehberger.com/open-source-packages">
+                    philiprehberger.com/open-source-packages
+                </a>.
+            </p>
 
-      <h2>What's <strong>not</strong> in v1</h2>
-      <p>This is the honest framing — what a real engagement would harden:</p>
-      <ul>
-        <li>Buyer-facing region residency switching (single S3 region per workspace currently).</li>
-        <li>Custom sender domain (per-buyer DKIM record publishing).</li>
-        <li>Notion / Airtable / Microsoft Teams / Pipedrive / Zoho CRM destinations.</li>
-        <li>Per-workspace spam classifier with feedback loop from Promote / Mark-Spam actions.</li>
-        <li>Multi-AZ + ASG disaster-recovery upgrade.</li>
-        <li>SOC2 / HIPAA copy.</li>
-      </ul>
-    </article>
-  );
+            <h2>Stack</h2>
+            <ul>
+                <li>Laravel 13 + Filament v5 + MySQL 8 (read API + admin)</li>
+                <li>Next.js 16 + React 19 + Tailwind 4 (this dashboard)</li>
+                <li>Apache + mod_php + PM2 (deploy)</li>
+                <li>Sentry + BetterStack + Plausible (observability)</li>
+                <li>All sub-$0.50/mo in cloud cost at Phase 1 traffic</li>
+            </ul>
+
+            <p>
+                Source at{' '}
+                <a href="https://github.com/philiprehberger/codex">
+                    github.com/philiprehberger/codex
+                </a>.
+            </p>
+        </article>
+    );
 }
