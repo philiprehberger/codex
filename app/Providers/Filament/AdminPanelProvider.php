@@ -2,6 +2,7 @@
 
 namespace App\Providers\Filament;
 
+use Filament\Auth\MultiFactor\App\AppAuthentication;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -39,6 +40,18 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 AccountWidget::class,
+            ])
+            // Phase 3 Day-1 spike picked Filament v5's first-party MFA
+            // (TOTP "App" provider + recovery codes). Forced enrolment at
+            // first login via EnsureMultiFactorAuthenticationIsEnabled
+            // middleware (registered automatically by isRequired=true).
+            ->multiFactorAuthentication([
+                AppAuthentication::make()->recoverable(),
+            ], isRequired: true)
+            ->navigationGroups([
+                'Catalog',
+                'Vocabulary',
+                'System',
             ])
             ->middleware([
                 EncryptCookies::class,
