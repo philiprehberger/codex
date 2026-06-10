@@ -56,7 +56,7 @@ class Project extends Model
 
     protected static function booted(): void
     {
-        static::addGlobalScope(new RedactedScope());
+        static::addGlobalScope(new RedactedScope);
 
         // shipped requires shipped_date + hours_actual. Enforced from the
         // observer so direct Project::create([...]) writes from seeders /

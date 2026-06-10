@@ -104,6 +104,7 @@ class AuditLogResource extends Resource
                                 ->title('Source capability not found.')
                                 ->danger()
                                 ->send();
+
                             return;
                         }
 

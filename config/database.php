@@ -75,7 +75,7 @@ return [
             // SetPrimaryTag action depends on READ COMMITTED for clean locking.
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 Mysql::ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
-                Mysql::ATTR_INIT_COMMAND => "SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED",
+                Mysql::ATTR_INIT_COMMAND => 'SET SESSION TRANSACTION ISOLATION LEVEL READ COMMITTED',
             ]) : [],
         ],
 

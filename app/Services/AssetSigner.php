@@ -64,6 +64,7 @@ class AssetSigner
     {
         $canonical = $ulid.'|'.$expiresAt;
         $binary = hash_hmac('sha256', $canonical, $key, true);
+
         return rtrim(strtr(base64_encode($binary), '+/', '-_'), '=');
     }
 
@@ -73,6 +74,7 @@ class AssetSigner
         if ($keys === []) {
             throw new \RuntimeException('codex.asset_signing.keys is empty — set CODEX_ASSET_SIGNING_KEYS.');
         }
+
         return $keys[0];
     }
 

@@ -3,9 +3,7 @@
 namespace Tests\Feature\Api;
 
 use App\Models\Capability;
-use App\Models\Industry;
 use App\Models\Project;
-use App\Models\Technology;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 

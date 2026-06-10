@@ -4,6 +4,7 @@ namespace App\Filament\Resources\DesignStyles;
 
 use App\Filament\Resources\DesignStyles\Pages\ManageDesignStyles;
 use App\Models\DesignStyle;
+use App\Rules\SlugRule;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -33,7 +34,7 @@ class DesignStyleResource extends Resource
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('slug')
-                    ->rule(new \App\Rules\SlugRule())
+                    ->rule(new SlugRule)
                     ->required(),
             ]);
     }

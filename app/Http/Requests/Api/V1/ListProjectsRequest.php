@@ -30,13 +30,13 @@ class ListProjectsRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'capability'   => ['nullable', 'string', 'alpha_dash', 'max:120'],
-            'industry'     => ['nullable', 'string', 'alpha_dash', 'max:120'],
+            'capability' => ['nullable', 'string', 'alpha_dash', 'max:120'],
+            'industry' => ['nullable', 'string', 'alpha_dash', 'max:120'],
             'architecture' => ['nullable', 'string', 'alpha_dash', 'max:120'],
-            'type'         => ['nullable', 'string', 'in:demo,client,personal,open_source,package'],
-            'year'         => ['nullable', 'integer', 'between:2010,2099'],
-            'cursor'       => ['nullable', 'string', 'max:255'],
-            'per_page'     => ['nullable', 'integer', 'between:1,100'],
+            'type' => ['nullable', 'string', 'in:demo,client,personal,open_source,package'],
+            'year' => ['nullable', 'integer', 'between:2010,2099'],
+            'cursor' => ['nullable', 'string', 'max:255'],
+            'per_page' => ['nullable', 'integer', 'between:1,100'],
         ];
     }
 

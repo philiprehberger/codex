@@ -9,7 +9,6 @@ use App\Models\DesignStyle;
 use App\Models\Industry;
 use App\Models\Project;
 use App\Models\Technology;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 
 /**

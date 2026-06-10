@@ -1,7 +1,11 @@
 <?php
 
+use App\Providers\AppServiceProvider;
+use App\Providers\Filament\AdminPanelProvider;
+use App\Providers\SeederGuardServiceProvider;
+
 return [
-    App\Providers\AppServiceProvider::class,
-    App\Providers\SeederGuardServiceProvider::class,
-    App\Providers\Filament\AdminPanelProvider::class,
+    AppServiceProvider::class,
+    SeederGuardServiceProvider::class,
+    AdminPanelProvider::class,
 ];

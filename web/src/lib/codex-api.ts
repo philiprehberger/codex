@@ -10,8 +10,16 @@
 // the Host-header discipline is enforced at the linter, not at review
 // time. See web/eslint.config.* (Phase 7 wire-up).
 
-const INTERNAL_API_URL = process.env.CODEX_API_INTERNAL_URL ?? 'http://127.0.0.1';
-const PUBLIC_API_HOST = process.env.NEXT_PUBLIC_CODEX_API_HOST ?? 'api.codex.philiprehberger.com';
+// Read env vars per-call (not at module load) so a test can swap them in
+// beforeEach without bouncing the test runner. Both have safe defaults
+// for production where the env is set at deploy time.
+function getInternalApiUrl(): string {
+    return process.env.CODEX_API_INTERNAL_URL ?? 'http://127.0.0.1';
+}
+
+function getPublicApiHost(): string {
+    return process.env.NEXT_PUBLIC_CODEX_API_HOST ?? 'api.codex.philiprehberger.com';
+}
 
 export type RevalidateOptions = {
     /** Seconds. Defaults to 3600 (matches Laravel's report-cache TTL). */
@@ -35,7 +43,7 @@ export async function codexFetch<T>(
     path: string,
     opts: RevalidateOptions = {},
 ): Promise<T> {
-    const url = `${INTERNAL_API_URL}${path.startsWith('/') ? path : `/${path}`}`;
+    const url = `${getInternalApiUrl()}${path.startsWith('/') ? path : `/${path}`}`;
 
     const next: { revalidate?: number; tags?: string[] } = {};
     if (opts.revalidate !== undefined) {
@@ -54,7 +62,7 @@ export async function codexFetch<T>(
             // and the loopback fetch silently 404s. Documented at
             // ~/projects/income-ops/.scratch/plans/project_intelligence_
             // codex_portfolio.md §"Internal vs public API URL".
-            Host: PUBLIC_API_HOST,
+            Host: getPublicApiHost(),
             Accept: 'application/json',
         },
         next,

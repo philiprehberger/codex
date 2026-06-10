@@ -3,8 +3,6 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
-use App\Models\Capability;
-use App\Models\Scopes\RedactedScope;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Facades\DB;
 
@@ -26,7 +24,7 @@ class ListCapabilitiesController extends Controller
     {
         $rows = DB::table('capabilities AS c')
             ->leftJoin('project_capabilities AS pc',
-                fn ($join) => $join->on(DB::raw('COALESCE(c.canonical_id, c.id)'), '=', 'pc.capability_id')
+                fn ($join) => $join->on(DB::raw('COALESCE(c.canonical_id, c.id)'), '=', 'pc.capability_id'),
             )
             ->leftJoin('projects AS p', function ($join) {
                 $join->on('p.id', '=', 'pc.project_id')->whereNull('p.deleted_at');

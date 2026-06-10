@@ -33,7 +33,7 @@ class RedactedScopeTest extends TestCase
         $this->assertNull($scoped->internal_notes);
     }
 
-    public function test_withoutGlobalScope_yields_full_row(): void
+    public function test_without_global_scope_yields_full_row(): void
     {
         Project::factory()->redacted()->create([
             'slug' => 'unscoped-test',
@@ -49,7 +49,7 @@ class RedactedScopeTest extends TestCase
         $this->assertSame('sensitive notes', $unscoped->internal_notes);
     }
 
-    public function test_internal_notes_is_hidden_from_toArray_regardless_of_scope(): void
+    public function test_internal_notes_is_hidden_from_to_array_regardless_of_scope(): void
     {
         Project::factory()->redacted()->create([
             'slug' => 'hidden-test',

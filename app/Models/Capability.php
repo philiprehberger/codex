@@ -79,6 +79,7 @@ class Capability extends Model
                 return $this;
             }
         }
+
         return $current;
     }
 

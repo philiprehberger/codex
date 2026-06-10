@@ -30,6 +30,7 @@ class ResetAdminPasswordCommand extends Command
         $user = User::where('email', $email)->first();
         if (! $user) {
             $this->error("No admin user with email {$email}.");
+
             return self::FAILURE;
         }
 
@@ -44,6 +45,7 @@ class ResetAdminPasswordCommand extends Command
             foreach ($e->errors()['password'] ?? [] as $msg) {
                 $this->error($msg);
             }
+
             return self::FAILURE;
         }
 

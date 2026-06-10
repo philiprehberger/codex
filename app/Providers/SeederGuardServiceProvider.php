@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Database\Seeders\BaseSeeder;
-use Illuminate\Database\Events\NoPendingMigrations;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Config;

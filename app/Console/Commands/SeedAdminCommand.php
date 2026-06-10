@@ -5,9 +5,9 @@ namespace App\Console\Commands;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rules\Password;
 use Illuminate\Validation\ValidationException;
-use Illuminate\Support\Facades\Validator;
 
 /**
  * One-shot first-deploy command — seeds the single admin user. Password
@@ -31,11 +31,13 @@ class SeedAdminCommand extends Command
         $email = $this->option('email') ?: $this->ask('Admin email');
         if (! filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->error('Invalid email address.');
+
             return self::FAILURE;
         }
 
         if (User::where('email', $email)->exists()) {
             $this->error("Admin user with email {$email} already exists. Use codex:reset-admin-password to rotate.");
+
             return self::FAILURE;
         }
 
@@ -50,6 +52,7 @@ class SeedAdminCommand extends Command
             foreach ($e->errors()['password'] ?? [] as $msg) {
                 $this->error($msg);
             }
+
             return self::FAILURE;
         }
 

@@ -31,12 +31,14 @@ class Reset2faCommand extends Command
         $user = User::where('email', $email)->first();
         if (! $user) {
             $this->error("No admin user with email {$email}.");
+
             return self::FAILURE;
         }
 
         if (! $this->option('confirm')
             && ! $this->confirm("This clears 2FA for {$email}. They will be forced to re-enrol on next login. Continue?")) {
             $this->info('Aborted.');
+
             return self::SUCCESS;
         }
 

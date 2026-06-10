@@ -4,13 +4,14 @@ namespace App\Filament\Resources\Architectures;
 
 use App\Filament\Resources\Architectures\Pages\ManageArchitectures;
 use App\Models\Architecture;
+use App\Rules\SlugRule;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -34,7 +35,7 @@ class ArchitectureResource extends Resource
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('slug')
-                    ->rule(new \App\Rules\SlugRule())
+                    ->rule(new SlugRule)
                     ->required(),
                 Textarea::make('description')
                     ->columnSpanFull(),

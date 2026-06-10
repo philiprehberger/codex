@@ -44,6 +44,7 @@ class DiagnosticsController extends Controller
     {
         try {
             DB::select('SELECT 1 AS ok');
+
             return true;
         } catch (\Throwable) {
             return false;
@@ -54,6 +55,7 @@ class DiagnosticsController extends Controller
     {
         try {
             Cache::put('codex:diag:probe', 'ok', 5);
+
             return Cache::get('codex:diag:probe') === 'ok';
         } catch (\Throwable) {
             return false;
@@ -66,6 +68,7 @@ class DiagnosticsController extends Controller
             // Database driver is the production target; sync is dev-only.
             // For both, verifying the connection resolves is enough.
             app('queue')->connection();
+
             return true;
         } catch (\Throwable) {
             return false;

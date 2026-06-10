@@ -34,12 +34,12 @@ class ProjectAssetResource extends Resource
                     ->required(),
                 Select::make('asset_type')
                     ->options([
-            'screenshot' => 'Screenshot',
-            'wireframe' => 'Wireframe',
-            'logo' => 'Logo',
-            'diagram' => 'Diagram',
-            'video' => 'Video',
-        ])
+                        'screenshot' => 'Screenshot',
+                        'wireframe' => 'Wireframe',
+                        'logo' => 'Logo',
+                        'diagram' => 'Diagram',
+                        'video' => 'Video',
+                    ])
                     ->required(),
                 TextInput::make('path')
                     ->required(),

@@ -11,6 +11,7 @@ class ArchitectureFactory extends Factory
     public function definition(): array
     {
         $name = fake()->unique()->word();
+
         return [
             'name' => ucfirst($name),
             'slug' => $name.'-'.fake()->unique()->numerify('####'),

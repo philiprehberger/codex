@@ -34,12 +34,14 @@ class SyncBundleFixturesCommand extends Command
     {
         if (! App::isLocal()) {
             $this->error('codex:sync-bundle-fixtures is dev-only — refusing to run outside the local environment.');
+
             return self::FAILURE;
         }
 
         $source = $this->expandHome((string) $this->option('source'));
         if (! File::isDirectory($source)) {
             $this->error("Source directory not found: {$source}");
+
             return self::FAILURE;
         }
 
@@ -54,6 +56,7 @@ class SyncBundleFixturesCommand extends Command
             $description = $this->extractShortDescription($dir->getRealPath());
             if ($description === null) {
                 $this->warn(" - {$slug}: no description found, skipping");
+
                 continue;
             }
 
@@ -61,7 +64,7 @@ class SyncBundleFixturesCommand extends Command
             $path = "{$target}/{$slug}.md";
 
             if ($this->option('dry-run')) {
-                $this->line(" * {$slug}: " . substr($description, 0, 80) . (strlen($description) > 80 ? '…' : ''));
+                $this->line(" * {$slug}: ".substr($description, 0, 80).(strlen($description) > 80 ? '…' : ''));
             } else {
                 File::put($path, $body);
                 $written++;
@@ -97,27 +100,35 @@ class SyncBundleFixturesCommand extends Command
                 $trimmed = trim($line);
                 if ($trimmed === '---') {
                     $inFrontMatter = ! $inFrontMatter;
+
                     continue;
                 }
                 if ($inFrontMatter || $trimmed === '' || str_starts_with($trimmed, '#')) {
-                    if ($body !== []) break;
+                    if ($body !== []) {
+                        break;
+                    }
+
                     continue;
                 }
                 $body[] = $trimmed;
-                if (count($body) >= 3) break;
+                if (count($body) >= 3) {
+                    break;
+                }
             }
             if ($body !== []) {
                 return implode(' ', $body);
             }
         }
+
         return null;
     }
 
     private function expandHome(string $path): string
     {
         if (str_starts_with($path, '~/')) {
-            return ($_SERVER['HOME'] ?? getenv('HOME') ?: '') . substr($path, 1);
+            return ($_SERVER['HOME'] ?? getenv('HOME') ?: '').substr($path, 1);
         }
+
         return $path;
     }
 }

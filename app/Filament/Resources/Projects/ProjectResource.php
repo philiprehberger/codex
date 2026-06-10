@@ -20,16 +20,13 @@ use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Actions\ForceDeleteBulkAction;
 use Filament\Actions\RestoreBulkAction;
-use Filament\Notifications\Notification;
-use Illuminate\Database\Eloquent\Collection;
-use Illuminate\Support\Facades\DB;
 use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
+use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
-use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Schema;
@@ -40,7 +37,9 @@ use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use Illuminate\Support\Facades\DB;
 
 class ProjectResource extends Resource
 {
@@ -72,7 +71,7 @@ class ProjectResource extends Resource
                         ->icon(Heroicon::OutlinedIdentification)
                         ->schema([
                             TextInput::make('name')->required()->maxLength(255),
-                            TextInput::make('slug')->required()->rule(new SlugRule())->maxLength(120),
+                            TextInput::make('slug')->required()->rule(new SlugRule)->maxLength(120),
                             Select::make('project_type')
                                 ->options([
                                     'demo' => 'Demo',
@@ -235,7 +234,7 @@ class ProjectResource extends Resource
                         ->label('Add capability…')
                         ->icon(Heroicon::OutlinedTag)
                         ->schema([
-                            \Filament\Forms\Components\Select::make('capability_id')
+                            Select::make('capability_id')
                                 ->label('Capability')
                                 ->options(fn () => Capability::query()
                                     ->whereNull('canonical_id')
@@ -253,7 +252,7 @@ class ProjectResource extends Resource
                         ->label('Add technology…')
                         ->icon(Heroicon::OutlinedTag)
                         ->schema([
-                            \Filament\Forms\Components\Select::make('technology_id')
+                            Select::make('technology_id')
                                 ->label('Technology')
                                 ->options(fn () => Technology::query()->orderBy('name')->pluck('name', 'id')->all())
                                 ->searchable()
@@ -267,7 +266,7 @@ class ProjectResource extends Resource
                         ->label('Add industry…')
                         ->icon(Heroicon::OutlinedTag)
                         ->schema([
-                            \Filament\Forms\Components\Select::make('industry_id')
+                            Select::make('industry_id')
                                 ->label('Industry')
                                 ->options(fn () => Industry::query()->orderBy('name')->pluck('name', 'id')->all())
                                 ->searchable()
@@ -281,7 +280,7 @@ class ProjectResource extends Resource
                         ->label('Add tag…')
                         ->icon(Heroicon::OutlinedTag)
                         ->schema([
-                            \Filament\Forms\Components\Select::make('tag_id')
+                            Select::make('tag_id')
                                 ->label('Tag')
                                 ->options(fn () => ProjectTag::query()->orderBy('name')->pluck('name', 'id')->all())
                                 ->searchable()

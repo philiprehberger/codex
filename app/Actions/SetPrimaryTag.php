@@ -3,8 +3,8 @@
 namespace App\Actions;
 
 use App\Models\Project;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use InvalidArgumentException;
 
 /**
@@ -24,9 +24,9 @@ use InvalidArgumentException;
 class SetPrimaryTag
 {
     /**
-     * @param  Project  $project          Owning project.
-     * @param  string   $relation         Method name on Project — capabilities|technologies.
-     * @param  string   $tagId            ULID of the tag to mark primary.
+     * @param  Project  $project  Owning project.
+     * @param  string  $relation  Method name on Project — capabilities|technologies.
+     * @param  string  $tagId  ULID of the tag to mark primary.
      */
     public function execute(Project $project, string $relation, string $tagId): void
     {
@@ -40,7 +40,7 @@ class SetPrimaryTag
             Project::where('id', $project->id)->lockForUpdate()->firstOrFail();
 
             $pivotTable = $relation === 'capabilities' ? 'project_capabilities' : 'project_technologies';
-            $tagFk      = $relation === 'capabilities' ? 'capability_id'        : 'technology_id';
+            $tagFk = $relation === 'capabilities' ? 'capability_id' : 'technology_id';
 
             // Clear any existing primary on this dimension. Done as a raw
             // pivot update because $project->$relation()->updateExistingPivot
@@ -65,7 +65,7 @@ class SetPrimaryTag
                     ->update(['is_primary' => true, 'updated_at' => now()]);
             } else {
                 DB::table($pivotTable)->insert([
-                    'id' => (string) \Illuminate\Support\Str::ulid(),
+                    'id' => (string) Str::ulid(),
                     'project_id' => $project->id,
                     $tagFk => $tagId,
                     'is_primary' => true,

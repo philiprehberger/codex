@@ -1,0 +1,715 @@
+parameters:
+	ignoreErrors:
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$api_integrations\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$asset_type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$caption\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$database_tables\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$display_order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$duration_days\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$lighthouse_a11y\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$lighthouse_best\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$lighthouse_perf\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$lighthouse_seo\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$loc_total\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$path\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$pivot\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$recorded_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$test_count\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:resolveCanonical\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Method App\\Console\\Commands\\ExportPortfolioCommand\:\:serialise\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 5
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Parameter \#2 \$contents of method Illuminate\\Filesystem\\FilesystemAdapter\:\:put\(\) expects Illuminate\\Http\\File\|Illuminate\\Http\\UploadedFile\|Psr\\Http\\Message\\StreamInterface\|resource\|string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 5
+			path: app/Console/Commands/ExportPortfolioCommand.php
+
+		-
+			message: '#^Argument of an invalid type list\<string\>\|false supplied for foreach, only iterables are supported\.$#'
+			identifier: foreach.nonIterable
+			count: 1
+			path: app/Console/Commands/SyncBundleFixturesCommand.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Capability\|Illuminate\\Database\\Eloquent\\Collection\<int, App\\Models\\Capability\>\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Filament/Resources/Capabilities/CapabilityResource.php
+
+		-
+			message: '#^Unsafe call to private method App\\Filament\\Resources\\Capabilities\\CapabilityResource\:\:vocabularyCount\(\) through static\:\:\.$#'
+			identifier: staticClassAccess.privateMethod
+			count: 1
+			path: app/Filament/Resources/Capabilities/CapabilityResource.php
+
+		-
+			message: '#^Method App\\Filament\\Resources\\Projects\\ProjectResource\:\:bulkAttach\(\) has parameter \$records with generic class Illuminate\\Database\\Eloquent\\Collection but does not specify its types\: TKey, TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Filament/Resources/Projects/ProjectResource.php
+
+		-
+			message: '#^Method App\\Filament\\Resources\\Users\\UserResource\:\:canDelete\(\) has parameter \$record with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Filament/Resources/Users/UserResource.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Api\\V1\\HeatmapController\:\:build\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Controllers/Api/V1/HeatmapController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Api/V1/ListProjectsController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$pivot\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Api/V1/ListProjectsController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Api/V1/ListProjectsController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/V1/ListProjectsController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Api\\V1\\ListProjectsController\:\:applyFilters\(\) has parameter \$query with generic class Illuminate\\Database\\Eloquent\\Builder but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Http/Controllers/Api/V1/ListProjectsController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Api\\V1\\ListProjectsController\:\:serialise\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Controllers/Api/V1/ListProjectsController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 2
+			path: app/Http/Controllers/Api/V1/ListProjectsController.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 2
+			path: app/Http/Controllers/Api/V1/ListProjectsController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowCapabilityController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Project\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowCapabilityController.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Database\\Eloquent\\Collection\<int,App\\Models\\Project\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowCapabilityController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$api_integrations\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$asset_type\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$caption\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$category\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$database_tables\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$description\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$display_order\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$duration_days\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$id\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$lighthouse_a11y\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$lighthouse_best\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$lighthouse_perf\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$lighthouse_seo\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
+			identifier: property.notFound
+			count: 7
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$path\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$pivot\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$recorded_at\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 7
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$test_count\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Call to an undefined method Illuminate\\Database\\Eloquent\\Model\:\:resolveCanonical\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 9
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Database\\Eloquent\\Collection\<int,Illuminate\\Database\\Eloquent\\Model\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 9
+			path: app/Http/Controllers/Api/V1/ShowProjectController.php
+
+		-
+			message: '#^Parameter \#1 \$stream of function fpassthru expects resource, resource\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Controllers/Api/V1/SignedAssetController.php
+
+		-
+			message: '#^Method App\\Http\\Requests\\Api\\V1\\ListProjectsRequest\:\:rules\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Requests/Api/V1/ListProjectsRequest.php
+
+		-
+			message: '#^Method App\\Http\\Responses\\ProblemResponse\:\:__construct\(\) has parameter \$errors with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Http/Responses/ProblemResponse.php
+
+		-
+			message: '#^Method App\\Models\\Architecture\:\:projects\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Architecture.php
+
+		-
+			message: '#^Method App\\Models\\Capability\:\:aliases\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Capability.php
+
+		-
+			message: '#^Method App\\Models\\Capability\:\:canonical\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Capability.php
+
+		-
+			message: '#^Method App\\Models\\Capability\:\:projects\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Capability.php
+
+		-
+			message: '#^Method App\\Models\\Deliverable\:\:projects\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Deliverable.php
+
+		-
+			message: '#^Method App\\Models\\DesignStyle\:\:projects\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/DesignStyle.php
+
+		-
+			message: '#^Method App\\Models\\Industry\:\:projects\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Industry.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:architectures\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:assets\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:capabilities\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:deliverables\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:designStyles\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:industries\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:latestMetrics\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:learnings\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:metrics\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\HasMany does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:tags\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\Project\:\:technologies\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Project.php
+
+		-
+			message: '#^Method App\\Models\\ProjectAsset\:\:project\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/ProjectAsset.php
+
+		-
+			message: '#^Method App\\Models\\ProjectLearning\:\:project\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/ProjectLearning.php
+
+		-
+			message: '#^Method App\\Models\\ProjectMetric\:\:project\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsTo does not specify its types\: TRelatedModel, TDeclaringModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/ProjectMetric.php
+
+		-
+			message: '#^Method App\\Models\\ProjectTag\:\:projects\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/ProjectTag.php
+
+		-
+			message: '#^Class App\\Models\\Scopes\\RedactedScope implements generic interface Illuminate\\Database\\Eloquent\\Scope but does not specify its types\: TModel$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Scopes/RedactedScope.php
+
+		-
+			message: '#^Parameter \#1 \$expression of method Illuminate\\Database\\Eloquent\\Builder\<covariant Illuminate\\Database\\Eloquent\\Model\>\:\:selectRaw\(\) expects literal\-string, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Models/Scopes/RedactedScope.php
+
+		-
+			message: '#^Method App\\Models\\Technology\:\:projects\(\) return type with generic class Illuminate\\Database\\Eloquent\\Relations\\BelongsToMany does not specify its types\: TRelatedModel, TDeclaringModel, TPivotModel, TAccessor \(2\-4 required\)$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Models/Technology.php
+
+		-
+			message: '#^Method App\\Rules\\SlugRule\:\:reservedFirstSegments\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Rules/SlugRule.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 1
+			path: app/Services/AssetSigner.php
+
+		-
+			message: '#^Method App\\Services\\AssetSigner\:\:sign\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Services/AssetSigner.php
+
+		-
+			message: '#^Called ''env'' outside of the config directory which returns null when the config is cached, use ''config''\.$#'
+			identifier: larastan.noEnvCallsOutsideOfConfig
+			count: 2
+			path: app/Services/RevalidateClient.php
+
+		-
+			message: '#^Parameter \#1 \$content of method Illuminate\\Http\\Client\\PendingRequest\<false\>\:\:withBody\(\) expects Psr\\Http\\Message\\StreamInterface\|string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/RevalidateClient.php
+
+		-
+			message: '#^Parameter \#2 \$data of function hash_hmac expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Services/RevalidateClient.php
+
+		-
+			message: '#^Parameter \#1 \$string of function rtrim expects string, bool\|string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: config/filesystems.php
+
+		-
+			message: '#^Match expression does not handle remaining value\: string$#'
+			identifier: match.unhandled
+			count: 2
+			path: database/seeders/DemoProjectsSeeder.php
+
+		-
+			message: '#^Method Database\\Seeders\\PackagesSeeder\:\:cluster\(\) has parameter \$capabilitySlugs with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: database/seeders/PackagesSeeder.php
+
+		-
+			message: '#^Method Database\\Seeders\\PackagesSeeder\:\:cluster\(\) has parameter \$technologySlugs with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: database/seeders/PackagesSeeder.php
+
+		-
+			message: '#^Unable to resolve the template type TKey in call to function collect$#'
+			identifier: argument.templateType
+			count: 1
+			path: tests/Feature/Api/CapabilitiesAndHeatmapTest.php
+
+		-
+			message: '#^Unable to resolve the template type TValue in call to function collect$#'
+			identifier: argument.templateType
+			count: 1
+			path: tests/Feature/Api/CapabilitiesAndHeatmapTest.php
+
+		-
+			message: '#^Unable to resolve the template type TKey in call to function collect$#'
+			identifier: argument.templateType
+			count: 4
+			path: tests/Feature/Api/ListProjectsTest.php
+
+		-
+			message: '#^Unable to resolve the template type TValue in call to function collect$#'
+			identifier: argument.templateType
+			count: 4
+			path: tests/Feature/Api/ListProjectsTest.php
+
+		-
+			message: '#^Cannot access property \$canonical_id on App\\Models\\Capability\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/CapabilityMergeTest.php
+
+		-
+			message: '#^Offset ''affected_pivots'' does not exist on string\|null\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: tests/Feature/CapabilityMergeTest.php
+
+		-
+			message: '#^Offset ''after'' does not exist on string\|null\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: tests/Feature/CapabilityMergeTest.php
+
+		-
+			message: '#^Offset ''before'' does not exist on string\|null\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: tests/Feature/CapabilityMergeTest.php
+
+		-
+			message: '#^Offset ''truncated'' does not exist on string\|null\.$#'
+			identifier: offsetAccess.notFound
+			count: 1
+			path: tests/Feature/CapabilityMergeTest.php
+
+		-
+			message: '#^Parameter \#2 \$target of method App\\Actions\\MergeCapability\:\:execute\(\) expects App\\Models\\Capability, App\\Models\\Capability\|null given\.$#'
+			identifier: argument.type
+			count: 2
+			path: tests/Feature/CapabilityMergeTest.php
+
+		-
+			message: '#^Cannot access property \$hours_actual on App\\Models\\Project\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/ShippedInvariantTest.php
+
+		-
+			message: '#^Cannot access property \$shipped_date on App\\Models\\Project\|null\.$#'
+			identifier: property.nonObject
+			count: 1
+			path: tests/Feature/ShippedInvariantTest.php
+
+		-
+			message: '#^Cannot access property \$status on App\\Models\\Project\|null\.$#'
+			identifier: property.nonObject
+			count: 3
+			path: tests/Feature/ShippedInvariantTest.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\|null\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: tests/Feature/ShippedInvariantTest.php

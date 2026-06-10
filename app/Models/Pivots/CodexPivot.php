@@ -21,6 +21,7 @@ abstract class CodexPivot extends Pivot
     use HasUlids;
 
     public $incrementing = false;
+
     protected $keyType = 'string';
 
     /**

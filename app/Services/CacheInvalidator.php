@@ -29,6 +29,7 @@ class CacheInvalidator
         foreach ($keys as $key) {
             Cache::forget($key);
         }
+
         return count($keys);
     }
 

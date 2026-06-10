@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Deliverables;
 
 use App\Filament\Resources\Deliverables\Pages\ManageDeliverables;
 use App\Models\Deliverable;
+use App\Rules\SlugRule;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -33,7 +34,7 @@ class DeliverableResource extends Resource
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('slug')
-                    ->rule(new \App\Rules\SlugRule())
+                    ->rule(new SlugRule)
                     ->required(),
             ]);
     }

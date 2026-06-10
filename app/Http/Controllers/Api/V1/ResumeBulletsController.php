@@ -40,7 +40,7 @@ class ResumeBulletsController extends Controller
     {
         $rows = DB::table('capabilities AS c')
             ->leftJoin('project_capabilities AS pc',
-                fn ($j) => $j->on(DB::raw('COALESCE(c.canonical_id, c.id)'), '=', 'pc.capability_id')
+                fn ($j) => $j->on(DB::raw('COALESCE(c.canonical_id, c.id)'), '=', 'pc.capability_id'),
             )
             ->leftJoin('projects AS p', function ($j) {
                 $j->on('p.id', '=', 'pc.project_id')->whereNull('p.deleted_at');

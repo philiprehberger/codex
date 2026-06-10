@@ -15,7 +15,7 @@ return [
     |
     */
     'internal_api_url' => env('CODEX_API_INTERNAL_URL', 'http://127.0.0.1'),
-    'public_api_url'   => env('CODEX_PUBLIC_API_URL', 'https://api.codex.philiprehberger.com'),
+    'public_api_url' => env('CODEX_PUBLIC_API_URL', 'https://api.codex.philiprehberger.com'),
 
     /*
     |--------------------------------------------------------------------------
@@ -44,13 +44,13 @@ return [
     |
     */
     'vocabulary' => [
-        'capabilities'  => ['warn' => 60, 'cap' => 80],
-        'technologies'  => ['warn' => 80, 'cap' => 120],
-        'industries'    => ['warn' => 20, 'cap' => 30],
+        'capabilities' => ['warn' => 60, 'cap' => 80],
+        'technologies' => ['warn' => 80, 'cap' => 120],
+        'industries' => ['warn' => 20, 'cap' => 30],
         'architectures' => ['warn' => 10, 'cap' => 20],
-        'deliverables'  => ['warn' => 10, 'cap' => 20],
+        'deliverables' => ['warn' => 10, 'cap' => 20],
         'design_styles' => ['warn' => 10, 'cap' => 20],
-        'project_tags'  => ['warn' => 40, 'cap' => 80],
+        'project_tags' => ['warn' => 40, 'cap' => 80],
     ],
 
     /*

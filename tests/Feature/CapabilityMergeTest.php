@@ -23,7 +23,7 @@ class CapabilityMergeTest extends TestCase
     protected function setUp(): void
     {
         parent::setUp();
-        $this->action = new MergeCapability();
+        $this->action = new MergeCapability;
     }
 
     public function test_merging_via_an_alias_target_rewrites_to_terminal_canonical(): void

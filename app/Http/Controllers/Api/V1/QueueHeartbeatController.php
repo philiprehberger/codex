@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Cache;
 
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\Cache;
 class QueueHeartbeatController extends Controller
 {
     public const HEARTBEAT_KEY = 'codex:queue:heartbeat';
+
     public const HEARTBEAT_TTL_SECONDS = 300; // 5 minutes
 
     public function __invoke(): Response
@@ -30,7 +32,7 @@ class QueueHeartbeatController extends Controller
 
         // Stored as ISO-8601 string for cross-driver compatibility.
         try {
-            $lastAt = \Carbon\Carbon::parse($last);
+            $lastAt = Carbon::parse($last);
         } catch (\Throwable) {
             return response('queue: heartbeat unparseable', 503);
         }

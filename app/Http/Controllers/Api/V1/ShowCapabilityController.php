@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use App\Models\Capability;
+use App\Models\Project;
 use Illuminate\Http\JsonResponse;
 
 /**
@@ -33,7 +34,7 @@ class ShowCapabilityController extends Controller
             ->push($canonical->id)
             ->all();
 
-        $projects = \App\Models\Project::query()
+        $projects = Project::query()
             ->whereHas('capabilities', fn ($q) => $q->whereIn('capabilities.id', $aliasIds))
             ->orderByDesc('id')
             ->get([

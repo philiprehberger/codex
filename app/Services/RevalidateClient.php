@@ -41,6 +41,7 @@ class RevalidateClient
         $secrets = $this->secrets();
         if ($secrets === []) {
             Log::warning('codex.revalidate.no_secret', ['tag' => $tag]);
+
             return false;
         }
 
@@ -69,14 +70,17 @@ class RevalidateClient
                     'tag' => $tag,
                     'status' => $response->status(),
                 ]);
+
                 return false;
             }
+
             return true;
         } catch (\Throwable $e) {
             Log::warning('codex.revalidate.exception', [
                 'tag' => $tag,
                 'message' => $e->getMessage(),
             ]);
+
             return false;
         }
     }
@@ -95,12 +99,14 @@ class RevalidateClient
 
     private function nextRevalidateUrl(): ?string
     {
-        $base = Config::get('codex.next_revalidate_url')
+        $base = Config::get('codex.revalidate.next_revalidate_url')
+            ?? Config::get('codex.next_revalidate_url')
             ?? env('CODEX_NEXT_REVALIDATE_URL');
 
         if (! $base) {
             return null;
         }
+
         return rtrim($base, '/').'/api/revalidate';
     }
 }

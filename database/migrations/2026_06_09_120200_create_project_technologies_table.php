@@ -1,5 +1,6 @@
 <?php
 
+use App\Support\BinaryCollation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -9,9 +10,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('project_technologies', function (Blueprint $table) {
-            $table->char('id', 26)->primary()->collation(\App\Support\BinaryCollation::name());
-            $table->char('project_id', 26)->collation(\App\Support\BinaryCollation::name());
-            $table->char('technology_id', 26)->collation(\App\Support\BinaryCollation::name());
+            $table->char('id', 26)->primary()->collation(BinaryCollation::name());
+            $table->char('project_id', 26)->collation(BinaryCollation::name());
+            $table->char('technology_id', 26)->collation(BinaryCollation::name());
             // At most one primary per project per dimension — invariant
             // enforced by SetPrimaryTag action + saved observer + nightly
             // codex:assert-invariants. MySQL 8 lacks partial unique support.

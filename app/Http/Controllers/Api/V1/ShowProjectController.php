@@ -86,7 +86,7 @@ class ShowProjectController extends Controller
                             'perf' => $project->metrics->first()->lighthouse_perf,
                             'a11y' => $project->metrics->first()->lighthouse_a11y,
                             'best' => $project->metrics->first()->lighthouse_best,
-                            'seo'  => $project->metrics->first()->lighthouse_seo,
+                            'seo' => $project->metrics->first()->lighthouse_seo,
                         ],
                     ]
                     : null,

@@ -1,5 +1,6 @@
 <?php
 
+use App\Support\BinaryCollation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -9,11 +10,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('audit_log', function (Blueprint $table) {
-            $table->char('id', 26)->primary()->collation(\App\Support\BinaryCollation::name());
+            $table->char('id', 26)->primary()->collation(BinaryCollation::name());
 
             // null for system actions; FK is intentionally loose — audit
             // history outlives users (force-deleted admin still has a trail).
-            $table->char('actor_id', 26)->nullable()->collation(\App\Support\BinaryCollation::name());
+            $table->char('actor_id', 26)->nullable()->collation(BinaryCollation::name());
             // Forensic surface if TOTP is ever compromised. IPv4 or IPv6.
             $table->string('actor_ip', 45)->nullable();
             $table->string('actor_user_agent', 500)->nullable();
@@ -23,7 +24,7 @@ return new class extends Migration
             $table->string('action', 60);
             // projects, capabilities, project_capabilities, …
             $table->string('subject_type', 60);
-            $table->char('subject_id', 26)->collation(\App\Support\BinaryCollation::name());
+            $table->char('subject_id', 26)->collation(BinaryCollation::name());
 
             // REQUIRED for merge_capability; nullable for routine
             // create/update/delete. Enforced at the action service layer.

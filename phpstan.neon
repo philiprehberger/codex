@@ -1,0 +1,32 @@
+includes:
+    - vendor/larastan/larastan/extension.neon
+    - phpstan-baseline.neon
+
+parameters:
+    level: 8
+
+    paths:
+        - app
+        - config
+        - database/seeders
+        - routes
+        - tests
+
+    excludePaths:
+        - vendor/*
+        - app/Filament/Resources/*/Pages/*
+
+    treatPhpDocTypesAsCertain: false
+
+    # Cross-cutting Codex rules — enforced via stricter level on these
+    # paths, since they are the load-bearing surfaces for the data-
+    # integrity invariants. Phase 7 wires the phpstan-laravel rule
+    # banning DB::raw / DB::select outside migrations + commands when
+    # that package's API stabilises; for now the rule is a manual
+    # review gate noted in docs/invariants.md.
+
+    ignoreErrors:
+        # Filament resources hit a lot of class-string magic that's
+        # accurate at runtime but level-8 can't statically verify.
+        - identifier: argument.type
+          path: app/Filament/*

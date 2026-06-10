@@ -4,7 +4,6 @@ namespace App\Providers;
 
 use App\Jobs\RevalidateCacheJob;
 use App\Models\Capability;
-use App\Services\CacheInvalidator;
 use App\Models\Pivots\ProjectArchitecturePivot;
 use App\Models\Pivots\ProjectCapabilityPivot;
 use App\Models\Pivots\ProjectDeliverablePivot;
@@ -14,6 +13,7 @@ use App\Models\Pivots\ProjectTagMapPivot;
 use App\Models\Pivots\ProjectTechnologyPivot;
 use App\Models\Project;
 use App\Observers\RevalidationObserver;
+use App\Services\CacheInvalidator;
 use App\Services\RevalidateClient;
 use App\Services\RevalidationBuffer;
 use Illuminate\Cache\RateLimiting\Limit;
@@ -121,10 +121,11 @@ class AppServiceProvider extends ServiceProvider
             $threshold = (int) (config('codex.revalidate.queue_threshold') ?? 10);
             if (count($tags) > $threshold) {
                 RevalidateCacheJob::dispatch($tags);
+
                 return;
             }
 
-            /** @var \App\Services\RevalidateClient $client */
+            /** @var RevalidateClient $client */
             $client = app(RevalidateClient::class);
             foreach ($tags as $tag) {
                 $client->post($tag);

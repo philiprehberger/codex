@@ -1,5 +1,6 @@
 <?php
 
+use App\Support\BinaryCollation;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -9,8 +10,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('project_assets', function (Blueprint $table) {
-            $table->char('id', 26)->primary()->collation(\App\Support\BinaryCollation::name());
-            $table->char('project_id', 26)->collation(\App\Support\BinaryCollation::name());
+            $table->char('id', 26)->primary()->collation(BinaryCollation::name());
+            $table->char('project_id', 26)->collation(BinaryCollation::name());
             // screenshot, wireframe, logo, diagram, video
             $table->enum('asset_type', ['screenshot', 'wireframe', 'logo', 'diagram', 'video']);
             // Relative to Codex's storage root. The import command copies

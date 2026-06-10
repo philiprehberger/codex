@@ -3,8 +3,10 @@
 namespace App\Console\Commands;
 
 use App\Models\Project;
+use App\Models\Scopes\RedactedScope;
 use App\Rules\SlugRule;
 use Illuminate\Console\Command;
+use Sentry\Severity;
 
 /**
  * SlugRule rejects reserved-word slugs at write time by reading
@@ -19,6 +21,7 @@ use Illuminate\Console\Command;
 class AuditSlugCollisionsCommand extends Command
 {
     protected $signature = 'codex:audit-slug-collisions';
+
     protected $description = 'Diffs projects.slug against the live route table; flags slug ↔ route-name collisions.';
 
     public function handle(): int
@@ -26,7 +29,7 @@ class AuditSlugCollisionsCommand extends Command
         $reserved = array_flip(SlugRule::reservedFirstSegments());
         $collisions = [];
 
-        Project::withTrashed()->withoutGlobalScope(\App\Models\Scopes\RedactedScope::class)
+        Project::withTrashed()->withoutGlobalScope(RedactedScope::class)
             ->select('id', 'slug', 'visibility')
             ->orderBy('slug')
             ->chunk(200, function ($projects) use ($reserved, &$collisions) {
@@ -43,6 +46,7 @@ class AuditSlugCollisionsCommand extends Command
 
         if ($collisions === []) {
             $this->info('codex:audit-slug-collisions — clean.');
+
             return self::SUCCESS;
         }
 
@@ -57,12 +61,13 @@ class AuditSlugCollisionsCommand extends Command
             if (app()->bound('sentry')) {
                 app('sentry')->captureMessage(
                     sprintf('codex slug-collision: %s (project %s)', $c['slug'], $c['project_id']),
-                    \Sentry\Severity::warning(),
+                    Severity::warning(),
                 );
             }
         }
 
         $this->error(sprintf('codex:audit-slug-collisions — %d collision(s).', count($collisions)));
+
         return self::FAILURE;
     }
 }

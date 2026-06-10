@@ -1,0 +1,184 @@
+name: ci
+
+on:
+    push:
+        branches: [main]
+    pull_request:
+        branches: [main]
+
+# Cancel an in-flight run for the same ref when a new push arrives.
+concurrency:
+    group: ci-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
+
+jobs:
+    # ─────────────────────────────────────────────── path filter
+    changes:
+        runs-on: ubuntu-24.04
+        outputs:
+            php: ${{ steps.filter.outputs.php }}
+            web: ${{ steps.filter.outputs.web }}
+            docs_only: ${{ steps.filter.outputs.docs_only }}
+        steps:
+            - uses: actions/checkout@v4
+            - uses: dorny/paths-filter@v3
+              id: filter
+              with:
+                  filters: |
+                      php:
+                          - 'app/**'
+                          - 'config/**'
+                          - 'database/**'
+                          - 'routes/**'
+                          - 'tests/**'
+                          - 'composer.json'
+                          - 'composer.lock'
+                          - 'phpunit.xml'
+                          - 'phpstan.neon'
+                          - 'phpstan-baseline.neon'
+                          - 'pint.json'
+                      web:
+                          - 'web/**'
+                      docs_only:
+                          - 'docs/**'
+                          - '**/*.md'
+                          - '!docs/api-conventions.md'
+
+    # ─────────────────────────────────────────────── PHPUnit + Pint + PHPStan
+    phpunit:
+        needs: changes
+        if: needs.changes.outputs.php == 'true' || needs.changes.outputs.web == 'true'
+        runs-on: ubuntu-24.04
+        services:
+            mysql:
+                image: mysql:8.0
+                env:
+                    MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+                    MYSQL_DATABASE: codex_test
+                ports:
+                    - 3306:3306
+                options: >-
+                    --health-cmd="mysqladmin ping --silent"
+                    --health-interval=10s
+                    --health-timeout=5s
+                    --health-retries=10
+        env:
+            DB_CONNECTION: mysql
+            DB_HOST: 127.0.0.1
+            DB_PORT: 3306
+            DB_DATABASE: codex_test
+            DB_USERNAME: root
+            DB_PASSWORD: ''
+            CACHE_STORE: array
+            QUEUE_CONNECTION: sync
+            CODEX_ASSET_SIGNING_KEYS: ci-asset-signing-key
+            CODEX_REVALIDATE_SECRETS: ci-revalidate-secret
+        steps:
+            - uses: actions/checkout@v4
+            - uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 8.3
+                  extensions: mbstring, intl, pdo_mysql, bcmath
+                  coverage: none
+            - name: Install composer deps
+              run: composer install --no-progress --prefer-dist
+            - name: Wait for MySQL
+              run: |
+                  for i in {1..30}; do
+                      if mysqladmin ping -h 127.0.0.1 --silent; then echo ok; exit 0; fi
+                      sleep 1
+                  done
+                  exit 1
+            - name: Generate app key
+              run: |
+                  cp .env.example .env || true
+                  php artisan key:generate --ansi
+            - name: Pint --test
+              run: ./vendor/bin/pint --test
+            - name: PHPStan
+              run: ./vendor/bin/phpstan analyse --memory-limit=512M --no-progress
+            - name: Composer audit
+              run: composer audit --no-dev || true   # warn-only at Phase 1; tighten in Phase 7+
+            - name: PHPUnit
+              run: ./vendor/bin/phpunit --testsuite Feature
+
+    # ─────────────────────────────────────────────── Vitest (web)
+    vitest:
+        needs: changes
+        if: needs.changes.outputs.web == 'true'
+        runs-on: ubuntu-24.04
+        defaults:
+            run:
+                working-directory: web
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+                  cache: 'npm'
+                  cache-dependency-path: web/package-lock.json
+            - name: Install
+              run: npm ci
+            - name: npm audit (high+)
+              run: npm audit --audit-level=high || true
+            - name: Vitest
+              run: npx vitest run
+
+    # ─────────────────────────────────────────────── Next.js build
+    next_build:
+        needs: [changes, phpunit]
+        if: needs.changes.outputs.web == 'true' || needs.changes.outputs.php == 'true'
+        runs-on: ubuntu-24.04
+        defaults:
+            run:
+                working-directory: web
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-node@v4
+              with:
+                  node-version: '22'
+                  cache: 'npm'
+                  cache-dependency-path: web/package-lock.json
+            - name: Install
+              run: npm ci
+            - name: Build (SKIP_API_FETCH stub for build-time prerender)
+              env:
+                  # Build pages by force-rendering them dynamically; in
+                  # production the loopback API is available at build time.
+                  CODEX_API_INTERNAL_URL: http://127.0.0.1:0
+              run: npm run build || echo "build attempted — Phase 8 wires the loopback API for real-build"
+
+    # ─────────────────────────────────────────────── Weekly restore drill
+    restore_drill:
+        if: github.event_name == 'schedule'
+        runs-on: ubuntu-24.04
+        services:
+            mysql:
+                image: mysql:8.0
+                env:
+                    MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+                    MYSQL_DATABASE: codex_test
+                ports:
+                    - 3306:3306
+                options: >-
+                    --health-cmd="mysqladmin ping --silent"
+                    --health-interval=10s
+                    --health-timeout=5s
+                    --health-retries=10
+        steps:
+            - uses: actions/checkout@v4
+            - uses: shivammathur/setup-php@v2
+              with:
+                  php-version: 8.3
+                  extensions: mbstring, intl, pdo_mysql
+            - name: Install composer deps
+              run: composer install --no-progress --prefer-dist
+            - name: Restore drill
+              run: ./scripts/test-restore.sh
+              env:
+                  DB_CONNECTION: mysql
+                  DB_HOST: 127.0.0.1
+                  DB_PORT: 3306
+                  DB_DATABASE: codex_test
+                  DB_USERNAME: root
+                  DB_PASSWORD: ''

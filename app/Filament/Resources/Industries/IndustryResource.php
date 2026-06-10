@@ -4,6 +4,7 @@ namespace App\Filament\Resources\Industries;
 
 use App\Filament\Resources\Industries\Pages\ManageIndustries;
 use App\Models\Industry;
+use App\Rules\SlugRule;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -33,7 +34,7 @@ class IndustryResource extends Resource
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('slug')
-                    ->rule(new \App\Rules\SlugRule())
+                    ->rule(new SlugRule)
                     ->required(),
             ]);
     }

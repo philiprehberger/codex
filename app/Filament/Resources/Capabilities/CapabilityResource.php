@@ -10,8 +10,8 @@ use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Notifications\Notification;
 use Filament\Resources\Resource;
@@ -39,7 +39,7 @@ class CapabilityResource extends Resource
         return $schema
             ->components([
                 TextInput::make('name')->required()->maxLength(120),
-                TextInput::make('slug')->required()->rule(new SlugRule())->maxLength(120),
+                TextInput::make('slug')->required()->rule(new SlugRule)->maxLength(120),
                 Select::make('category')
                     ->required()
                     ->options([
@@ -84,6 +84,7 @@ class CapabilityResource extends Resource
                         ->warning()
                         ->send();
                 }
+
                 return $query;
             })
             ->columns([

@@ -10,7 +10,6 @@ use App\Models\Industry;
 use App\Models\Project;
 use App\Models\ProjectMetric;
 use App\Models\Technology;
-use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -96,6 +95,7 @@ class DemoProjectsSeeder extends BaseSeeder
         if ($slugs === []) {
             return [];
         }
+
         return $model::whereIn('slug', $slugs)->pluck('id')->all();
     }
 
@@ -160,7 +160,7 @@ class DemoProjectsSeeder extends BaseSeeder
                 'slug' => 'pennant',
                 'name' => 'Pennant — Feature Flags',
                 'short_description' => 'Feature-flag API with real-time SSE broadcasts, two SDKs, and a Filament admin where the buyer actually wants to live.',
-                'long_description' => "Pennant is the feature-flag piece of the portfolio — stateful SDKs in PHP + Python, real-time SSE updates so a flag change reaches running apps in < 1s, and a Filament admin with environment + user-targeting rules.",
+                'long_description' => 'Pennant is the feature-flag piece of the portfolio — stateful SDKs in PHP + Python, real-time SSE updates so a flag change reaches running apps in < 1s, and a Filament admin with environment + user-targeting rules.',
                 'repo_url' => 'https://github.com/philiprehberger/pennant',
                 'live_url' => 'https://pennant.philiprehberger.com',
                 'docs_url' => 'https://pennant.philiprehberger.com/docs',
@@ -176,7 +176,7 @@ class DemoProjectsSeeder extends BaseSeeder
                 'slug' => 'inkwell',
                 'name' => 'Inkwell — Form Submission API',
                 'short_description' => 'HTML form ingestion API with spam scoring, multi-destination fan-out (email/Slack/HubSpot/etc), and a 3 KB JS widget.',
-                'long_description' => "Inkwell is the form-submission product shape. Public POST endpoint, deterministic spam scoring, fan-out to email + webhook + Slack + Discord + Google Sheets + HubSpot + Mailchimp. Works with JS off, in HTML emails, for screen readers.",
+                'long_description' => 'Inkwell is the form-submission product shape. Public POST endpoint, deterministic spam scoring, fan-out to email + webhook + Slack + Discord + Google Sheets + HubSpot + Mailchimp. Works with JS off, in HTML emails, for screen readers.',
                 'repo_url' => 'https://github.com/philiprehberger/inkwell',
                 'live_url' => 'https://inkwell.philiprehberger.com',
                 'docs_url' => 'https://inkwell.philiprehberger.com/docs',
@@ -192,7 +192,7 @@ class DemoProjectsSeeder extends BaseSeeder
                 'slug' => 'docgen',
                 'name' => 'Docgen — Document Generation API',
                 'short_description' => 'PDF/DOCX/HTML generation from versioned templates with format conversion and a try-it docs site.',
-                'long_description' => "Docgen turns templated content into PDF, DOCX, or HTML. Versioned templates with rollback, format conversion via headless Chromium + Pandoc, signed-URL retrieval. The B2B SaaS shape: ingest data, render document, ship to S3.",
+                'long_description' => 'Docgen turns templated content into PDF, DOCX, or HTML. Versioned templates with rollback, format conversion via headless Chromium + Pandoc, signed-URL retrieval. The B2B SaaS shape: ingest data, render document, ship to S3.',
                 'repo_url' => 'https://github.com/philiprehberger/docgen',
                 'live_url' => 'https://docgen.philiprehberger.com',
                 'docs_url' => 'https://docgen.philiprehberger.com/docs',

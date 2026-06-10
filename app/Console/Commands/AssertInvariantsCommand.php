@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
+use Sentry\Severity;
 
 /**
  * Nightly safety net for the "one primary per dimension per project"
@@ -18,6 +19,7 @@ use Illuminate\Support\Facades\DB;
 class AssertInvariantsCommand extends Command
 {
     protected $signature = 'codex:assert-invariants';
+
     protected $description = 'Validates "one primary per dimension per project" across capabilities + technologies. Nightly safety net.';
 
     public function handle(): int
@@ -44,7 +46,7 @@ class AssertInvariantsCommand extends Command
                 if (app()->bound('sentry')) {
                     app('sentry')->captureMessage(
                         sprintf('codex invariants: %s primary drift on project %s', $pivot, $row->project_id),
-                        \Sentry\Severity::warning(),
+                        Severity::warning(),
                     );
                 }
             }
@@ -52,10 +54,12 @@ class AssertInvariantsCommand extends Command
 
         if ($violations === 0) {
             $this->info('codex:assert-invariants — clean (no drift across project_capabilities + project_technologies).');
+
             return self::SUCCESS;
         }
 
         $this->error(sprintf('codex:assert-invariants — %d violation(s) found.', $violations));
+
         return self::FAILURE;
     }
 }

@@ -37,26 +37,31 @@ class SlugRule implements ValidationRule
     {
         if (! is_string($value) || $value === '') {
             $fail('Slug must be a non-empty string.');
+
             return;
         }
 
         if (strlen($value) < 3) {
             $fail('Slug must be at least 3 characters.');
+
             return;
         }
 
         if (strlen($value) > 120) {
             $fail('Slug must be at most 120 characters.');
+
             return;
         }
 
         if (! preg_match('/^[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/', $value)) {
             $fail('Slug must be lowercase kebab-case (a-z, 0-9, hyphens; no leading/trailing/double hyphen).');
+
             return;
         }
 
         if (str_contains($value, '--')) {
             $fail('Slug must not contain consecutive hyphens.');
+
             return;
         }
 
@@ -86,6 +91,7 @@ class SlugRule implements ValidationRule
                     $segments[$first] = true;
                 }
             }
+
             return array_values(array_unique(array_merge(
                 array_keys($segments),
                 self::FALLBACK_RESERVED,

@@ -4,6 +4,7 @@ namespace App\Filament\Resources\ProjectTags;
 
 use App\Filament\Resources\ProjectTags\Pages\ManageProjectTags;
 use App\Models\ProjectTag;
+use App\Rules\SlugRule;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -33,7 +34,7 @@ class ProjectTagResource extends Resource
                 TextInput::make('name')
                     ->required(),
                 TextInput::make('slug')
-                    ->rule(new \App\Rules\SlugRule())
+                    ->rule(new SlugRule)
                     ->required(),
             ]);
     }

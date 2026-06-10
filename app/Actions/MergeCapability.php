@@ -67,7 +67,7 @@ class MergeCapability
                 'reason' => $reason,
                 'diff' => [
                     'before' => ['canonical_id' => $previousCanonicalId],
-                    'after'  => ['canonical_id' => $terminal->id],
+                    'after' => ['canonical_id' => $terminal->id],
                     // affected_pivots stays empty in Phase 1 because reads
                     // use COALESCE(canonical_id, id) and pivot rows aren't
                     // rewritten. The key is present in the shape so a

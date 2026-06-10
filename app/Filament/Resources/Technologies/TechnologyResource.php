@@ -4,11 +4,13 @@ namespace App\Filament\Resources\Technologies;
 
 use App\Filament\Resources\Technologies\Pages\ManageTechnologies;
 use App\Models\Technology;
+use App\Rules\SlugRule;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
+use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
@@ -31,8 +33,8 @@ class TechnologyResource extends Resource
         return $schema
             ->components([
                 TextInput::make('name')->required(),
-                TextInput::make('slug')->required()->rule(new \App\Rules\SlugRule()),
-                \Filament\Forms\Components\Select::make('category')
+                TextInput::make('slug')->required()->rule(new SlugRule),
+                Select::make('category')
                     ->options([
                         'language' => 'Language',
                         'framework' => 'Framework',
