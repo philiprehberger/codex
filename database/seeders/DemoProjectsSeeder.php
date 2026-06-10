@@ -205,6 +205,32 @@ class DemoProjectsSeeder extends BaseSeeder
                 'metrics' => ['test_count' => 71, 'lighthouse_perf' => 100, 'lighthouse_a11y' => 95, 'lighthouse_best' => 100, 'lighthouse_seo' => 100, 'duration_days' => 12],
             ]),
 
+            // ── DevOps tooling ──────────────────────────────────────────
+            [
+                'slug' => 'shipyard',
+                'name' => 'Shipyard — Atomic-Release Deploy CLI',
+                'short_description' => 'Atomic-release deploy CLI: zero-downtime SSH/rsync deploys with health-gated promotion and automatic rollback. One static Go binary, one YAML config, no agent on the server.',
+                'long_description' => "First DevOps tool in the portfolio. Every prior piece (webhook-relay, docgen, pennant, inkwell) sells to product or API teams. Shipyard sells to the person who got woken up at 3am because 'cd app && git pull && pm2 restart' served half-deployed code for 90 seconds and had no rollback.\n\n13-step lifecycle: parse config, run pre_upload hooks locally, SSH connect with known_hosts verification, acquire remote SFTP lockfile with TTL stale-steal, upload artifact, extract into releases/<timestamp>/, symlink shared files into the release dir, run post_extract hooks remotely, atomic symlink flip via `ln -s` + `mv -Tf` (a bare `ln -sfn` is not atomic — the mv is the trick), run post_flip hooks, HTTP health probe with retries, auto-rollback on failure, auto-prune respecting `releases.keep`, lock release.\n\nEats own cooking: the docs site at shipyard.philiprehberger.com is itself deployed by Shipyard. The shipyard.yaml that does it is in the repo root. Exit codes 0..5 are stable + documented so CI scripts can branch deterministically.\n\nDistributed as a single static Go binary via GoReleaser → GitHub Releases on every `v*` tag push: linux/darwin amd64+arm64, windows amd64. Native Go SSH + SFTP (no shell-out to ssh/scp; matters for Windows builds).",
+                'repo_url' => 'https://github.com/philiprehberger/shipyard',
+                'live_url' => 'https://shipyard.philiprehberger.com',
+                'docs_url' => 'https://shipyard.philiprehberger.com/docs/quickstart',
+                'project_type' => 'open_source',
+                'status' => 'shipped',
+                'visibility' => 'public',
+                'shipped_date' => '2026-06-10',
+                'hours_estimated' => 60,
+                'hours_actual' => 48,
+                'capability_slugs' => ['atomic-deploys', 'cli-tools', 'configuration-loading', 'observability', 'version-management', 'error-handling'],
+                'primary_capability' => 'atomic-deploys',
+                'technology_slugs' => ['go', 'bash', 'nextjs', 'react', 'typescript', 'tailwind', 'apache', 'pm2', 'systemd', 'letsencrypt', 'github-actions', 'aws-ec2', 'npm'],
+                'primary_technology' => 'go',
+                'industry_slugs' => ['developer-tools'],
+                'architecture_slugs' => ['static'],
+                'deliverable_slugs' => ['cli-tool', 'documentation'],
+                'design_style_slugs' => ['developer-focused'],
+                'metrics' => ['test_count' => 26, 'duration_days' => 1],
+            ],
+
             // ── Headless WP + Marketing sites ───────────────────────────
             [
                 'slug' => 'throughline-headless-wp',
