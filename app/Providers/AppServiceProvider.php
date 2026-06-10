@@ -19,6 +19,8 @@ use App\Services\RevalidationBuffer;
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Queue;
 use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Validation\Rules\Password;
@@ -68,8 +70,8 @@ class AppServiceProvider extends ServiceProvider
         // /up/queue reads this key (TTL 5min) so BetterStack can detect
         // worker death within the next ping cycle. The looping listener
         // only fires inside `queue:work`, never on web requests.
-        \Illuminate\Support\Facades\Queue::looping(function () {
-            \Illuminate\Support\Facades\Cache::put(
+        Queue::looping(function () {
+            Cache::put(
                 'codex:queue:heartbeat',
                 now()->toIso8601String(),
                 600,

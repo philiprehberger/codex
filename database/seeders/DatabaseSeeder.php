@@ -43,8 +43,11 @@ class DatabaseSeeder extends Seeder
             DeliverableSeeder::class,
             DesignStyleSeeder::class,
             DemoProjectsSeeder::class,
-            PackagesSeeder::class,
             ClientWorkSeeder::class,
+            // PackagesSeeder targets the sister `packages` table — depends
+            // on capabilities + technologies being seeded but not on any
+            // project row.
+            PackagesSeeder::class,
         ]);
     }
 }

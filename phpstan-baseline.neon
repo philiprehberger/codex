@@ -193,6 +193,36 @@ parameters:
 			path: app/Http/Controllers/Api/V1/HeatmapController.php
 
 		-
+			message: '#^Access to an undefined property App\\Models\\Capability\:\:\$pivot\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ListPackagesController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/V1/ListPackagesController.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,App\\Models\\Package\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: argument.unresolvableType
+			count: 1
+			path: app/Http/Controllers/Api/V1/ListPackagesController.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Support\\Collection\<int,App\\Models\\Package\>\:\:map\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 1
+			path: app/Http/Controllers/Api/V1/ListPackagesController.php
+
+		-
+			message: '#^Return type of call to method Illuminate\\Support\\Collection\<int,array\<string, mixed\>\>\:\:all\(\) contains unresolvable type\.$#'
+			identifier: method.unresolvableReturnType
+			count: 1
+			path: app/Http/Controllers/Api/V1/ListPackagesController.php
+
+		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$name\.$#'
 			identifier: property.notFound
 			count: 2
@@ -257,6 +287,18 @@ parameters:
 			identifier: method.unresolvableReturnType
 			count: 1
 			path: app/Http/Controllers/Api/V1/ShowCapabilityController.php
+
+		-
+			message: '#^Access to an undefined property App\\Models\\Capability\:\:\$pivot\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowPackageController.php
+
+		-
+			message: '#^Cannot call method toDateString\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowPackageController.php
 
 		-
 			message: '#^Access to an undefined property Illuminate\\Database\\Eloquent\\Model\:\:\$api_integrations\.$#'
@@ -617,18 +659,6 @@ parameters:
 			identifier: match.unhandled
 			count: 2
 			path: database/seeders/DemoProjectsSeeder.php
-
-		-
-			message: '#^Method Database\\Seeders\\PackagesSeeder\:\:cluster\(\) has parameter \$capabilitySlugs with no value type specified in iterable type array\.$#'
-			identifier: missingType.iterableValue
-			count: 1
-			path: database/seeders/PackagesSeeder.php
-
-		-
-			message: '#^Method Database\\Seeders\\PackagesSeeder\:\:cluster\(\) has parameter \$technologySlugs with no value type specified in iterable type array\.$#'
-			identifier: missingType.iterableValue
-			count: 1
-			path: database/seeders/PackagesSeeder.php
 
 		-
 			message: '#^Unable to resolve the template type TKey in call to function collect$#'

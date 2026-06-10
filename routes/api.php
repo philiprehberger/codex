@@ -2,11 +2,13 @@
 
 use App\Http\Controllers\Api\V1\HeatmapController;
 use App\Http\Controllers\Api\V1\ListCapabilitiesController;
+use App\Http\Controllers\Api\V1\ListPackagesController;
 use App\Http\Controllers\Api\V1\ListProjectsController;
 use App\Http\Controllers\Api\V1\ReportGapsController;
 use App\Http\Controllers\Api\V1\ResumeBulletsController;
 use App\Http\Controllers\Api\V1\SearchIndexController;
 use App\Http\Controllers\Api\V1\ShowCapabilityController;
+use App\Http\Controllers\Api\V1\ShowPackageController;
 use App\Http\Controllers\Api\V1\ShowProjectController;
 use App\Http\Controllers\Api\V1\SignedAssetController;
 use Illuminate\Support\Facades\Route;
@@ -40,6 +42,10 @@ Route::prefix('v1')
         Route::get('/capabilities/{slug}', ShowCapabilityController::class)
             ->where('slug', '[a-z0-9-]+')
             ->name('capabilities.show');
+        Route::get('/packages', ListPackagesController::class)->name('packages.index');
+        Route::get('/packages/{slug}', ShowPackageController::class)
+            ->where('slug', '[a-z0-9-]+')
+            ->name('packages.show');
         Route::get('/assets/{ulid}', SignedAssetController::class)
             ->whereAlphaNumeric('ulid')
             ->name('assets.show');
