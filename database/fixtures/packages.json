@@ -9,7 +9,8 @@
         "repo_url": "https://github.com/philiprehberger/dart-api-client",
         "registry_url": null,
         "capability_slugs": [
-            "rest-api"
+            "rest-api",
+            "cli-tools"
         ],
         "primary_capability": "rest-api"
     },
@@ -48,8 +49,10 @@
         "short_description": "Token-based design system with themes, JSON import/export, and validation. Zero dependencies. Pure Dart.",
         "repo_url": "https://github.com/philiprehberger/dart-design-tokens",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "color-utilities"
+        ],
+        "primary_capability": "color-utilities"
     },
     {
         "slug": "dart-env",
@@ -73,9 +76,9 @@
         "repo_url": "https://github.com/philiprehberger/dart-event-bus",
         "registry_url": null,
         "capability_slugs": [
-            "event-tracking"
+            "real-time-sync"
         ],
-        "primary_capability": "event-tracking"
+        "primary_capability": "real-time-sync"
     },
     {
         "slug": "dart-event-tracker",
@@ -158,8 +161,10 @@
         "short_description": "Rust-style Result type for type-safe error handling with pattern matching.",
         "repo_url": "https://github.com/philiprehberger/dart-result-type",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "dart-retry",
@@ -198,8 +203,10 @@
         "short_description": "Unicode-aware URL slug generator with transliteration and collision handling",
         "repo_url": "https://github.com/philiprehberger/dart-slug",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "dart-string-ext",
@@ -210,8 +217,10 @@
         "short_description": "String extension methods for case conversion, truncation, masking, and validation",
         "repo_url": "https://github.com/philiprehberger/dart-string-ext",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "string-manipulation"
+        ],
+        "primary_capability": "string-manipulation"
     },
     {
         "slug": "dart-sync-engine",
@@ -248,8 +257,10 @@
         "short_description": "Visual snapshot testing for Flutter widgets with golden file comparison",
         "repo_url": "https://github.com/philiprehberger/dart-flutter-snapshot-test",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "observability"
+        ],
+        "primary_capability": "observability"
     },
     {
         "slug": "dart-flutter-state-inspector",
@@ -326,8 +337,10 @@
         "short_description": "Process large collections in configurable batches with progress reporting, error handling, async execution, streaming IAsyncEnumerable support, checkpoint/resume, and adaptive batch sizing.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-batch-processor",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "background-queue"
+        ],
+        "primary_capability": "background-queue"
     },
     {
         "slug": "dn-dotnet-cache-kit",
@@ -353,8 +366,7 @@
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-change-tracker",
         "registry_url": null,
         "capability_slugs": [
-            "observability",
-            "event-tracking"
+            "observability"
         ],
         "primary_capability": "observability"
     },
@@ -407,8 +419,10 @@
         "short_description": "Convert between RGB, HSL, HSV, Hex, and CMYK color models with harmonies, contrast ratio, blending, and gradient generation.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-color-converter",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "color-utilities"
+        ],
+        "primary_capability": "color-utilities"
     },
     {
         "slug": "dn-dotnet-config-diff",
@@ -419,8 +433,10 @@
         "short_description": "Structured diff for JSON configuration files — detect added, removed, changed, and unchanged keys.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-config-diff",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "dn-dotnet-config-validator",
@@ -432,7 +448,8 @@
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-config-validator",
         "registry_url": null,
         "capability_slugs": [
-            "rule-engine"
+            "rule-engine",
+            "configuration-loading"
         ],
         "primary_capability": "rule-engine"
     },
@@ -461,7 +478,8 @@
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-cron-expression",
         "registry_url": null,
         "capability_slugs": [
-            "scheduled-jobs"
+            "scheduled-jobs",
+            "date-time-utilities"
         ],
         "primary_capability": "scheduled-jobs"
     },
@@ -488,8 +506,10 @@
         "short_description": "Lightweight test data generator with locale support, structured builders, and UUID generation.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-data-faker",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "observability"
+        ],
+        "primary_capability": "observability"
     },
     {
         "slug": "dn-dotnet-date-range",
@@ -500,8 +520,10 @@
         "short_description": "Immutable date/time range type with overlap detection, intersection, union, gap finding, and splitting.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-date-range",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "dn-dotnet-debounce",
@@ -602,7 +624,8 @@
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-env-validator",
         "registry_url": null,
         "capability_slugs": [
-            "rule-engine"
+            "rule-engine",
+            "configuration-loading"
         ],
         "primary_capability": "rule-engine"
     },
@@ -616,9 +639,9 @@
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-event-bus",
         "registry_url": null,
         "capability_slugs": [
-            "event-tracking"
+            "real-time-sync"
         ],
-        "primary_capability": "event-tracking"
+        "primary_capability": "real-time-sync"
     },
     {
         "slug": "dn-dotnet-execution-timer",
@@ -669,8 +692,11 @@
         "short_description": "Convert byte counts into human-readable file size strings and parse them back to bytes.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-filesize-humanizer",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "file-upload-pipeline",
+            "string-manipulation"
+        ],
+        "primary_capability": "file-upload-pipeline"
     },
     {
         "slug": "dn-dotnet-filesystem-snapshot",
@@ -693,8 +719,10 @@
         "short_description": "Flatten nested JSON objects into dot-notation key-value pairs, and unflatten them back.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-flatten-json",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "dn-dotnet-fluent-guard",
@@ -705,8 +733,10 @@
         "short_description": "Fluent parameter validation and guard clauses for .NET.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-fluent-guard",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "dn-dotnet-geolocation",
@@ -779,8 +809,10 @@
         "short_description": "DelegatingHandler that logs and times every outgoing HttpClient request.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-http-debug-handler",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rest-api"
+        ],
+        "primary_capability": "rest-api"
     },
     {
         "slug": "dn-dotnet-id-generator",
@@ -791,8 +823,10 @@
         "short_description": "Sortable, URL-safe unique ID generators — ULID, NanoID, and prefixed IDs.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-id-generator",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "dn-dotnet-ip-range",
@@ -803,8 +837,10 @@
         "short_description": "Parse and match IP addresses against CIDR ranges with IPv4 and IPv6 support.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-ip-range",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "observability"
+        ],
+        "primary_capability": "observability"
     },
     {
         "slug": "dn-dotnet-json-merge",
@@ -815,8 +851,10 @@
         "short_description": "Deep merge JSON documents with configurable array strategies and null handling using System.Text.Json.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-json-merge",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "dn-dotnet-json-patch",
@@ -827,8 +865,10 @@
         "short_description": "RFC 6902 JSON Patch operations for System.Text.Json — apply, generate, and parse patch documents.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-json-patch",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "dn-dotnet-json-schema",
@@ -839,8 +879,10 @@
         "short_description": "Validate JSON documents against JSON Schema with structured error paths using System.Text.Json.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-json-schema",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "dn-dotnet-mapper",
@@ -863,8 +905,10 @@
         "short_description": "Mask and redact sensitive data in strings and objects for safe logging.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-masker",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "gdpr-compliance"
+        ],
+        "primary_capability": "gdpr-compliance"
     },
     {
         "slug": "dn-dotnet-mime-detect",
@@ -887,8 +931,10 @@
         "short_description": "Immutable Money value type with integer arithmetic, ISO 4217 currencies, and proportional allocation.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-money",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "money-currency"
+        ],
+        "primary_capability": "money-currency"
     },
     {
         "slug": "dn-dotnet-obfuscator",
@@ -923,8 +969,10 @@
         "short_description": "Option/Maybe monad for explicit null handling with Map, Bind, Match, and LINQ support.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-option-type",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "dn-dotnet-outbox",
@@ -947,8 +995,10 @@
         "short_description": "Standardized pagination primitives — PagedResult, cursor-based pagination, and IQueryable extensions.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-pagination",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "pagination"
+        ],
+        "primary_capability": "pagination"
     },
     {
         "slug": "dn-dotnet-password-strength",
@@ -987,8 +1037,10 @@
         "short_description": "Middleware pipeline builder for any operation — like ASP.NET Core middleware but for business logic.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-pipeline",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "workflow-engine"
+        ],
+        "primary_capability": "workflow-engine"
     },
     {
         "slug": "dn-dotnet-pluralizer",
@@ -1061,8 +1113,10 @@
         "short_description": "Lightweight Result type for .NET — model success and failure without exceptions using pattern matching.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-result",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "dn-dotnet-retry-kit",
@@ -1074,7 +1128,8 @@
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-retry-kit",
         "registry_url": null,
         "capability_slugs": [
-            "observability"
+            "observability",
+            "error-handling"
         ],
         "primary_capability": "observability"
     },
@@ -1087,8 +1142,10 @@
         "short_description": "Resilient JSON parsing with fallback defaults and path-based value extraction that never throws.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-safe-json",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "dn-dotnet-scheduler",
@@ -1125,8 +1182,10 @@
         "short_description": "Convert text to clean, URL-safe slugs with Unicode diacritic handling, separator collapsing, and max length enforcement.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-slugify",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "dn-dotnet-smart-truncate",
@@ -1137,8 +1196,10 @@
         "short_description": "Truncate strings at word boundaries — no cut words, no ugly mid-word breaks.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-smart-truncate",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "string-manipulation"
+        ],
+        "primary_capability": "string-manipulation"
     },
     {
         "slug": "dn-dotnet-specification",
@@ -1175,8 +1236,10 @@
         "short_description": "String similarity and phonetic matching with Levenshtein, Jaro-Winkler, Dice, Soundex, and fuzzy search.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-string-similarity",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "string-manipulation"
+        ],
+        "primary_capability": "string-manipulation"
     },
     {
         "slug": "dn-dotnet-string-template",
@@ -1201,8 +1264,10 @@
         "short_description": "Lightweight task runner with dependency graph resolution and parallel execution.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-task-dependency-runner",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "workflow-engine"
+        ],
+        "primary_capability": "workflow-engine"
     },
     {
         "slug": "dn-dotnet-temp-file",
@@ -1337,8 +1402,10 @@
         "short_description": "Batch processing and chunking utilities for Go. Generic, concurrent, zero dependencies",
         "repo_url": "https://github.com/philiprehberger/go-batch",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "background-queue"
+        ],
+        "primary_capability": "background-queue"
     },
     {
         "slug": "go-cache-kit",
@@ -1418,7 +1485,8 @@
         "repo_url": "https://github.com/philiprehberger/go-env-validator",
         "registry_url": null,
         "capability_slugs": [
-            "rule-engine"
+            "rule-engine",
+            "configuration-loading"
         ],
         "primary_capability": "rule-engine"
     },
@@ -1541,8 +1609,10 @@
         "short_description": "Cursor and offset pagination helpers for Go. Generic, zero dependencies",
         "repo_url": "https://github.com/philiprehberger/go-pagination",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "pagination"
+        ],
+        "primary_capability": "pagination"
     },
     {
         "slug": "go-panicguard",
@@ -1553,8 +1623,10 @@
         "short_description": "Panic recovery utilities for Go — safe goroutines, panic-to-error conversion, and HTTP handler protection",
         "repo_url": "https://github.com/philiprehberger/go-panicguard",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "go-ratelimit",
@@ -1589,8 +1661,10 @@
         "short_description": "Generic Result type for Go — `Ok[T]` / `Err[T]` with mapping and chaining",
         "repo_url": "https://github.com/philiprehberger/go-result",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "go-retry-kit",
@@ -1602,7 +1676,8 @@
         "repo_url": "https://github.com/philiprehberger/go-retry-kit",
         "registry_url": null,
         "capability_slugs": [
-            "observability"
+            "observability",
+            "error-handling"
         ],
         "primary_capability": "observability"
     },
@@ -1640,7 +1715,8 @@
         "repo_url": "https://github.com/philiprehberger/go-slog-redact",
         "registry_url": null,
         "capability_slugs": [
-            "observability"
+            "observability",
+            "gdpr-compliance"
         ],
         "primary_capability": "observability"
     },
@@ -1667,8 +1743,10 @@
         "short_description": "URL-safe slug generator for Go. Handles Unicode, configurable, zero dependencies",
         "repo_url": "https://github.com/philiprehberger/go-slug",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "go-sseutil",
@@ -1743,8 +1821,10 @@
         "short_description": "Struct validation library for Go using struct tags. Zero external dependencies",
         "repo_url": "https://github.com/philiprehberger/go-validatex",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "go-webhook-relay-client",
@@ -1756,7 +1836,8 @@
         "repo_url": "https://github.com/philiprehberger/go-webhook-relay-client",
         "registry_url": null,
         "capability_slugs": [
-            "webhook-delivery"
+            "webhook-delivery",
+            "cli-tools"
         ],
         "primary_capability": "webhook-delivery"
     },
@@ -1825,8 +1906,10 @@
         "short_description": "Color parsing, conversion, and manipulation across RGB, HSL, and HEX.",
         "repo_url": "https://github.com/philiprehberger/kt-color-kit",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "color-utilities"
+        ],
+        "primary_capability": "color-utilities"
     },
     {
         "slug": "kt-config-kit",
@@ -1837,8 +1920,10 @@
         "short_description": "Layered configuration loading from multiple sources with type-safe access.",
         "repo_url": "https://github.com/philiprehberger/kt-config-kit",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "kt-cron-kit",
@@ -1901,8 +1986,10 @@
         "short_description": "Human-readable duration formatting and parsing for Kotlin.",
         "repo_url": "https://github.com/philiprehberger/kt-duration-fmt",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "kt-enum-kit",
@@ -1926,7 +2013,8 @@
         "repo_url": "https://github.com/philiprehberger/kt-env-validator",
         "registry_url": null,
         "capability_slugs": [
-            "rule-engine"
+            "rule-engine",
+            "configuration-loading"
         ],
         "primary_capability": "rule-engine"
     },
@@ -1940,9 +2028,9 @@
         "repo_url": "https://github.com/philiprehberger/kt-event-bus",
         "registry_url": null,
         "capability_slugs": [
-            "event-tracking"
+            "real-time-sync"
         ],
-        "primary_capability": "event-tracking"
+        "primary_capability": "real-time-sync"
     },
     {
         "slug": "kt-feature-flag",
@@ -1967,8 +2055,10 @@
         "short_description": "Flatten nested maps to dot-notation keys and unflatten back.",
         "repo_url": "https://github.com/philiprehberger/kt-flatten-json",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "kt-graceful-shutdown",
@@ -1991,8 +2081,11 @@
         "short_description": "Fluent guard clause validation for Kotlin with descriptive error messages.",
         "repo_url": "https://github.com/philiprehberger/kt-guard-clause",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rule-engine",
+            "error-handling"
+        ],
+        "primary_capability": "rule-engine"
     },
     {
         "slug": "kt-hash-kit",
@@ -2030,7 +2123,8 @@
         "repo_url": "https://github.com/philiprehberger/kt-http-client",
         "registry_url": null,
         "capability_slugs": [
-            "rest-api"
+            "rest-api",
+            "cli-tools"
         ],
         "primary_capability": "rest-api"
     },
@@ -2043,8 +2137,10 @@
         "short_description": "ID generation for Kotlin: ULID, NanoID, Snowflake, and prefixed IDs.",
         "repo_url": "https://github.com/philiprehberger/kt-id-gen",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "kt-json-diff",
@@ -2055,8 +2151,10 @@
         "short_description": "Structural diffs between JSON documents with path-based change tracking.",
         "repo_url": "https://github.com/philiprehberger/kt-json-diff",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "kt-json-logger",
@@ -2081,8 +2179,10 @@
         "short_description": "Data masking for sensitive values in logs and API responses.",
         "repo_url": "https://github.com/philiprehberger/kt-mask-kit",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "gdpr-compliance"
+        ],
+        "primary_capability": "gdpr-compliance"
     },
     {
         "slug": "kt-money",
@@ -2093,8 +2193,10 @@
         "short_description": "Type-safe monetary values with currency support and precise arithmetic.",
         "repo_url": "https://github.com/philiprehberger/kt-money",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "money-currency"
+        ],
+        "primary_capability": "money-currency"
     },
     {
         "slug": "kt-pagination",
@@ -2105,8 +2207,10 @@
         "short_description": "Framework-agnostic pagination for offset, cursor, and keyset patterns.",
         "repo_url": "https://github.com/philiprehberger/kt-pagination",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "pagination"
+        ],
+        "primary_capability": "pagination"
     },
     {
         "slug": "kt-pipe",
@@ -2143,8 +2247,10 @@
         "short_description": "A lightweight, typed Result monad for Kotlin with railway-oriented error handling.",
         "repo_url": "https://github.com/philiprehberger/kt-result",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "kt-retry-kit",
@@ -2156,7 +2262,8 @@
         "repo_url": "https://github.com/philiprehberger/kt-retry-kit",
         "registry_url": null,
         "capability_slugs": [
-            "observability"
+            "observability",
+            "error-handling"
         ],
         "primary_capability": "observability"
     },
@@ -2169,8 +2276,10 @@
         "short_description": "Non-throwing JSON parsing with typed errors and path-based navigation.",
         "repo_url": "https://github.com/philiprehberger/kt-safe-json",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "kt-schema-validator",
@@ -2207,8 +2316,10 @@
         "short_description": "URL-friendly slug generation from Unicode strings with transliteration, validation, and batch processing.",
         "repo_url": "https://github.com/philiprehberger/kt-slug",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "kt-state-machine",
@@ -2233,8 +2344,10 @@
         "short_description": "String manipulation: truncation, case conversion, masking, wrapping, and interpolation.",
         "repo_url": "https://github.com/philiprehberger/kt-string-kit",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "string-manipulation"
+        ],
+        "primary_capability": "string-manipulation"
     },
     {
         "slug": "kt-task-queue",
@@ -2312,7 +2425,8 @@
         "repo_url": "https://github.com/philiprehberger/php-cron-expression-builder",
         "registry_url": "https://packagist.org/packages/philiprehberger/cron-expression-builder",
         "capability_slugs": [
-            "scheduled-jobs"
+            "scheduled-jobs",
+            "date-time-utilities"
         ],
         "primary_capability": "scheduled-jobs"
     },
@@ -2326,7 +2440,8 @@
         "repo_url": "https://github.com/philiprehberger/php-env-validator",
         "registry_url": "https://packagist.org/packages/philiprehberger/env-validator",
         "capability_slugs": [
-            "rule-engine"
+            "rule-engine",
+            "configuration-loading"
         ],
         "primary_capability": "rule-engine"
     },
@@ -2341,7 +2456,8 @@
         "registry_url": "https://packagist.org/packages/philiprehberger/http-retry-client",
         "capability_slugs": [
             "rest-api",
-            "observability"
+            "observability",
+            "cli-tools"
         ],
         "primary_capability": "rest-api"
     },
@@ -2488,8 +2604,10 @@
         "short_description": "Typed Result pattern for Laravel service-layer operations with named factory methods and specialized result types",
         "repo_url": "https://github.com/philiprehberger/php-laravel-operation-result",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-operation-result",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "php-laravel-rate-limiter",
@@ -2578,8 +2696,10 @@
         "short_description": "Automatic slug generation for Eloquent models with scoped uniqueness, history, and transliteration",
         "repo_url": "https://github.com/philiprehberger/php-laravel-slug-generator",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-slug-generator",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "php-api-response",
@@ -2640,8 +2760,10 @@
         "short_description": "Color parsing, conversion, manipulation, and WCAG contrast checking",
         "repo_url": "https://github.com/philiprehberger/php-color",
         "registry_url": "https://packagist.org/packages/philiprehberger/php-color",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "color-utilities"
+        ],
+        "primary_capability": "color-utilities"
     },
     {
         "slug": "php-config-loader",
@@ -2652,8 +2774,10 @@
         "short_description": "Load configuration from JSON and PHP files with environment variable substitution",
         "repo_url": "https://github.com/philiprehberger/php-config-loader",
         "registry_url": "https://packagist.org/packages/philiprehberger/php-config-loader",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "php-crypt",
@@ -2750,8 +2874,10 @@
         "short_description": "Convert seconds into human-readable duration strings",
         "repo_url": "https://github.com/philiprehberger/php-human-duration",
         "registry_url": "https://packagist.org/packages/philiprehberger/php-human-duration",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "php-install-doctor",
@@ -2774,8 +2900,10 @@
         "short_description": "Mask sensitive data in strings, arrays, and objects for safe logging",
         "repo_url": "https://github.com/philiprehberger/php-mask",
         "registry_url": "https://packagist.org/packages/philiprehberger/php-mask",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "gdpr-compliance"
+        ],
+        "primary_capability": "gdpr-compliance"
     },
     {
         "slug": "php-money",
@@ -2786,8 +2914,10 @@
         "short_description": "Immutable Money value object with currency support, formatting, arithmetic, and Laravel Eloquent cast",
         "repo_url": "https://github.com/philiprehberger/php-money",
         "registry_url": "https://packagist.org/packages/philiprehberger/php-money",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "money-currency"
+        ],
+        "primary_capability": "money-currency"
     },
     {
         "slug": "php-password-strength",
@@ -2812,8 +2942,10 @@
         "short_description": "Composable pipeline pattern for processing data through ordered stages",
         "repo_url": "https://github.com/philiprehberger/php-pipeline",
         "registry_url": "https://packagist.org/packages/philiprehberger/php-pipeline",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "workflow-engine"
+        ],
+        "primary_capability": "workflow-engine"
     },
     {
         "slug": "php-retry",
@@ -2852,8 +2984,10 @@
         "short_description": "Safe JSON parsing with exceptions, schema validation, and typed getters",
         "repo_url": "https://github.com/philiprehberger/php-safe-json",
         "registry_url": "https://packagist.org/packages/philiprehberger/php-safe-json",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "php-schema-validator",
@@ -2918,8 +3052,10 @@
         "short_description": "UUID v4 and v7 generation, validation, and ordered UUIDs for database indexing",
         "repo_url": "https://github.com/philiprehberger/php-uuid-tools",
         "registry_url": "https://packagist.org/packages/philiprehberger/php-uuid-tools",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "php-webhook-relay-client",
@@ -2931,7 +3067,8 @@
         "repo_url": "https://github.com/philiprehberger/php-webhook-relay-client",
         "registry_url": "https://packagist.org/packages/philiprehberger/php-webhook-relay-client",
         "capability_slugs": [
-            "webhook-delivery"
+            "webhook-delivery",
+            "cli-tools"
         ],
         "primary_capability": "webhook-delivery"
     },
@@ -2970,8 +3107,10 @@
         "short_description": "Terminal text styling with zero dependencies and TTY detection.",
         "repo_url": "https://github.com/philiprehberger/py-ansi-style",
         "registry_url": "https://pypi.org/project/philiprehberger-ansi-style",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cli-tools"
+        ],
+        "primary_capability": "cli-tools"
     },
     {
         "slug": "py-api-timer",
@@ -3008,8 +3147,10 @@
         "short_description": "Batch processing with progress tracking and error handling.",
         "repo_url": "https://github.com/philiprehberger/py-batch-iter",
         "registry_url": "https://pypi.org/project/philiprehberger-batch-iter",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "background-queue"
+        ],
+        "primary_capability": "background-queue"
     },
     {
         "slug": "py-cache-kit",
@@ -3062,8 +3203,10 @@
         "short_description": "Decorator-based CLI framework with rich output",
         "repo_url": "https://github.com/philiprehberger/py-cli-builder",
         "registry_url": "https://pypi.org/project/philiprehberger-cli-builder",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cli-tools"
+        ],
+        "primary_capability": "cli-tools"
     },
     {
         "slug": "py-cli-spinner",
@@ -3074,8 +3217,10 @@
         "short_description": "Dead-simple terminal spinners and progress indicators for CLI scripts",
         "repo_url": "https://github.com/philiprehberger/py-cli-spinner",
         "registry_url": "https://pypi.org/project/philiprehberger-cli-spinner",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cli-tools"
+        ],
+        "primary_capability": "cli-tools"
     },
     {
         "slug": "py-cli-table",
@@ -3086,8 +3231,10 @@
         "short_description": "Format Python data as aligned terminal tables with no dependencies",
         "repo_url": "https://github.com/philiprehberger/py-cli-table",
         "registry_url": "https://pypi.org/project/philiprehberger-cli-table",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cli-tools"
+        ],
+        "primary_capability": "cli-tools"
     },
     {
         "slug": "py-clipboard",
@@ -3098,8 +3245,10 @@
         "short_description": "Cross-platform clipboard copy and paste in one function call.",
         "repo_url": "https://github.com/philiprehberger/py-clipboard",
         "registry_url": "https://pypi.org/project/philiprehberger-clipboard",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cli-tools"
+        ],
+        "primary_capability": "cli-tools"
     },
     {
         "slug": "py-color-convert",
@@ -3110,8 +3259,10 @@
         "short_description": "Convert between color formats: hex, RGB, HSL, HSV, CMYK, and named CSS colors",
         "repo_url": "https://github.com/philiprehberger/py-color-convert",
         "registry_url": "https://pypi.org/project/philiprehberger-color-convert",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "color-utilities"
+        ],
+        "primary_capability": "color-utilities"
     },
     {
         "slug": "py-config-diff",
@@ -3122,8 +3273,10 @@
         "short_description": "Compare configuration files across environments",
         "repo_url": "https://github.com/philiprehberger/py-config-diff",
         "registry_url": "https://pypi.org/project/philiprehberger-config-diff",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "py-config-kit",
@@ -3134,8 +3287,10 @@
         "short_description": "Layered configuration loader merging env vars, files, and defaults.",
         "repo_url": "https://github.com/philiprehberger/py-config-kit",
         "registry_url": "https://pypi.org/project/philiprehberger-config-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "py-csv-kit",
@@ -3160,8 +3315,10 @@
         "short_description": "Lightweight test data generation with realistic fake values.",
         "repo_url": "https://github.com/philiprehberger/py-data-factory",
         "registry_url": "https://pypi.org/project/philiprehberger-data-factory",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "observability"
+        ],
+        "primary_capability": "observability"
     },
     {
         "slug": "py-data-pipeline",
@@ -3172,8 +3329,10 @@
         "short_description": "Composable data transformation pipeline with lazy evaluation.",
         "repo_url": "https://github.com/philiprehberger/py-data-pipeline",
         "registry_url": "https://pypi.org/project/philiprehberger-data-pipeline",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "workflow-engine"
+        ],
+        "primary_capability": "workflow-engine"
     },
     {
         "slug": "py-datetime-kit",
@@ -3184,8 +3343,10 @@
         "short_description": "Common datetime operations missing from the standard library.",
         "repo_url": "https://github.com/philiprehberger/py-datetime-kit",
         "registry_url": "https://pypi.org/project/philiprehberger-datetime-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "py-debounce",
@@ -3270,8 +3431,10 @@
         "short_description": "Automatically generate CLI interfaces from function signatures and docstrings",
         "repo_url": "https://github.com/philiprehberger/py-docstring-cli",
         "registry_url": "https://pypi.org/project/philiprehberger-docstring-cli",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cli-tools"
+        ],
+        "primary_capability": "cli-tools"
     },
     {
         "slug": "py-dotenv-cast",
@@ -3282,8 +3445,10 @@
         "short_description": "Type-safe environment variable loading with casting and defaults.",
         "repo_url": "https://github.com/philiprehberger/py-dotenv-cast",
         "registry_url": "https://pypi.org/project/philiprehberger-dotenv-cast",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "py-dotpath",
@@ -3318,8 +3483,10 @@
         "short_description": "Parse and format human-readable duration strings like \\",
         "repo_url": "https://github.com/philiprehberger/py-duration",
         "registry_url": "https://pypi.org/project/philiprehberger-duration",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "py-email-validate",
@@ -3331,7 +3498,8 @@
         "repo_url": "https://github.com/philiprehberger/py-email-validate",
         "registry_url": "https://pypi.org/project/philiprehberger-email-validate",
         "capability_slugs": [
-            "email-campaigns"
+            "email-campaigns",
+            "date-time-utilities"
         ],
         "primary_capability": "email-campaigns"
     },
@@ -3370,8 +3538,10 @@
         "short_description": ".env file parser with interpolation and multi-file support",
         "repo_url": "https://github.com/philiprehberger/py-env-file",
         "registry_url": "https://pypi.org/project/philiprehberger-env-file",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "py-env-validator",
@@ -3383,7 +3553,8 @@
         "repo_url": "https://github.com/philiprehberger/py-env-validator",
         "registry_url": "https://pypi.org/project/philiprehberger-env-validator",
         "capability_slugs": [
-            "rule-engine"
+            "rule-engine",
+            "configuration-loading"
         ],
         "primary_capability": "rule-engine"
     },
@@ -3448,8 +3619,10 @@
         "short_description": "Convert bytes to human-readable file sizes and back.",
         "repo_url": "https://github.com/philiprehberger/py-filesize",
         "registry_url": "https://pypi.org/project/philiprehberger-filesize",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "file-upload-pipeline"
+        ],
+        "primary_capability": "file-upload-pipeline"
     },
     {
         "slug": "py-flatten-json",
@@ -3460,8 +3633,10 @@
         "short_description": "Flatten nested JSON/dicts into dot-notation keys and unflatten back",
         "repo_url": "https://github.com/philiprehberger/py-flatten-json",
         "registry_url": "https://pypi.org/project/philiprehberger-flatten-json",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "py-func-timeout",
@@ -3535,8 +3710,10 @@
         "short_description": "Convert byte counts to human-readable strings and back, with formatting options",
         "repo_url": "https://github.com/philiprehberger/py-humanize-bytes",
         "registry_url": "https://pypi.org/project/philiprehberger-humanize-bytes",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "string-manipulation"
+        ],
+        "primary_capability": "string-manipulation"
     },
     {
         "slug": "py-import-profiler",
@@ -3561,8 +3738,10 @@
         "short_description": "Readable JSON comparison with colorized terminal output.",
         "repo_url": "https://github.com/philiprehberger/py-json-diff",
         "registry_url": "https://pypi.org/project/philiprehberger-json-diff",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "py-json-logger",
@@ -3639,8 +3818,10 @@
         "short_description": "Automatically mask sensitive values (API keys, passwords, tokens) in logs and print output",
         "repo_url": "https://github.com/philiprehberger/py-masked-print",
         "registry_url": "https://pypi.org/project/philiprehberger-masked-print",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "gdpr-compliance"
+        ],
+        "primary_capability": "gdpr-compliance"
     },
     {
         "slug": "py-money",
@@ -3651,8 +3832,10 @@
         "short_description": "Precise monetary calculations using integer cents with currency support and formatting.",
         "repo_url": "https://github.com/philiprehberger/py-money",
         "registry_url": "https://pypi.org/project/philiprehberger-money",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "money-currency"
+        ],
+        "primary_capability": "money-currency"
     },
     {
         "slug": "py-mqtt-client",
@@ -3663,8 +3846,10 @@
         "short_description": "Simplified MQTT pub/sub wrapper with auto-reconnect",
         "repo_url": "https://github.com/philiprehberger/py-mqtt-client",
         "registry_url": "https://pypi.org/project/philiprehberger-mqtt-client",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cli-tools"
+        ],
+        "primary_capability": "cli-tools"
     },
     {
         "slug": "py-net-scanner",
@@ -3699,8 +3884,10 @@
         "short_description": "Cursor and offset pagination utilities for any data source.",
         "repo_url": "https://github.com/philiprehberger/py-pagination",
         "registry_url": "https://pypi.org/project/philiprehberger-agination",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "pagination"
+        ],
+        "primary_capability": "pagination"
     },
     {
         "slug": "py-portcheck",
@@ -3797,8 +3984,10 @@
         "short_description": "Rust-inspired Result type for Python with pattern matching and type-safe error handling",
         "repo_url": "https://github.com/philiprehberger/py-result",
         "registry_url": "https://pypi.org/project/philiprehberger-result",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "py-retry-kit",
@@ -3810,7 +3999,8 @@
         "repo_url": "https://github.com/philiprehberger/py-retry-kit",
         "registry_url": "https://pypi.org/project/philiprehberger-retry-kit",
         "capability_slugs": [
-            "observability"
+            "observability",
+            "error-handling"
         ],
         "primary_capability": "observability"
     },
@@ -3835,8 +4025,10 @@
         "short_description": "JSON encoder that handles datetime, Decimal, UUID, dataclasses, and sets without crashing.",
         "repo_url": "https://github.com/philiprehberger/py-safe-json",
         "registry_url": "https://pypi.org/project/philiprehberger-safe-json",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "py-safeget",
@@ -3871,8 +4063,10 @@
         "short_description": "Automatically detect and mask secrets in strings and dicts.",
         "repo_url": "https://github.com/philiprehberger/py-secret-mask",
         "registry_url": "https://pypi.org/project/philiprehberger-secret-mask",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "gdpr-compliance"
+        ],
+        "primary_capability": "gdpr-compliance"
     },
     {
         "slug": "py-semver",
@@ -3919,8 +4113,10 @@
         "short_description": "URL slug generation with transliteration and uniqueness.",
         "repo_url": "https://github.com/philiprehberger/py-slug",
         "registry_url": "https://pypi.org/project/philiprehberger-slug",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "py-sql-print",
@@ -3981,8 +4177,10 @@
         "short_description": "Truncate strings intelligently without cutting words",
         "repo_url": "https://github.com/philiprehberger/py-string-truncate",
         "registry_url": "https://pypi.org/project/philiprehberger-string-truncate",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "string-manipulation"
+        ],
+        "primary_capability": "string-manipulation"
     },
     {
         "slug": "py-struct-log",
@@ -4007,8 +4205,10 @@
         "short_description": "Lightweight task dependency engine with topological execution",
         "repo_url": "https://github.com/philiprehberger/py-task-graph",
         "registry_url": "https://pypi.org/project/philiprehberger-task-graph",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "workflow-engine"
+        ],
+        "primary_capability": "workflow-engine"
     },
     {
         "slug": "py-task-scheduler",
@@ -4109,8 +4309,10 @@
         "short_description": "Runtime type checking decorators for function arguments",
         "repo_url": "https://github.com/philiprehberger/py-type-guard",
         "registry_url": "https://pypi.org/project/philiprehberger-type-guard",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "py-type-parse",
@@ -4158,7 +4360,8 @@
         "repo_url": "https://github.com/philiprehberger/py-webhook-relay-client",
         "registry_url": "https://pypi.org/project/philiprehberger-webhook-relay-client",
         "capability_slugs": [
-            "webhook-delivery"
+            "webhook-delivery",
+            "cli-tools"
         ],
         "primary_capability": "webhook-delivery"
     },
@@ -4249,8 +4452,10 @@
         "short_description": "Batch processing toolkit with chunking, progress, and error collection",
         "repo_url": "https://github.com/philiprehberger/rb-batch",
         "registry_url": "https://rubygems.org/gems/rb-batch",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "background-queue"
+        ],
+        "primary_capability": "background-queue"
     },
     {
         "slug": "rb-bit-field",
@@ -4353,8 +4558,10 @@
         "short_description": "All-in-one CLI toolkit with argument parsing, prompts, and spinners",
         "repo_url": "https://github.com/philiprehberger/rb-cli-kit",
         "registry_url": "https://rubygems.org/gems/rb-cli-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cli-tools"
+        ],
+        "primary_capability": "cli-tools"
     },
     {
         "slug": "rb-color",
@@ -4365,8 +4572,10 @@
         "short_description": "Terminal ANSI color and styling with auto-detection",
         "repo_url": "https://github.com/philiprehberger/rb-color",
         "registry_url": "https://rubygems.org/gems/rb-color",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "color-utilities"
+        ],
+        "primary_capability": "color-utilities"
     },
     {
         "slug": "rb-color-convert",
@@ -4377,8 +4586,10 @@
         "short_description": "Color format conversion with parsing, manipulation, harmony generation, color blindness simulation, and CSS named colors",
         "repo_url": "https://github.com/philiprehberger/rb-color-convert",
         "registry_url": "https://rubygems.org/gems/rb-color-convert",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "color-utilities"
+        ],
+        "primary_capability": "color-utilities"
     },
     {
         "slug": "rb-compact-id",
@@ -4389,8 +4600,10 @@
         "short_description": "Compact UUID encoding in Base58 and Base62 for shorter, URL-safe identifiers",
         "repo_url": "https://github.com/philiprehberger/rb-compact-id",
         "registry_url": "https://rubygems.org/gems/rb-compact-id",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "rb-config-kit",
@@ -4401,8 +4614,10 @@
         "short_description": "Layered configuration with YAML, ENV, and defaults",
         "repo_url": "https://github.com/philiprehberger/rb-config-kit",
         "registry_url": "https://rubygems.org/gems/rb-config-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "rb-config-validator",
@@ -4414,7 +4629,8 @@
         "repo_url": "https://github.com/philiprehberger/rb-config-validator",
         "registry_url": "https://rubygems.org/gems/rb-config-validator",
         "capability_slugs": [
-            "rule-engine"
+            "rule-engine",
+            "configuration-loading"
         ],
         "primary_capability": "rule-engine"
     },
@@ -4531,8 +4747,10 @@
         "short_description": "Date utilities for business days, relative expressions, and period calculations",
         "repo_url": "https://github.com/philiprehberger/rb-date-kit",
         "registry_url": "https://rubygems.org/gems/rb-date-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "rb-debounce",
@@ -4605,8 +4823,10 @@
         "short_description": "Immutable Duration value object with parsing, arithmetic, and formatting",
         "repo_url": "https://github.com/philiprehberger/rb-duration",
         "registry_url": "https://rubygems.org/gems/rb-duration",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "rb-email-validator",
@@ -4668,8 +4888,10 @@
         "short_description": "Multi-source environment variable loader with precedence and validation",
         "repo_url": "https://github.com/philiprehberger/rb-env-loader",
         "registry_url": "https://rubygems.org/gems/rb-env-loader",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "rb-env-validator",
@@ -4681,7 +4903,8 @@
         "repo_url": "https://github.com/philiprehberger/rb-env-validator",
         "registry_url": "https://rubygems.org/gems/rb-env-validator",
         "capability_slugs": [
-            "rule-engine"
+            "rule-engine",
+            "configuration-loading"
         ],
         "primary_capability": "rule-engine"
     },
@@ -4808,8 +5031,11 @@
         "short_description": "Expressive guard clause DSL for method precondition validation",
         "repo_url": "https://github.com/philiprehberger/rb-guard-clause",
         "registry_url": "https://rubygems.org/gems/rb-guard-clause",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rule-engine",
+            "error-handling"
+        ],
+        "primary_capability": "rule-engine"
     },
     {
         "slug": "rb-gzip-kit",
@@ -4820,8 +5046,10 @@
         "short_description": "Gzip compression and decompression with streaming support",
         "repo_url": "https://github.com/philiprehberger/rb-gzip-kit",
         "registry_url": "https://rubygems.org/gems/rb-gzip-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "observability"
+        ],
+        "primary_capability": "observability"
     },
     {
         "slug": "rb-hash-ring",
@@ -4881,7 +5109,8 @@
         "repo_url": "https://github.com/philiprehberger/rb-http-client",
         "registry_url": "https://rubygems.org/gems/rb-http-client",
         "capability_slugs": [
-            "rest-api"
+            "rest-api",
+            "cli-tools"
         ],
         "primary_capability": "rest-api"
     },
@@ -4894,8 +5123,10 @@
         "short_description": "Lightweight HTTP request stubbing for tests",
         "repo_url": "https://github.com/philiprehberger/rb-http-mock",
         "registry_url": "https://rubygems.org/gems/rb-http-mock",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rest-api"
+        ],
+        "primary_capability": "rest-api"
     },
     {
         "slug": "rb-human-size",
@@ -4918,8 +5149,10 @@
         "short_description": "Multi-format unique ID generator with ULID, nanoid, UUID v7, CUID2, prefixed, snowflake, hashid, and encoding support",
         "repo_url": "https://github.com/philiprehberger/rb-id-gen",
         "registry_url": "https://rubygems.org/gems/rb-id-gen",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "rb-image-size",
@@ -4980,8 +5213,10 @@
         "short_description": "Enhanced IP address library with CIDR, classification, and range operations",
         "repo_url": "https://github.com/philiprehberger/rb-ip-addr",
         "registry_url": "https://rubygems.org/gems/rb-ip-addr",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "observability"
+        ],
+        "primary_capability": "observability"
     },
     {
         "slug": "rb-job-meter",
@@ -5004,8 +5239,10 @@
         "short_description": "JSON Merge Patch (RFC 7396) and JSON Patch (RFC 6902) for Ruby",
         "repo_url": "https://github.com/philiprehberger/rb-json-merge",
         "registry_url": "https://rubygems.org/gems/rb-json-merge",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "rb-json-path",
@@ -5016,8 +5253,10 @@
         "short_description": "JSONPath expression evaluator with dot notation, wildcards, slices, filters, and recursive descent",
         "repo_url": "https://github.com/philiprehberger/rb-json-path",
         "registry_url": "https://rubygems.org/gems/rb-json-path",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "rb-json-schema",
@@ -5028,8 +5267,10 @@
         "short_description": "JSON Schema validator supporting common draft-07 keywords with schema composition, conditional validation, and compiled schemas",
         "repo_url": "https://github.com/philiprehberger/rb-json-schema",
         "registry_url": "https://rubygems.org/gems/rb-json-schema",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "rb-jwt-kit",
@@ -5106,8 +5347,10 @@
         "short_description": "Data masking library with auto-detect PII redaction for strings and nested structures",
         "repo_url": "https://github.com/philiprehberger/rb-mask",
         "registry_url": "https://rubygems.org/gems/rb-mask",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "gdpr-compliance"
+        ],
+        "primary_capability": "gdpr-compliance"
     },
     {
         "slug": "rb-math-kit",
@@ -5130,8 +5373,10 @@
         "short_description": "Optional/Maybe monad with safe chaining and pattern matching",
         "repo_url": "https://github.com/philiprehberger/rb-maybe",
         "registry_url": "https://rubygems.org/gems/rb-maybe",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "rb-memo",
@@ -5208,8 +5453,10 @@
         "short_description": "Immutable money value object with integer subunit storage and multi-currency formatting",
         "repo_url": "https://github.com/philiprehberger/rb-money",
         "registry_url": "https://rubygems.org/gems/rb-money",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "money-currency"
+        ],
+        "primary_capability": "money-currency"
     },
     {
         "slug": "rb-multipart",
@@ -5246,8 +5493,10 @@
         "short_description": "Framework-agnostic pagination with cursor, offset, and keyset strategies",
         "repo_url": "https://github.com/philiprehberger/rb-pagination",
         "registry_url": "https://rubygems.org/gems/rb-pagination",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "pagination"
+        ],
+        "primary_capability": "pagination"
     },
     {
         "slug": "rb-parallel-each",
@@ -5446,8 +5695,10 @@
         "short_description": "Result type with Ok/Err, map, flat_map, and pattern matching",
         "repo_url": "https://github.com/philiprehberger/rb-result",
         "registry_url": "https://rubygems.org/gems/rb-result",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "rb-retry-kit",
@@ -5459,7 +5710,8 @@
         "repo_url": "https://github.com/philiprehberger/rb-retry-kit",
         "registry_url": "https://rubygems.org/gems/rb-retry-kit",
         "capability_slugs": [
-            "observability"
+            "observability",
+            "error-handling"
         ],
         "primary_capability": "observability"
     },
@@ -5615,8 +5867,10 @@
         "short_description": "URL-friendly slug generator with Unicode transliteration and collision-aware uniqueness",
         "repo_url": "https://github.com/philiprehberger/rb-slug",
         "registry_url": "https://rubygems.org/gems/rb-slug",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "rb-state-bag",
@@ -5665,8 +5919,10 @@
         "short_description": "Comprehensive string utilities without ActiveSupport dependency",
         "repo_url": "https://github.com/philiprehberger/rb-string-kit",
         "registry_url": "https://rubygems.org/gems/rb-string-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "string-manipulation"
+        ],
+        "primary_capability": "string-manipulation"
     },
     {
         "slug": "rb-struct-kit",
@@ -5741,8 +5997,10 @@
         "short_description": "Shell command runner with output capture, timeout, streaming, signal handling, and stdin piping",
         "repo_url": "https://github.com/philiprehberger/rb-task-runner",
         "registry_url": "https://rubygems.org/gems/rb-task-runner",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "workflow-engine"
+        ],
+        "primary_capability": "workflow-engine"
     },
     {
         "slug": "rb-template",
@@ -5841,8 +6099,10 @@
         "short_description": "Smart string truncation with word boundaries, HTML safety, and multi-byte support",
         "repo_url": "https://github.com/philiprehberger/rb-truncate",
         "registry_url": "https://rubygems.org/gems/rb-truncate",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "string-manipulation"
+        ],
+        "primary_capability": "string-manipulation"
     },
     {
         "slug": "rb-try",
@@ -6031,8 +6291,11 @@
         "short_description": "Cross-platform terminal color and style output with automatic capability detection",
         "repo_url": "https://github.com/philiprehberger/rs-clicolor",
         "registry_url": "https://crates.io/crates/rs-clicolor",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cli-tools",
+            "color-utilities"
+        ],
+        "primary_capability": "cli-tools"
     },
     {
         "slug": "rs-color",
@@ -6043,8 +6306,10 @@
         "short_description": "Color manipulation library — parsing, conversion, blending, contrast checking, and ANSI terminal output",
         "repo_url": "https://github.com/philiprehberger/rs-color",
         "registry_url": "https://crates.io/crates/rs-color",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "color-utilities"
+        ],
+        "primary_capability": "color-utilities"
     },
     {
         "slug": "rs-config-loader",
@@ -6055,8 +6320,10 @@
         "short_description": "Layered configuration from files and environment variables",
         "repo_url": "https://github.com/philiprehberger/rs-config-loader",
         "registry_url": "https://crates.io/crates/rs-config-loader",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "rs-cron-parser",
@@ -6095,8 +6362,10 @@
         "short_description": "Date and time utilities — business days, date ranges, holiday calendars, and formatting shortcuts",
         "repo_url": "https://github.com/philiprehberger/rs-date-utils",
         "registry_url": "https://crates.io/crates/rs-date-utils",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "rs-diff-assert",
@@ -6121,8 +6390,10 @@
         "short_description": "Fast .env file parser with variable interpolation, multi-file layering, and type-safe loading",
         "repo_url": "https://github.com/philiprehberger/rs-dotenv",
         "registry_url": "https://crates.io/crates/rs-dotenv",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "rs-duration-fmt",
@@ -6133,8 +6404,10 @@
         "short_description": "Human-readable duration formatting and parsing",
         "repo_url": "https://github.com/philiprehberger/rs-duration-fmt",
         "registry_url": "https://crates.io/crates/rs-duration-fmt",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "rs-email-parser",
@@ -6160,7 +6433,8 @@
         "repo_url": "https://github.com/philiprehberger/rs-env-validator",
         "registry_url": "https://crates.io/crates/rs-env-validator",
         "capability_slugs": [
-            "rule-engine"
+            "rule-engine",
+            "configuration-loading"
         ],
         "primary_capability": "rule-engine"
     },
@@ -6174,9 +6448,9 @@
         "repo_url": "https://github.com/philiprehberger/rs-event-bus",
         "registry_url": "https://crates.io/crates/rs-event-bus",
         "capability_slugs": [
-            "event-tracking"
+            "real-time-sync"
         ],
-        "primary_capability": "event-tracking"
+        "primary_capability": "real-time-sync"
     },
     {
         "slug": "rs-feature-flags",
@@ -6201,8 +6475,11 @@
         "short_description": "Early-return guard clause macros for cleaner control flow",
         "repo_url": "https://github.com/philiprehberger/rs-guard-clause",
         "registry_url": "https://crates.io/crates/rs-guard-clause",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rule-engine",
+            "error-handling"
+        ],
+        "primary_capability": "rule-engine"
     },
     {
         "slug": "rs-healthcheck-client",
@@ -6214,7 +6491,8 @@
         "repo_url": "https://github.com/philiprehberger/rs-healthcheck-client",
         "registry_url": "https://crates.io/crates/rs-healthcheck-client",
         "capability_slugs": [
-            "observability"
+            "observability",
+            "cli-tools"
         ],
         "primary_capability": "observability"
     },
@@ -6239,8 +6517,10 @@
         "short_description": "Unified ID generation: ULID, UUIDv7, NanoID, and Snowflake",
         "repo_url": "https://github.com/philiprehberger/rs-id-gen",
         "registry_url": "https://crates.io/crates/rs-id-gen",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "rs-ip-utils",
@@ -6263,8 +6543,10 @@
         "short_description": "Structural JSON diff with path tracking for Rust",
         "repo_url": "https://github.com/philiprehberger/rs-json-diff",
         "registry_url": "https://crates.io/crates/rs-json-diff",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "json-processing"
+        ],
+        "primary_capability": "json-processing"
     },
     {
         "slug": "rs-jwt",
@@ -6289,8 +6571,10 @@
         "short_description": "Data masking and redaction for strings, emails, and sensitive data",
         "repo_url": "https://github.com/philiprehberger/rs-mask",
         "registry_url": "https://crates.io/crates/rs-mask",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "gdpr-compliance"
+        ],
+        "primary_capability": "gdpr-compliance"
     },
     {
         "slug": "rs-mime-detect",
@@ -6351,8 +6635,10 @@
         "short_description": "Extension traits for Result and Option with tap, map, and error accumulation",
         "repo_url": "https://github.com/philiprehberger/rs-result-ext",
         "registry_url": "https://crates.io/crates/rs-result-ext",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "rs-retry-kit",
@@ -6364,7 +6650,8 @@
         "repo_url": "https://github.com/philiprehberger/rs-retry-kit",
         "registry_url": "https://crates.io/crates/rs-retry-kit",
         "capability_slugs": [
-            "observability"
+            "observability",
+            "error-handling"
         ],
         "primary_capability": "observability"
     },
@@ -6425,8 +6712,10 @@
         "short_description": "Unicode-aware slug generation for URL-safe strings",
         "repo_url": "https://github.com/philiprehberger/rs-slug",
         "registry_url": "https://crates.io/crates/rs-slug",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "rs-str-utils",
@@ -6737,8 +7026,10 @@
         "short_description": "Lightweight color parsing, conversion, and manipulation",
         "repo_url": "https://github.com/philiprehberger/ts-color-kit",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/color-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "color-utilities"
+        ],
+        "primary_capability": "color-utilities"
     },
     {
         "slug": "ts-config-layer",
@@ -6749,8 +7040,10 @@
         "short_description": "Layered configuration loader with typed output and multiple sources",
         "repo_url": "https://github.com/philiprehberger/ts-config-layer",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/config-layer",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "ts-cookie-ts",
@@ -6799,8 +7092,10 @@
         "short_description": "Collision-resistant sortable unique IDs",
         "repo_url": "https://github.com/philiprehberger/ts-cuid-ts",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/cuid-ts",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "ts-date-range-ts",
@@ -6811,8 +7106,10 @@
         "short_description": "Date range operations — overlap, gap, iterate, merge",
         "repo_url": "https://github.com/philiprehberger/ts-date-range-ts",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/date-range-ts",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "ts-debounce-ts",
@@ -6873,8 +7170,10 @@
         "short_description": "Parse, format, and manipulate time durations",
         "repo_url": "https://github.com/philiprehberger/ts-duration-ts",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/duration-ts",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "ts-env-expand",
@@ -6885,8 +7184,10 @@
         "short_description": "Interpolate variables within environment values",
         "repo_url": "https://github.com/philiprehberger/ts-env-expand",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/env-expand",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "ts-env-validator",
@@ -6898,7 +7199,8 @@
         "repo_url": "https://github.com/philiprehberger/ts-env-validator",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/env-validator",
         "capability_slugs": [
-            "rule-engine"
+            "rule-engine",
+            "configuration-loading"
         ],
         "primary_capability": "rule-engine"
     },
@@ -6978,7 +7280,8 @@
         "repo_url": "https://github.com/philiprehberger/ts-http-client",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/http-client",
         "capability_slugs": [
-            "rest-api"
+            "rest-api",
+            "cli-tools"
         ],
         "primary_capability": "rest-api"
     },
@@ -7005,8 +7308,10 @@
         "short_description": "Flexible ID generation with UUID, ULID, nanoid, and prefixed IDs",
         "repo_url": "https://github.com/philiprehberger/ts-id-gen",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/id-gen",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "id-generation"
+        ],
+        "primary_capability": "id-generation"
     },
     {
         "slug": "ts-invariant-ts",
@@ -7043,8 +7348,10 @@
         "short_description": "Data masking and redaction for logs and APIs",
         "repo_url": "https://github.com/philiprehberger/ts-mask-kit",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/mask-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "gdpr-compliance"
+        ],
+        "primary_capability": "gdpr-compliance"
     },
     {
         "slug": "ts-match-ts",
@@ -7105,8 +7412,10 @@
         "short_description": "Precise money and currency arithmetic",
         "repo_url": "https://github.com/philiprehberger/ts-money-ts",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/money-ts",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "money-currency"
+        ],
+        "primary_capability": "money-currency"
     },
     {
         "slug": "ts-next-api-middleware",
@@ -7319,8 +7628,10 @@
         "short_description": "Chainable Result monad for error handling without exceptions",
         "repo_url": "https://github.com/philiprehberger/ts-result-chain",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/result-chain",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "ts-retry-fetch",
@@ -7347,7 +7658,8 @@
         "repo_url": "https://github.com/philiprehberger/ts-retry-kit",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/retry-kit",
         "capability_slugs": [
-            "observability"
+            "observability",
+            "error-handling"
         ],
         "primary_capability": "observability"
     },
@@ -7360,8 +7672,10 @@
         "short_description": "Safe JSON parsing and serialization with circular detection and depth limiting",
         "repo_url": "https://github.com/philiprehberger/ts-safe-json",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/safe-json",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "ts-safe-parse",
@@ -7420,8 +7734,10 @@
         "short_description": "String manipulation utilities — truncate, pad, wrap, template",
         "repo_url": "https://github.com/philiprehberger/ts-string-kit",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/string-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "string-manipulation"
+        ],
+        "primary_capability": "string-manipulation"
     },
     {
         "slug": "ts-task-queue",
@@ -7522,8 +7838,10 @@
         "short_description": "Parse and stringify CSS color values — hex, rgb, hsl, and named colors",
         "repo_url": "https://github.com/philiprehberger/ts-color-string",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/ts-color-string",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "color-utilities"
+        ],
+        "primary_capability": "color-utilities"
     },
     {
         "slug": "ts-debounce-promise",
@@ -7596,8 +7914,10 @@
         "short_description": "Human-readable file size formatting and parsing — bytes to KB, MB, GB and back",
         "repo_url": "https://github.com/philiprehberger/ts-filesize",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/ts-filesize",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "file-upload-pipeline"
+        ],
+        "primary_capability": "file-upload-pipeline"
     },
     {
         "slug": "ts-glob-match",
@@ -7620,8 +7940,10 @@
         "short_description": "Runtime type guard utilities with TypeScript narrowing",
         "repo_url": "https://github.com/philiprehberger/ts-guard",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/ts-guard",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "ts-http-error",
@@ -7720,8 +8042,10 @@
         "short_description": "Convert milliseconds to human-readable strings and back",
         "repo_url": "https://github.com/philiprehberger/ts-pretty-ms",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/ts-pretty-ms",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cli-tools"
+        ],
+        "primary_capability": "cli-tools"
     },
     {
         "slug": "ts-result",
@@ -7732,8 +8056,10 @@
         "short_description": "Rust-inspired Result type for type-safe error handling without try/catch",
         "repo_url": "https://github.com/philiprehberger/ts-result",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/ts-result",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "error-handling"
+        ],
+        "primary_capability": "error-handling"
     },
     {
         "slug": "ts-retry-queue",
@@ -7797,8 +8123,10 @@
         "short_description": "Task orchestration with dependency resolution and topological execution",
         "repo_url": "https://github.com/philiprehberger/ts-task-runner",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/ts-task-runner",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "workflow-engine"
+        ],
+        "primary_capability": "workflow-engine"
     },
     {
         "slug": "ts-template",
@@ -7898,7 +8226,8 @@
         "repo_url": "https://github.com/philiprehberger/ts-webhook-relay-client",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/webhook-relay-client",
         "capability_slugs": [
-            "webhook-delivery"
+            "webhook-delivery",
+            "cli-tools"
         ],
         "primary_capability": "webhook-delivery"
     },
