@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use App\Jobs\RevalidateCacheJob;
 use App\Models\Capability;
+use App\Services\CacheInvalidator;
 use App\Models\Pivots\ProjectArchitecturePivot;
 use App\Models\Pivots\ProjectCapabilityPivot;
 use App\Models\Pivots\ProjectDeliverablePivot;
@@ -31,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         // N. The scoped() binding wins fresh in each request lifecycle.
         $this->app->scoped(RevalidationBuffer::class);
         $this->app->singleton(RevalidateClient::class);
+        $this->app->singleton(CacheInvalidator::class);
     }
 
     public function boot(): void
@@ -54,6 +56,12 @@ class AppServiceProvider extends ServiceProvider
                 Limit::perMinute(10)->by(strtolower($request->input('email').'|'.$request->ip())),
             ];
         });
+
+        // Public read-API throttles. Per plan §"Rate limiting": all
+        // /api/v1/* under codex.api (60/min/ip); heavy aggregations
+        // (/heatmap + /reports/*) under codex.api-heavy (20/min/ip).
+        RateLimiter::for('codex.api', fn (Request $r) => Limit::perMinute(60)->by($r->ip()));
+        RateLimiter::for('codex.api-heavy', fn (Request $r) => Limit::perMinute(20)->by($r->ip()));
 
         $this->registerRevalidationObservers();
         $this->registerRevalidationFlush();
@@ -100,6 +108,12 @@ class AppServiceProvider extends ServiceProvider
 
             $tags = $buffer->tags();
             $buffer->clear();
+
+            // Local Laravel-side cache forget first — the dashboard's
+            // Next.js cache invalidation is best-effort (downed Next.js
+            // is non-blocking), but our own cache must be authoritative
+            // immediately on admin write.
+            app(CacheInvalidator::class)->forgetReports();
 
             // > 10 tags is the bulk threshold. In practice with our
             // 4-tag coarse set, this only trips on multi-record bulk
