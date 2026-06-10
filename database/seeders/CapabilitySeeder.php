@@ -462,6 +462,29 @@ class CapabilitySeeder extends BaseSeeder
                 'icon' => 'swatch',
                 'description' => 'Color model conversion (RGB / HSL / HSV / Hex / CMYK), WCAG contrast-ratio calculation, color-harmony generation (complementary, triadic, analogous), and design-token formatting for CSS / Tailwind / iOS / Android export. The toolkit for shipping a coherent design system across web + mobile.',
             ],
+
+            // ──────────────────────────────────────────────── Phase 8.5 primitives
+            [
+                'slug' => 'cryptography',
+                'name' => 'Cryptography & Hashing',
+                'category' => 'Infrastructure',
+                'icon' => 'shield-exclamation',
+                'description' => 'Hashing primitives (MD5 / SHA-256 / SHA-512 / HMAC / CRC32) with hex and base64 encoding, base encoding (Base32 / Base58 / Base62 / Base64URL) for URL-safe ID transport, MIME-type detection from magic bytes (so an uploaded `.exe` renamed `.jpg` still surfaces), and safe-by-default YAML / shell-exec wrappers. The "I need to sign webhooks, hash passwords, or detect file types" layer.',
+            ],
+            [
+                'slug' => 'version-management',
+                'name' => 'Version Management',
+                'category' => 'Infrastructure',
+                'icon' => 'tag',
+                'description' => 'Semantic versioning parsers, comparators, range matchers, and bump helpers compliant with the SemVer 2.0.0 spec. Used in package upgrade tooling, dependency-resolution code, release pipelines, and feature-flag gates that depend on a deployed version range. The "is `2.3.1` greater than `~2.3.0`" toolkit.',
+            ],
+            [
+                'slug' => 'testing-utilities',
+                'name' => 'Testing Utilities',
+                'category' => 'Infrastructure',
+                'icon' => 'beaker',
+                'description' => 'Test data factories with builder DSLs, faker-style realistic value generation (names, addresses, emails, UUIDs, dates), trait inheritance for variant fixtures, snapshot-testing helpers, and HTTP mocking for integration tests. The Day-One layer underneath every codebase\'s ~80 PHPUnit / Pest / Vitest tests so each test only declares what differs from the baseline.',
+            ],
         ];
     }
 }

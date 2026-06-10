@@ -57,11 +57,11 @@ class IngestPackagesCommand extends Command
         'rate-limiting' => ['rate-limit', 'throttle', 'token-bucket', 'sliding-window', 'debounce'],
         'webhook-delivery' => ['webhook', 'signing-helper'],
         'webhook-receiving' => ['webhook-receiver', 'hmac-verify'],
-        'rest-api' => ['api-client', 'api-kit', 'api-builder', 'api-error', 'api-versioning', 'fetch', 'http-retry', 'http-client', 'http-helper', 'http-status', 'rest', 'jsonrpc', 'graphql-client', 'http-mock', 'http-debug', 'http-handler'],
+        'rest-api' => ['api-client', 'api-kit', 'api-builder', 'api-error', 'api-versioning', 'fetch', 'http-retry', 'http-client', 'http-helper', 'http-status', 'rest', 'jsonrpc', 'graphql-client', 'http-mock', 'http-debug', 'http-handler', 'url-builder', 'url-clean', 'url-encode', 'middleware', 'response-macros', 'laravel-api-versioning'],
         'oauth-connectors' => ['oauth', 'auth-kit', 'token-kit'],
         'authentication' => ['auth', 'jwt', 'session-kit', 'password', 'totp', 'csrf', 'secure-store', 'credential'],
         'authorization' => ['rbac', 'policy', 'gate-kit', 'permission'],
-        'observability' => ['log', 'audit', 'metric', 'tracing', 'sentry', 'observability', 'correlation', 'healthcheck', 'circuit', 'retry', 'clock', 'change-tracker', 'tracker', 'inspector', 'profiler', 'timer', 'ip-range', 'ip-addr', 'ip-kit', 'snapshot-test', 'data-faker', 'data-factory'],
+        'observability' => ['log', 'audit', 'metric', 'tracing', 'sentry', 'observability', 'correlation', 'healthcheck', 'circuit', 'retry', 'clock', 'change-tracker', 'tracker', 'inspector', 'profiler', 'timer', 'ip-range', 'ip-addr', 'ip-kit', 'security-headers', 'model-diff'],
         'background-queue' => ['queue', 'worker', 'job-kit', 'async-batcher', 'async-queue', 'batch-processor', 'batch'],
         'scheduled-jobs' => ['cron', 'scheduler', 'schedule-kit'],
         'workflow-engine' => ['workflow', 'state-machine', 'fsm', 'sync-engine', 'task-graph', 'task-runner', 'task-dependency', 'pipeline'],
@@ -103,14 +103,31 @@ class IngestPackagesCommand extends Command
         'error-handling' => ['result-type', 'result', 'either', 'option-type', 'maybe', 'safe-json', 'try-kit', 'fallback', 'guard'],
         'id-generation' => ['ulid', 'nanoid', 'snowflake', 'uuid', 'cuid', 'slug', 'id-gen', 'id-generator', 'prefixed-id', 'compact-id'],
         'money-currency' => ['money', 'currency', 'iso-4217', 'allocator', 'monetary'],
-        'date-time-utilities' => ['date', 'duration', 'time-zone', 'timezone', 'business-day', 'relative-time', 'cron-expression'],
+        'date-time-utilities' => ['date', 'duration', 'time-zone', 'timezone', 'business-day', 'relative-time', 'time-ago', 'cron-expression', 'db-expressions'],
         'cli-tools' => ['cli', 'terminal', 'prompt-kit', 'spinner', 'progress-bar', 'ansi', 'tty'],
-        'configuration-loading' => ['config', 'env-file', 'env-validator', 'env-expand', 'env-loader', 'dotenv', 'config-diff', 'config-kit', 'config-loader', 'config-validator'],
+        'configuration-loading' => ['config', 'env-file', 'env-validator', 'env-expand', 'env-loader', 'dotenv', 'config-diff', 'config-kit', 'config-loader', 'config-validator', 'settings'],
         'json-processing' => ['json-merge', 'json-patch', 'json-flatten', 'flatten-json', 'json-path', 'json-diff', 'json-schema', 'json-kit'],
         'string-manipulation' => ['string-ext', 'string-similarity', 'string-kit', 'case-convert', 'case-kit', 'levenshtein', 'jaro', 'humanize', 'truncate', 'titlecase'],
         'pagination' => ['pagination', 'cursor-paginate', 'paged-result'],
         'color-utilities' => ['color', 'palette', 'wcag', 'contrast', 'design-token'],
+
+        // ──────────────────────────────────────────────── Phase 8.5 primitives
+        'cryptography' => ['hash', 'hmac', 'sha-256', 'sha-512', 'md5', 'crc32', 'base-encoding', 'base-convert', 'mime-detect', 'mime-type', 'magic-bytes', 'safe-yaml', 'safe-exec', 'safe-shutdown', 'encrypt', 'decrypt'],
+        'version-management' => ['semver', 'version-compare', 'version-bump', 'semantic-version'],
+        'testing-utilities' => ['test-factory', 'test-data', 'test-utils', 'snapshot-test', 'data-faker', 'data-factory', 'fake-data', 'fixture-kit'],
     ];
+
+    /**
+     * Capabilities whose patterns we want REMOVED from earlier entries
+     * because they fit a more specific Phase 8.5 capability. Applied
+     * after first-match classification — packages tagged with a removed
+     * pattern are re-classified into the more specific bucket.
+     *
+     * (Currently empty — we handled the relevant moves by editing the
+     * pattern arrays directly above. Left as a hook for the next
+     * refactor that needs cross-cap moves.)
+     */
+    private const RECLASSIFY = [];
 
     public function handle(): int
     {

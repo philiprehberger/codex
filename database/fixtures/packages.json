@@ -258,9 +258,9 @@
         "repo_url": "https://github.com/philiprehberger/dart-flutter-snapshot-test",
         "registry_url": null,
         "capability_slugs": [
-            "observability"
+            "testing-utilities"
         ],
-        "primary_capability": "observability"
+        "primary_capability": "testing-utilities"
     },
     {
         "slug": "dart-flutter-state-inspector",
@@ -325,8 +325,10 @@
         "short_description": "Base32, Base62, and Base64URL encoding and decoding — URL-safe, padding-free alternatives to standard Base64.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-base-encoding",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "dn-dotnet-batch-processor",
@@ -507,9 +509,9 @@
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-data-faker",
         "registry_url": null,
         "capability_slugs": [
-            "observability"
+            "testing-utilities"
         ],
-        "primary_capability": "observability"
+        "primary_capability": "testing-utilities"
     },
     {
         "slug": "dn-dotnet-date-range",
@@ -599,8 +601,10 @@
         "short_description": "AES-256-GCM encryption with key generation, sealed envelopes, PBKDF2 key derivation, streaming, and key rotation.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-encryption-kit",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "dn-dotnet-enum-toolkit",
@@ -771,8 +775,10 @@
         "short_description": "Password hashing with PBKDF2-SHA256/SHA512, secure password generation, HMAC, checksums, and consistent hashing.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-hashing",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "dn-dotnet-health-check-kit",
@@ -919,8 +925,10 @@
         "short_description": "Detect MIME types from file signatures (magic bytes) and file extensions — covers 200+ common file types.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-mime-detect",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "dn-dotnet-money",
@@ -1170,8 +1178,10 @@
         "short_description": "Semantic versioning parser, comparator, and range matcher — fully compliant with the semver 2.0 spec.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-semver",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "version-management"
+        ],
+        "primary_capability": "version-management"
     },
     {
         "slug": "dn-dotnet-slugify",
@@ -1302,8 +1312,10 @@
         "short_description": "Convert timestamps into human-readable relative phrases like \"3 hours ago\" or \"in 2 days\".",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-time-ago",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "dn-dotnet-tree-structure",
@@ -1338,8 +1350,10 @@
         "short_description": "Fluent, immutable URL construction with path segments, query parameters, and proper encoding.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-url-builder",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rest-api"
+        ],
+        "primary_capability": "rest-api"
     },
     {
         "slug": "dn-dotnet-url-cleaner",
@@ -1350,8 +1364,10 @@
         "short_description": "Remove tracking parameters from URLs — strip UTM tags, fbclid, gclid, and more.",
         "repo_url": "https://github.com/philiprehberger/dn-dotnet-url-cleaner",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rest-api"
+        ],
+        "primary_capability": "rest-api"
     },
     {
         "slug": "dn-dotnet-value-of",
@@ -1597,8 +1613,10 @@
         "short_description": "Composable HTTP middleware collection for Go's `net/http`. No framework required",
         "repo_url": "https://github.com/philiprehberger/go-middleware",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rest-api"
+        ],
+        "primary_capability": "rest-api"
     },
     {
         "slug": "go-pagination",
@@ -2096,8 +2114,10 @@
         "short_description": "Hashing utilities: MD5, SHA-256, SHA-512, HMAC, CRC32 with hex and base64 encoding.",
         "repo_url": "https://github.com/philiprehberger/kt-hash-kit",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "kt-healthcheck",
@@ -2304,8 +2324,10 @@
         "short_description": "Semantic version parsing, comparison, and range matching for Kotlin.",
         "repo_url": "https://github.com/philiprehberger/kt-semver",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "version-management"
+        ],
+        "primary_capability": "version-management"
     },
     {
         "slug": "kt-slug",
@@ -2372,8 +2394,10 @@
         "short_description": "Test data generation with builder DSL, traits, and faker utilities.",
         "repo_url": "https://github.com/philiprehberger/kt-test-factory",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "testing-utilities"
+        ],
+        "primary_capability": "testing-utilities"
     },
     {
         "slug": "kt-time-ago",
@@ -2384,8 +2408,10 @@
         "short_description": "Human-readable relative time formatting: 5 minutes ago, in 3 days, yesterday.",
         "repo_url": "https://github.com/philiprehberger/kt-time-ago",
         "registry_url": null,
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "kt-webhook-signature",
@@ -2526,8 +2552,10 @@
         "short_description": "Database-agnostic SQL expression helper for date truncation, extraction, and differences across SQLite and MySQL",
         "repo_url": "https://github.com/philiprehberger/php-laravel-db-expressions",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-db-expressions",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "php-laravel-export",
@@ -2592,8 +2620,10 @@
         "short_description": "Track and display structured differences between Eloquent model versions with human-readable labels",
         "repo_url": "https://github.com/philiprehberger/php-laravel-model-diff",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-model-diff",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "observability"
+        ],
+        "primary_capability": "observability"
     },
     {
         "slug": "php-laravel-operation-result",
@@ -2632,8 +2662,10 @@
         "short_description": "Response macros for consistent, standardized API responses in Laravel",
         "repo_url": "https://github.com/philiprehberger/php-laravel-response-macros",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-response-macros",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rest-api"
+        ],
+        "primary_capability": "rest-api"
     },
     {
         "slug": "php-laravel-search-query-parser",
@@ -2658,8 +2690,10 @@
         "short_description": "Laravel middleware for comprehensive security headers including CSP with nonce support, HSTS, and Permissions-Policy",
         "repo_url": "https://github.com/philiprehberger/php-laravel-security-headers",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-security-headers",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "observability"
+        ],
+        "primary_capability": "observability"
     },
     {
         "slug": "php-laravel-seo",
@@ -2684,8 +2718,10 @@
         "short_description": "Type-safe, cached application settings stored in the database with a simple key-value API",
         "repo_url": "https://github.com/philiprehberger/php-laravel-settings",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-settings",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "configuration-loading"
+        ],
+        "primary_capability": "configuration-loading"
     },
     {
         "slug": "php-laravel-slug-generator",
@@ -3135,8 +3171,10 @@
         "short_description": "Convert numbers between any base (2-62) with human-friendly APIs.",
         "repo_url": "https://github.com/philiprehberger/py-base-convert",
         "registry_url": "https://pypi.org/project/philiprehberger-base-convert",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "py-batch-iter",
@@ -3316,9 +3354,9 @@
         "repo_url": "https://github.com/philiprehberger/py-data-factory",
         "registry_url": "https://pypi.org/project/philiprehberger-data-factory",
         "capability_slugs": [
-            "observability"
+            "testing-utilities"
         ],
-        "primary_capability": "observability"
+        "primary_capability": "testing-utilities"
     },
     {
         "slug": "py-data-pipeline",
@@ -3671,8 +3709,10 @@
         "short_description": "Simplified hashing helpers for strings, files, and checksums",
         "repo_url": "https://github.com/philiprehberger/py-hash-utils",
         "registry_url": "https://pypi.org/project/philiprehberger-hash-utils",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "py-health-check",
@@ -4077,8 +4117,10 @@
         "short_description": "Parse, compare, bump, and validate semantic version strings",
         "repo_url": "https://github.com/philiprehberger/py-semver",
         "registry_url": "https://pypi.org/project/philiprehberger-semver",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "version-management"
+        ],
+        "primary_capability": "version-management"
     },
     {
         "slug": "py-server-monitor",
@@ -4259,8 +4301,10 @@
         "short_description": "Generate realistic fake data for testing without external dependencies",
         "repo_url": "https://github.com/philiprehberger/py-test-data",
         "registry_url": "https://pypi.org/project/philiprehberger-test-data",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "testing-utilities"
+        ],
+        "primary_capability": "testing-utilities"
     },
     {
         "slug": "py-text-table",
@@ -4335,8 +4379,10 @@
         "short_description": "Remove tracking parameters from URLs",
         "repo_url": "https://github.com/philiprehberger/py-url-clean",
         "registry_url": "https://pypi.org/project/philiprehberger-url-clean",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rest-api"
+        ],
+        "primary_capability": "rest-api"
     },
     {
         "slug": "py-web-scraper",
@@ -4428,8 +4474,10 @@
         "short_description": "Multi-format base encoding with Base32, Base36, Base58, Base62, and Base85 support",
         "repo_url": "https://github.com/philiprehberger/rb-base-convert",
         "registry_url": "https://rubygems.org/gems/rb-base-convert",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "rb-base64-url",
@@ -5060,8 +5108,10 @@
         "short_description": "Consistent hashing for distributed key distribution",
         "repo_url": "https://github.com/philiprehberger/rb-hash-ring",
         "registry_url": "https://rubygems.org/gems/rb-hash-ring",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "rb-header-kit",
@@ -5429,8 +5479,10 @@
         "short_description": "Generic middleware stack for composing processing pipelines with conditional execution, hooks, error handling, profiling, and stack composition",
         "repo_url": "https://github.com/philiprehberger/rb-middleware",
         "registry_url": "https://rubygems.org/gems/rb-middleware",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rest-api"
+        ],
+        "primary_capability": "rest-api"
     },
     {
         "slug": "rb-mime-type",
@@ -5441,8 +5493,10 @@
         "short_description": "MIME type detection from file extensions and magic bytes with 200+ mappings",
         "repo_url": "https://github.com/philiprehberger/rb-mime-type",
         "registry_url": "https://rubygems.org/gems/rb-mime-type",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "rb-money",
@@ -5765,8 +5819,10 @@
         "short_description": "Sandboxed expression evaluator with whitelisted operations",
         "repo_url": "https://github.com/philiprehberger/rb-safe-exec",
         "registry_url": "https://rubygems.org/gems/rb-safe-exec",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "rb-safe-yaml",
@@ -5777,8 +5833,10 @@
         "short_description": "Safe YAML loading with restricted types, schema validation, and size limits",
         "repo_url": "https://github.com/philiprehberger/rb-safe-yaml",
         "registry_url": "https://rubygems.org/gems/rb-safe-yaml",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "rb-sanitize-html",
@@ -5843,8 +5901,10 @@
         "short_description": "SemVer 2.0.0 parsing, comparison, range matching, and bump operations",
         "repo_url": "https://github.com/philiprehberger/rb-semver",
         "registry_url": "https://rubygems.org/gems/rb-semver",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "version-management"
+        ],
+        "primary_capability": "version-management"
     },
     {
         "slug": "rb-signed-payload",
@@ -6025,8 +6085,10 @@
         "short_description": "Lightweight test data factory DSL with sequences and traits",
         "repo_url": "https://github.com/philiprehberger/rb-test-factory",
         "registry_url": "https://rubygems.org/gems/rb-test-factory",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "testing-utilities"
+        ],
+        "primary_capability": "testing-utilities"
     },
     {
         "slug": "rb-time-ago",
@@ -6037,8 +6099,10 @@
         "short_description": "Relative time formatting for past and future timestamps",
         "repo_url": "https://github.com/philiprehberger/rb-time-ago",
         "registry_url": "https://rubygems.org/gems/rb-time-ago",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "date-time-utilities"
+        ],
+        "primary_capability": "date-time-utilities"
     },
     {
         "slug": "rb-timeout-kit",
@@ -6125,8 +6189,10 @@
         "short_description": "Hash with per-key type declarations, coercion, validation, nested schemas, and JSON serialization",
         "repo_url": "https://github.com/philiprehberger/rb-typed-hash",
         "registry_url": "https://rubygems.org/gems/rb-typed-hash",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "rb-uri-kit",
@@ -6149,8 +6215,10 @@
         "short_description": "Version string parsing with comparison, sorting, and constraint matching",
         "repo_url": "https://github.com/philiprehberger/rb-version-compare",
         "registry_url": "https://rubygems.org/gems/rb-version-compare",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "version-management"
+        ],
+        "primary_capability": "version-management"
     },
     {
         "slug": "rb-webhook-builder",
@@ -6585,8 +6653,10 @@
         "short_description": "File type detection from content (magic bytes), file extension, and MIME type mapping",
         "repo_url": "https://github.com/philiprehberger/rs-mime-detect",
         "registry_url": "https://crates.io/crates/rs-mime-detect",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "rs-mock-server",
@@ -6664,8 +6734,10 @@
         "short_description": "Graceful shutdown coordination with timeout support for Rust",
         "repo_url": "https://github.com/philiprehberger/rs-safe-shutdown",
         "registry_url": "https://crates.io/crates/rs-safe-shutdown",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "rs-secret-store",
@@ -6688,8 +6760,10 @@
         "short_description": "Semantic versioning with range parsing, comparison, and bumping",
         "repo_url": "https://github.com/philiprehberger/rs-semver-util",
         "registry_url": "https://crates.io/crates/rs-semver-util",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "version-management"
+        ],
+        "primary_capability": "version-management"
     },
     {
         "slug": "rs-service-health",
@@ -7253,8 +7327,10 @@
         "short_description": "Simple cross-platform hashing utilities",
         "repo_url": "https://github.com/philiprehberger/ts-hash-kit",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/hash-kit",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "cryptography"
+        ],
+        "primary_capability": "cryptography"
     },
     {
         "slug": "ts-healthcheck",
@@ -7400,8 +7476,10 @@
         "short_description": "Framework-agnostic middleware composition engine",
         "repo_url": "https://github.com/philiprehberger/ts-middleware-ts",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/middleware-ts",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rest-api"
+        ],
+        "primary_capability": "rest-api"
     },
     {
         "slug": "ts-money-ts",
@@ -7426,8 +7504,10 @@
         "short_description": "Next.js API route middleware: compose, validation, CSRF protection, and security headers",
         "repo_url": "https://github.com/philiprehberger/ts-next-api-middleware",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/next-api-middleware",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "rest-api"
+        ],
+        "primary_capability": "rest-api"
     },
     {
         "slug": "ts-next-deploy",
@@ -7722,8 +7802,10 @@
         "short_description": "Lightweight semver parsing, comparison, and range matching",
         "repo_url": "https://github.com/philiprehberger/ts-semver-ts",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/semver-ts",
-        "capability_slugs": [],
-        "primary_capability": null
+        "capability_slugs": [
+            "version-management"
+        ],
+        "primary_capability": "version-management"
     },
     {
         "slug": "ts-string-kit",
