@@ -295,7 +295,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Middleware for consistent, structured JSON API error responses.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-api-error-standardizer",
+        "repo_url": "https://github.com/philiprehberger/dotnet-api-error-standardizer",
         "registry_url": null,
         "capability_slugs": [
             "rest-api",
@@ -310,7 +310,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Async-aware synchronization primitives — AsyncLock, AsyncSemaphore, and AsyncOnce for safe mutual exclusion.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-async-lock",
+        "repo_url": "https://github.com/philiprehberger/dotnet-async-lock",
         "registry_url": null,
         "capability_slugs": [
             "concurrency-primitives"
@@ -324,7 +324,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Simple in-memory background job queue for ASP.NET Core with concurrency control.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-background-task-queue",
+        "repo_url": "https://github.com/philiprehberger/dotnet-background-task-queue",
         "registry_url": null,
         "capability_slugs": [
             "background-queue",
@@ -340,7 +340,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Base32, Base62, and Base64URL encoding and decoding — URL-safe, padding-free alternatives to standard Base64.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-base-encoding",
+        "repo_url": "https://github.com/philiprehberger/dotnet-base-encoding",
         "registry_url": null,
         "capability_slugs": [
             "cryptography",
@@ -355,7 +355,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Process large collections in configurable batches with progress reporting, error handling, async execution, streaming IAsyncEnumerable support, checkpoint/resume, and adaptive batch sizing.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-batch-processor",
+        "repo_url": "https://github.com/philiprehberger/dotnet-batch-processor",
         "registry_url": null,
         "capability_slugs": [
             "background-queue"
@@ -369,7 +369,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Thread-safe in-memory cache for .NET — LRU/LFU eviction, TTL expiration, tag-based invalidation, cache warming, and configurable max size.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-cache-kit",
+        "repo_url": "https://github.com/philiprehberger/dotnet-cache-kit",
         "registry_url": null,
         "capability_slugs": [
             "caching",
@@ -384,7 +384,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Track and diff property changes on objects over time for audit logging.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-change-tracker",
+        "repo_url": "https://github.com/philiprehberger/dotnet-change-tracker",
         "registry_url": null,
         "capability_slugs": [
             "observability",
@@ -399,7 +399,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Split any IEnumerable into fixed-size chunks with a simple static method or LINQ-style extension.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-chunk-list",
+        "repo_url": "https://github.com/philiprehberger/dotnet-chunk-list",
         "registry_url": null,
         "capability_slugs": [
             "object-collection-ops"
@@ -413,7 +413,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Standalone circuit breaker with sliding window failure rate, fallback support, half-open probing, and event callbacks.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-circuit-breaker",
+        "repo_url": "https://github.com/philiprehberger/dotnet-circuit-breaker",
         "registry_url": null,
         "capability_slugs": [
             "observability",
@@ -429,7 +429,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Abstraction over DateTime/DateTimeOffset for testable time-dependent code with a fake clock for testing.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-clock",
+        "repo_url": "https://github.com/philiprehberger/dotnet-clock",
         "registry_url": null,
         "capability_slugs": [
             "observability"
@@ -443,7 +443,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Convert between RGB, HSL, HSV, Hex, and CMYK color models with harmonies, contrast ratio, blending, and gradient generation.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-color-converter",
+        "repo_url": "https://github.com/philiprehberger/dotnet-color-converter",
         "registry_url": null,
         "capability_slugs": [
             "color-utilities"
@@ -457,7 +457,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Structured diff for JSON configuration files — detect added, removed, changed, and unchanged keys.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-config-diff",
+        "repo_url": "https://github.com/philiprehberger/dotnet-config-diff",
         "registry_url": null,
         "capability_slugs": [
             "configuration-loading",
@@ -472,7 +472,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Validate appsettings.json configuration sections at startup with attribute-based rules.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-config-validator",
+        "repo_url": "https://github.com/philiprehberger/dotnet-config-validator",
         "registry_url": null,
         "capability_slugs": [
             "rule-engine",
@@ -487,7 +487,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Validate credit card numbers with Luhn check, detect card brand, and mask for display.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-credit-card-validator",
+        "repo_url": "https://github.com/philiprehberger/dotnet-credit-card-validator",
         "registry_url": null,
         "capability_slugs": [
             "rule-engine",
@@ -502,7 +502,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Parse, validate, and evaluate cron expressions with next/previous occurrence calculation, shortcut aliases, fluent builder, human-readable descriptions, timezone-aware scheduling, exclusion calendars, and Nth weekday support.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-cron-expression",
+        "repo_url": "https://github.com/philiprehberger/dotnet-cron-expression",
         "registry_url": null,
         "capability_slugs": [
             "scheduled-jobs",
@@ -518,7 +518,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Lightweight CSV reader and writer with header mapping, type conversion, and streaming support.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-csv-kit",
+        "repo_url": "https://github.com/philiprehberger/dotnet-csv-kit",
         "registry_url": null,
         "capability_slugs": [
             "reporting"
@@ -532,7 +532,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Lightweight test data generator with locale support, structured builders, and UUID generation.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-data-faker",
+        "repo_url": "https://github.com/philiprehberger/dotnet-data-faker",
         "registry_url": null,
         "capability_slugs": [
             "testing-utilities"
@@ -546,7 +546,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Immutable date/time range type with overlap detection, intersection, union, gap finding, and splitting.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-date-range",
+        "repo_url": "https://github.com/philiprehberger/dotnet-date-range",
         "registry_url": null,
         "capability_slugs": [
             "date-time-utilities"
@@ -560,7 +560,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Debounce and throttle functions for .NET with configurable delay, leading/trailing edge, and async support.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-debounce",
+        "repo_url": "https://github.com/philiprehberger/dotnet-debounce",
         "registry_url": null,
         "capability_slugs": [
             "rate-limiting"
@@ -574,7 +574,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Fast deep cloning using compiled expression trees for nested objects, collections, and circular references.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-deep-clone",
+        "repo_url": "https://github.com/philiprehberger/dotnet-deep-clone",
         "registry_url": null,
         "capability_slugs": [
             "object-collection-ops"
@@ -588,7 +588,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Composite disposable container that disposes multiple IDisposable/IAsyncDisposable objects in reverse order.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-disposer",
+        "repo_url": "https://github.com/philiprehberger/dotnet-disposer",
         "registry_url": null,
         "capability_slugs": [
             "concurrency-primitives"
@@ -602,7 +602,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "RFC 5321/5322 compliant email validation with typo suggestions, disposable email detection, and bulk validation.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-email-validator",
+        "repo_url": "https://github.com/philiprehberger/dotnet-email-validator",
         "registry_url": null,
         "capability_slugs": [
             "rule-engine",
@@ -617,7 +617,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Fluent access to embedded resources with string, stream, byte array, and JSON deserialization support.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-embedded-resource",
+        "repo_url": "https://github.com/philiprehberger/dotnet-embedded-resource",
         "registry_url": null,
         "capability_slugs": [
             "filesystem-utilities"
@@ -631,7 +631,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "AES-256-GCM encryption with key generation, sealed envelopes, PBKDF2 key derivation, streaming, and key rotation.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-encryption-kit",
+        "repo_url": "https://github.com/philiprehberger/dotnet-encryption-kit",
         "registry_url": null,
         "capability_slugs": [
             "cryptography"
@@ -645,7 +645,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Enum utilities — parse with fallback, get display names and descriptions, convert to dictionaries, and list values.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-enum-toolkit",
+        "repo_url": "https://github.com/philiprehberger/dotnet-enum-toolkit",
         "registry_url": null,
         "capability_slugs": [
             "type-enum-utilities"
@@ -659,7 +659,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Declarative environment variable validation for .NET — attribute-based binding with type coercion.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-env-validator",
+        "repo_url": "https://github.com/philiprehberger/dotnet-env-validator",
         "registry_url": null,
         "capability_slugs": [
             "rule-engine",
@@ -674,7 +674,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "In-process publish/subscribe event bus with middleware pipeline, dead-letter queue, event replay, and Microsoft DI integration.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-event-bus",
+        "repo_url": "https://github.com/philiprehberger/dotnet-event-bus",
         "registry_url": null,
         "capability_slugs": [
             "real-time-sync",
@@ -690,7 +690,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Measure execution time of code blocks with structured results, nested scopes, and ILogger integration.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-execution-timer",
+        "repo_url": "https://github.com/philiprehberger/dotnet-execution-timer",
         "registry_url": null,
         "capability_slugs": [
             "observability"
@@ -704,7 +704,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Safe mathematical expression parser and evaluator with variables, custom functions, and operator precedence.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-expression-evaluator",
+        "repo_url": "https://github.com/philiprehberger/dotnet-expression-evaluator",
         "registry_url": null,
         "capability_slugs": [
             "configuration-loading"
@@ -718,7 +718,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Lightweight feature flags with percentage rollout, user targeting, time-based scheduling, and analytics — no external service required.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-feature-flag",
+        "repo_url": "https://github.com/philiprehberger/dotnet-feature-flag",
         "registry_url": null,
         "capability_slugs": [
             "rule-engine"
@@ -732,7 +732,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Convert byte counts into human-readable file size strings and parse them back to bytes.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-filesize-humanizer",
+        "repo_url": "https://github.com/philiprehberger/dotnet-filesize-humanizer",
         "registry_url": null,
         "capability_slugs": [
             "file-upload-pipeline",
@@ -748,7 +748,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Snapshot directories and detect added, removed, or modified files between runs using SHA-256 hashing.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-filesystem-snapshot",
+        "repo_url": "https://github.com/philiprehberger/dotnet-filesystem-snapshot",
         "registry_url": null,
         "capability_slugs": [
             "testing-utilities",
@@ -763,7 +763,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Flatten nested JSON objects into dot-notation key-value pairs, and unflatten them back.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-flatten-json",
+        "repo_url": "https://github.com/philiprehberger/dotnet-flatten-json",
         "registry_url": null,
         "capability_slugs": [
             "json-processing",
@@ -778,7 +778,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Fluent parameter validation and guard clauses for .NET.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-fluent-guard",
+        "repo_url": "https://github.com/philiprehberger/dotnet-fluent-guard",
         "registry_url": null,
         "capability_slugs": [
             "error-handling"
@@ -792,7 +792,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Calculate distances between coordinates, find points within radius, and compute bounding boxes.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-geolocation",
+        "repo_url": "https://github.com/philiprehberger/dotnet-geolocation",
         "registry_url": null,
         "capability_slugs": [
             "geospatial"
@@ -806,7 +806,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Match file paths against glob patterns — supports *, **, ?, character classes, brace expansion, and negation.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-glob-matcher",
+        "repo_url": "https://github.com/philiprehberger/dotnet-glob-matcher",
         "registry_url": null,
         "capability_slugs": [
             "rest-api",
@@ -821,7 +821,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Password hashing with PBKDF2-SHA256/SHA512, secure password generation, HMAC, checksums, and consistent hashing.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-hashing",
+        "repo_url": "https://github.com/philiprehberger/dotnet-hashing",
         "registry_url": null,
         "capability_slugs": [
             "cryptography"
@@ -835,7 +835,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Composable health checks for ASP.NET Core with built-in URL, TCP, DNS, certificate, disk, and memory checks.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-health-check-kit",
+        "repo_url": "https://github.com/philiprehberger/dotnet-health-check-kit",
         "registry_url": null,
         "capability_slugs": [
             "observability",
@@ -850,7 +850,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Whitelist-based HTML sanitizer for XSS prevention with configurable allowed tags, attributes, and URL schemes.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-html-sanitizer",
+        "repo_url": "https://github.com/philiprehberger/dotnet-html-sanitizer",
         "registry_url": null,
         "capability_slugs": [
             "content-moderation"
@@ -864,7 +864,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "DelegatingHandler that logs and times every outgoing HttpClient request.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-http-debug-handler",
+        "repo_url": "https://github.com/philiprehberger/dotnet-http-debug-handler",
         "registry_url": null,
         "capability_slugs": [
             "rest-api",
@@ -879,7 +879,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Sortable, URL-safe unique ID generators — ULID, NanoID, and prefixed IDs.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-id-generator",
+        "repo_url": "https://github.com/philiprehberger/dotnet-id-generator",
         "registry_url": null,
         "capability_slugs": [
             "id-generation",
@@ -894,7 +894,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Parse and match IP addresses against CIDR ranges with IPv4 and IPv6 support.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-ip-range",
+        "repo_url": "https://github.com/philiprehberger/dotnet-ip-range",
         "registry_url": null,
         "capability_slugs": [
             "observability"
@@ -908,7 +908,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Deep merge JSON documents with configurable array strategies and null handling using System.Text.Json.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-json-merge",
+        "repo_url": "https://github.com/philiprehberger/dotnet-json-merge",
         "registry_url": null,
         "capability_slugs": [
             "json-processing",
@@ -923,7 +923,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "RFC 6902 JSON Patch operations for System.Text.Json — apply, generate, and parse patch documents.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-json-patch",
+        "repo_url": "https://github.com/philiprehberger/dotnet-json-patch",
         "registry_url": null,
         "capability_slugs": [
             "json-processing"
@@ -937,7 +937,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Validate JSON documents against JSON Schema with structured error paths using System.Text.Json.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-json-schema",
+        "repo_url": "https://github.com/philiprehberger/dotnet-json-schema",
         "registry_url": null,
         "capability_slugs": [
             "json-processing"
@@ -951,7 +951,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Ultra-simple object-to-object mapper with convention-based mapping and fluent overrides.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-mapper",
+        "repo_url": "https://github.com/philiprehberger/dotnet-mapper",
         "registry_url": null,
         "capability_slugs": [
             "type-enum-utilities",
@@ -966,7 +966,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Mask and redact sensitive data in strings and objects for safe logging.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-masker",
+        "repo_url": "https://github.com/philiprehberger/dotnet-masker",
         "registry_url": null,
         "capability_slugs": [
             "gdpr-compliance"
@@ -980,7 +980,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Detect MIME types from file signatures (magic bytes) and file extensions — covers 200+ common file types.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-mime-detect",
+        "repo_url": "https://github.com/philiprehberger/dotnet-mime-detect",
         "registry_url": null,
         "capability_slugs": [
             "cryptography"
@@ -994,7 +994,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Immutable Money value type with integer arithmetic, ISO 4217 currencies, and proportional allocation.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-money",
+        "repo_url": "https://github.com/philiprehberger/dotnet-money",
         "registry_url": null,
         "capability_slugs": [
             "money-currency"
@@ -1008,7 +1008,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Reversible integer/long ID obfuscation for URL-safe, non-sequential public IDs.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-obfuscator",
+        "repo_url": "https://github.com/philiprehberger/dotnet-obfuscator",
         "registry_url": null,
         "capability_slugs": [
             "cryptography",
@@ -1024,7 +1024,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Compare two objects and return a list of property-level changes.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-object-diff",
+        "repo_url": "https://github.com/philiprehberger/dotnet-object-diff",
         "registry_url": null,
         "capability_slugs": [
             "diff-tracking"
@@ -1038,7 +1038,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Option/Maybe monad for explicit null handling with Map, Bind, Match, and LINQ support.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-option-type",
+        "repo_url": "https://github.com/philiprehberger/dotnet-option-type",
         "registry_url": null,
         "capability_slugs": [
             "error-handling"
@@ -1052,7 +1052,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Transactional outbox pattern implementation for reliable event/message publishing.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-outbox",
+        "repo_url": "https://github.com/philiprehberger/dotnet-outbox",
         "registry_url": null,
         "capability_slugs": [
             "background-queue"
@@ -1066,7 +1066,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Standardized pagination primitives — PagedResult, cursor-based pagination, and IQueryable extensions.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-pagination",
+        "repo_url": "https://github.com/philiprehberger/dotnet-pagination",
         "registry_url": null,
         "capability_slugs": [
             "pagination"
@@ -1080,7 +1080,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Password strength evaluation with entropy calculation, common password detection, and pattern analysis.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-password-strength",
+        "repo_url": "https://github.com/philiprehberger/dotnet-password-strength",
         "registry_url": null,
         "capability_slugs": [
             "authentication"
@@ -1094,7 +1094,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "International phone number validation and formatting based on ITU-T E.164 with country detection.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-phone-validator",
+        "repo_url": "https://github.com/philiprehberger/dotnet-phone-validator",
         "registry_url": null,
         "capability_slugs": [
             "rule-engine",
@@ -1109,7 +1109,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Middleware pipeline builder for any operation — like ASP.NET Core middleware but for business logic.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-pipeline",
+        "repo_url": "https://github.com/philiprehberger/dotnet-pipeline",
         "registry_url": null,
         "capability_slugs": [
             "workflow-engine",
@@ -1124,7 +1124,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Singularize and pluralize English words with irregular forms, uncountable words, count-aware formatting, and ordinal number conversion.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-pluralizer",
+        "repo_url": "https://github.com/philiprehberger/dotnet-pluralizer",
         "registry_url": null,
         "capability_slugs": [
             "string-text-formatting"
@@ -1138,7 +1138,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Poll any async operation until a condition is met with configurable intervals, timeouts, and backoff strategies.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-polling",
+        "repo_url": "https://github.com/philiprehberger/dotnet-polling",
         "registry_url": null,
         "capability_slugs": [
             "concurrency-primitives"
@@ -1152,7 +1152,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Generate human-readable random strings like `\"swift-river-42\"` — great for slugs, identifiers, and placeholders.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-random-readable-string",
+        "repo_url": "https://github.com/philiprehberger/dotnet-random-readable-string",
         "registry_url": null,
         "capability_slugs": [
             "string-text-formatting"
@@ -1166,7 +1166,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "In-memory rate limiting with fixed window, sliding window, and token bucket algorithms.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-rate-limiter",
+        "repo_url": "https://github.com/philiprehberger/dotnet-rate-limiter",
         "registry_url": null,
         "capability_slugs": [
             "rate-limiting",
@@ -1181,7 +1181,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Fluent, readable regex construction — build patterns programmatically and compile to standard Regex objects.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-regex-builder",
+        "repo_url": "https://github.com/philiprehberger/dotnet-regex-builder",
         "registry_url": null,
         "capability_slugs": [
             "string-manipulation"
@@ -1195,7 +1195,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Lightweight Result type for .NET — model success and failure without exceptions using pattern matching.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-result",
+        "repo_url": "https://github.com/philiprehberger/dotnet-result",
         "registry_url": null,
         "capability_slugs": [
             "error-handling"
@@ -1209,7 +1209,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Configurable retry logic and circuit breaker for .NET — exponential backoff, jitter, and built-in presets.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-retry-kit",
+        "repo_url": "https://github.com/philiprehberger/dotnet-retry-kit",
         "registry_url": null,
         "capability_slugs": [
             "observability",
@@ -1224,7 +1224,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Resilient JSON parsing with fallback defaults and path-based value extraction that never throws.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-safe-json",
+        "repo_url": "https://github.com/philiprehberger/dotnet-safe-json",
         "registry_url": null,
         "capability_slugs": [
             "error-handling"
@@ -1238,7 +1238,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Lightweight in-process job scheduler with cron expressions, timezone support, execution history, and lifecycle callbacks.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-scheduler",
+        "repo_url": "https://github.com/philiprehberger/dotnet-scheduler",
         "registry_url": null,
         "capability_slugs": [
             "scheduled-jobs"
@@ -1252,7 +1252,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Semantic versioning parser, comparator, and range matcher — fully compliant with the semver 2.0 spec.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-semver",
+        "repo_url": "https://github.com/philiprehberger/dotnet-semver",
         "registry_url": null,
         "capability_slugs": [
             "version-management"
@@ -1266,7 +1266,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Convert text to clean, URL-safe slugs with Unicode diacritic handling, separator collapsing, and max length enforcement.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-slugify",
+        "repo_url": "https://github.com/philiprehberger/dotnet-slugify",
         "registry_url": null,
         "capability_slugs": [
             "id-generation",
@@ -1281,7 +1281,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Truncate strings at word boundaries — no cut words, no ugly mid-word breaks.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-smart-truncate",
+        "repo_url": "https://github.com/philiprehberger/dotnet-smart-truncate",
         "registry_url": null,
         "capability_slugs": [
             "string-manipulation"
@@ -1295,7 +1295,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Specification pattern implementation for composable, reusable query filters.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-specification",
+        "repo_url": "https://github.com/philiprehberger/dotnet-specification",
         "registry_url": null,
         "capability_slugs": [
             "type-enum-utilities"
@@ -1309,7 +1309,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Lightweight finite state machine with fluent configuration, guard conditions, and async transition support.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-state-machine",
+        "repo_url": "https://github.com/philiprehberger/dotnet-state-machine",
         "registry_url": null,
         "capability_slugs": [
             "workflow-engine"
@@ -1323,7 +1323,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "String similarity and phonetic matching with Levenshtein, Jaro-Winkler, Dice, Soundex, and fuzzy search.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-string-similarity",
+        "repo_url": "https://github.com/philiprehberger/dotnet-string-similarity",
         "registry_url": null,
         "capability_slugs": [
             "string-manipulation"
@@ -1337,7 +1337,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Named placeholder string interpolation from objects and dictionaries with formatting and defaults.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-string-template",
+        "repo_url": "https://github.com/philiprehberger/dotnet-string-template",
         "registry_url": null,
         "capability_slugs": [
             "document-generation"
@@ -1351,7 +1351,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Lightweight task runner with dependency graph resolution and parallel execution.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-task-dependency-runner",
+        "repo_url": "https://github.com/philiprehberger/dotnet-task-dependency-runner",
         "registry_url": null,
         "capability_slugs": [
             "workflow-engine",
@@ -1366,7 +1366,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Safe temporary file and directory management with automatic cleanup via IDisposable and IAsyncDisposable.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-temp-file",
+        "repo_url": "https://github.com/philiprehberger/dotnet-temp-file",
         "registry_url": null,
         "capability_slugs": [
             "filesystem-utilities"
@@ -1380,7 +1380,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Line-by-line text diff using Myers' algorithm with unified diff output and structured DiffResult objects.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-text-diff",
+        "repo_url": "https://github.com/philiprehberger/dotnet-text-diff",
         "registry_url": null,
         "capability_slugs": [
             "diff-tracking"
@@ -1394,7 +1394,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Convert timestamps into human-readable relative phrases like \"3 hours ago\" or \"in 2 days\".",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-time-ago",
+        "repo_url": "https://github.com/philiprehberger/dotnet-time-ago",
         "registry_url": null,
         "capability_slugs": [
             "string-text-formatting"
@@ -1408,7 +1408,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Generic tree data structure with traversal, serialization, subtree mutation, lowest common ancestor, and flat-to-tree conversion.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-tree-structure",
+        "repo_url": "https://github.com/philiprehberger/dotnet-tree-structure",
         "registry_url": null,
         "capability_slugs": [
             "data-structures"
@@ -1422,7 +1422,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Type-safe unit conversions for length, weight, temperature, volume, data size, speed, pressure, area, and energy.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-unit-converter",
+        "repo_url": "https://github.com/philiprehberger/dotnet-unit-converter",
         "registry_url": null,
         "capability_slugs": [
             "string-text-formatting"
@@ -1436,7 +1436,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Fluent, immutable URL construction with path segments, query parameters, and proper encoding.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-url-builder",
+        "repo_url": "https://github.com/philiprehberger/dotnet-url-builder",
         "registry_url": null,
         "capability_slugs": [
             "rest-api"
@@ -1450,7 +1450,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Remove tracking parameters from URLs — strip UTM tags, fbclid, gclid, and more.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-url-cleaner",
+        "repo_url": "https://github.com/philiprehberger/dotnet-url-cleaner",
         "registry_url": null,
         "capability_slugs": [
             "rest-api"
@@ -1464,7 +1464,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "Strongly-typed value objects with built-in validation and JSON support — eliminate primitive obsession.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-value-of",
+        "repo_url": "https://github.com/philiprehberger/dotnet-value-of",
         "registry_url": null,
         "capability_slugs": [
             "type-enum-utilities"
@@ -1478,7 +1478,7 @@
         "registry": "nuget",
         "status": "active",
         "short_description": "HMAC webhook signing and verification with replay prevention — supports SHA-256, SHA-384, and SHA-512.",
-        "repo_url": "https://github.com/philiprehberger/dn-dotnet-webhook-signature",
+        "repo_url": "https://github.com/philiprehberger/dotnet-webhook-signature",
         "registry_url": null,
         "capability_slugs": [
             "webhook-delivery",
