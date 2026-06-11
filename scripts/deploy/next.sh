@@ -20,6 +20,15 @@
 #   permanently broken and the Filament observer's HMAC POSTs all 401.
 # - After rsync, pm2 reload uses --update-env so any change to the
 #   .env file is picked up by the running process.
+#
+# Build-time API dependency:
+# `next build` prerenders SSG pages, which means it makes real HTTP
+# calls to the API at CODEX_API_INTERNAL_URL (sourced from web/.env —
+# typically http://127.0.0.1:8000 locally). The build is local, so the
+# API must be reachable from the dev box. This script probes the URL
+# and auto-spawns a transient `php artisan serve` if nothing answers,
+# killing it on exit via a trap. If `composer dev` is already running,
+# the probe finds it and the spawn is skipped.
 
 set -euo pipefail
 
@@ -51,6 +60,33 @@ npm ci --no-audit --no-fund
 # Without this, a build that runs after a backend shape change reuses
 # the prior URL→response cache and renders pages with stale fields.
 rm -rf .next/cache
+
+# Ensure the Laravel API is reachable for prerender. Skip the spawn if
+# `composer dev` (or any other process) already answers — otherwise
+# fork an artisan serve scoped to this build and tear it down on exit.
+API_URL="${CODEX_API_INTERNAL_URL:-http://127.0.0.1:8000}"
+PROBE="$API_URL/api/v1/projects?per_page=1"
+if curl -sf -o /dev/null --max-time 2 "$PROBE"; then
+    info "API already reachable at $API_URL — reusing"
+else
+    # Parse the port from CODEX_API_INTERNAL_URL; default 8000 to match
+    # `php artisan serve`'s default and the loopback convention.
+    API_PORT=$(echo "$API_URL" | sed -nE 's|^https?://[^:/]+:([0-9]+).*|\1|p')
+    API_PORT="${API_PORT:-8000}"
+    info "spawning transient php artisan serve on 127.0.0.1:$API_PORT for prerender"
+    ARTISAN_LOG=$(mktemp --suffix=.codex-deploy-artisan.log)
+    ( cd .. && php artisan serve --host=127.0.0.1 --port="$API_PORT" >"$ARTISAN_LOG" 2>&1 ) &
+    ARTISAN_PID=$!
+    trap 'kill $ARTISAN_PID 2>/dev/null || true; rm -f "$ARTISAN_LOG"' EXIT
+    for i in $(seq 1 15); do
+        if curl -sf -o /dev/null --max-time 2 "$PROBE"; then break; fi
+        sleep 1
+    done
+    if ! curl -sf -o /dev/null --max-time 2 "$PROBE"; then
+        err "transient API failed to respond on 127.0.0.1:$API_PORT — see $ARTISAN_LOG"
+    fi
+fi
+
 npm run build
 
 info "preparing rsync staging dir"

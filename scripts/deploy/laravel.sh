@@ -81,7 +81,7 @@ if [ "$FIRST_DEPLOY" = "true" ]; then
     SEED_FLAG="--seed"
     export CODEX_ALLOW_SEEDERS_IN_PRODUCTION=true
 fi
-if ! ssh $SSH_OPTS "$REMOTE" "cd $RELEASE_PATH && CODEX_ALLOW_SEEDERS_IN_PRODUCTION=$CODEX_ALLOW_SEEDERS_IN_PRODUCTION php artisan migrate --force $SEED_FLAG"; then
+if ! ssh $SSH_OPTS "$REMOTE" "cd $RELEASE_PATH && CODEX_ALLOW_SEEDERS_IN_PRODUCTION=${CODEX_ALLOW_SEEDERS_IN_PRODUCTION:-false} php artisan migrate --force $SEED_FLAG"; then
     echo "✗ migration failed — release $RELEASE_NAME preserved for inspection" >&2
     echo "→ run: ssh $REMOTE 'cd $RELEASE_PATH && php artisan migrate:status'" >&2
     echo "→ see: infra/RECOVERY.md → 'Migration failed mid-deploy'" >&2
@@ -109,7 +109,8 @@ ssh $SSH_OPTS "$REMOTE" "sudo /usr/sbin/apachectl graceful"
 
 # 9. Queue worker reload (picks up new code)
 info "pm2 reload codex-queue"
-ssh $SSH_OPTS "$REMOTE" "pm2 reload codex-queue || pm2 start /var/www/ecosystem.config.js --only codex-queue"
+# pm2 lives under nvm on the remote; non-login ssh sessions don't source it.
+ssh $SSH_OPTS "$REMOTE" "export PATH=\$(ls -d /home/ubuntu/.nvm/versions/node/*/bin 2>/dev/null | tail -1):\$PATH; pm2 reload codex-queue || pm2 start /var/www/ecosystem.config.js --only codex-queue"
 
 # 10. Sentry release tagging (best-effort)
 info "Sentry release tag"
