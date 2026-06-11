@@ -30,6 +30,8 @@ class ShowPackageController extends Controller
                 'registry_url' => $package->registry_url,
                 'docs_url' => $package->docs_url,
                 'shipped_date' => $package->shipped_date?->toDateString(),
+                'readme_markdown' => $package->readme_markdown,
+                'readme_fetched_at' => $package->readme_fetched_at?->toIso8601String(),
                 'capabilities' => $package->capabilities->map(fn (Capability $c) => [
                     'slug' => $c->slug,
                     'name' => $c->name,

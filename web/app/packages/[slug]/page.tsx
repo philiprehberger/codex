@@ -1,5 +1,7 @@
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { CodexApiError, getPackage } from '@/lib/codex-api';
 
 export const revalidate = 3600;
@@ -151,6 +153,17 @@ export default async function PackageDetailPage({ params }: { params: Promise<Ro
                         {pkg.long_description.split('\n\n').map((para, i) => (
                             <p key={i}>{para}</p>
                         ))}
+                    </div>
+                </section>
+            )}
+
+            {pkg.readme_markdown && (
+                <section>
+                    <h2 className="text-lg font-semibold text-(--color-ink) mb-3">README</h2>
+                    <div className="prose prose-readme">
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            {pkg.readme_markdown}
+                        </ReactMarkdown>
                     </div>
                 </section>
             )}

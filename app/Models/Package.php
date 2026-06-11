@@ -30,6 +30,7 @@ class Package extends Model
         'slug', 'name', 'language', 'registry', 'status',
         'short_description', 'long_description', 'long_description_reviewed',
         'repo_url', 'registry_url', 'docs_url', 'shipped_date',
+        'readme_markdown', 'readme_fetched_at',
     ];
 
     protected function casts(): array
@@ -37,6 +38,7 @@ class Package extends Model
         return [
             'shipped_date' => 'date',
             'long_description_reviewed' => 'boolean',
+            'readme_fetched_at' => 'datetime',
         ];
     }
 

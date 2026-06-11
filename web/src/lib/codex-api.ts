@@ -243,6 +243,8 @@ export type PackageSummary = {
 
 export type PackageDetail = Omit<PackageSummary, 'capabilities'> & {
     long_description: string | null;
+    readme_markdown: string | null;
+    readme_fetched_at: string | null;
     capabilities: Array<{
         slug: string;
         name: string;

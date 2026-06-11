@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    // CODEX_GITHUB_TOKEN is read by GitHubReadmeFetcher (and any future
+    // GitHub integration). A fine-grained PAT scoped to "Public
+    // repositories - read-only" is enough; raises the rate limit from
+    // 60 req/hr/IP to 5000.
+    'github' => [
+        'token' => env('CODEX_GITHUB_TOKEN'),
+    ],
+
 ];

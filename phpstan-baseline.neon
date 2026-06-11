@@ -761,3 +761,9 @@ parameters:
 			identifier: method.nonObject
 			count: 2
 			path: app/Http/Controllers/Api/V1/DrillDownController.php
+
+		-
+			message: '#^Cannot call method toIso8601String\(\) on string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Http/Controllers/Api/V1/ShowPackageController.php
