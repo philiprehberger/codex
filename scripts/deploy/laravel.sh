@@ -103,9 +103,17 @@ ssh $SSH_OPTS "$REMOTE" "
 info "swapping current symlink → $RELEASE_NAME"
 ssh $SSH_OPTS "$REMOTE" "ln -sfn $RELEASE_PATH $CURRENT_LINK.tmp && mv -Tf $CURRENT_LINK.tmp $CURRENT_LINK"
 
-# 8. Apache graceful reload
-info "apachectl graceful"
-ssh $SSH_OPTS "$REMOTE" "sudo /usr/sbin/apachectl graceful"
+# 8. Apache graceful reload + PHP-FPM reload
+#
+# Apache runs mod_php under mpm_event by way of PHP-FPM — Apache graceful
+# only restarts Apache workers, NOT the FPM pool, so without the FPM
+# reload here the opcache for routes/api.php, controllers, etc. keeps
+# serving the previous release's bytecode (even though validate_timestamps
+# is on, the FPM children sit in a separate process tree that Apache's
+# SIGUSR1 doesn't reach). Diagnosed by chasing a "drill-down route exists
+# in route:list but HTTP returns 410 from the fallback" deploy bug.
+info "apachectl graceful + php-fpm reload"
+ssh $SSH_OPTS "$REMOTE" "sudo /usr/sbin/apachectl graceful && sudo systemctl reload php8.3-fpm"
 
 # 9. Queue worker reload (picks up new code)
 info "pm2 reload codex-queue"
