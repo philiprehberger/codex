@@ -118,6 +118,47 @@ export type CapabilityCategoryMatrix = {
     cells: Array<{ category: string; industry_slug: string; project_count: number; capability_count: number }>;
 };
 
+export type DrillDownScope =
+    | { type: 'capability' | 'industry' | 'architecture'; slug: string; label: string }
+    | { type: 'category' | 'cell'; label: string };
+
+export type DrillDownProjectCard = {
+    slug: string;
+    name: string;
+    short_description: string;
+    project_type: string;
+    status: string;
+    visibility: string;
+    shipped_date: string | null;
+    client_industry: string | null;
+};
+
+export type DrillDownPackageCard = {
+    slug: string;
+    name: string;
+    short_description: string;
+    language: string;
+    registry: string;
+    status: string;
+    repo_url: string | null;
+    shipped_date: string | null;
+};
+
+export type DrillDownResult = {
+    scope: DrillDownScope;
+    title: string;
+    subtitle: string;
+    projects: DrillDownProjectCard[];
+    packages: DrillDownPackageCard[];
+};
+
+export type DrillDownQuery =
+    | { capability: string }
+    | { industry: string }
+    | { architecture: string }
+    | { category: string }
+    | { category: string; industry: string };
+
 export type CapabilityListItem = {
     id: string;
     slug: string;
@@ -235,6 +276,24 @@ export async function getCapabilityCategoryMatrix() {
         '/api/v1/capabilities/category-matrix',
         { tags: STANDARD_TAGS },
     );
+}
+
+// Client-side drill-down fetcher. The modal that consumes this is a
+// client component, so the request runs in the browser — codexFetch's
+// loopback URL + Host-header trick doesn't apply here. CORS is already
+// allow-listed for codex.philiprehberger.com (config/cors.php on the
+// Laravel side), so a direct fetch to the public API works.
+export async function getDrillDown(query: DrillDownQuery): Promise<DrillDownResult> {
+    const host = process.env.NEXT_PUBLIC_CODEX_API_HOST ?? 'api.codex.philiprehberger.com';
+    const search = new URLSearchParams(query as Record<string, string>).toString();
+    const url = `https://${host}/api/v1/drill-down?${search}`;
+    const response = await fetch(url, { headers: { Accept: 'application/json' } });
+    if (!response.ok) {
+        const detail = await response.text().catch(() => '');
+        throw new CodexApiError(response.status, url, `${response.status} from ${url}: ${detail.slice(0, 200)}`);
+    }
+    const body = (await response.json()) as { data: DrillDownResult };
+    return body.data;
 }
 
 export async function listCapabilities() {

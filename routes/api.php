@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Api\V1\CapabilityCategoryMatrixController;
+use App\Http\Controllers\Api\V1\DrillDownController;
 use App\Http\Controllers\Api\V1\HeatmapController;
 use App\Http\Controllers\Api\V1\ListCapabilitiesController;
 use App\Http\Controllers\Api\V1\ListPackagesController;
@@ -36,6 +37,7 @@ Route::prefix('v1')
         });
 
         // Standard endpoints.
+        Route::get('/drill-down', DrillDownController::class)->name('drill-down');
         Route::get('/projects', ListProjectsController::class)->name('projects.index');
         Route::get('/projects/{slug}', ShowProjectController::class)
             ->where('slug', '[a-z0-9-]+')
