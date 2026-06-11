@@ -82,6 +82,7 @@ return [
     'cache' => [
         'report_keys' => [
             'codex:heatmap',
+            'codex:capability-matrix',
             'codex:reports:gaps',
             'codex:reports:bullets',
             'codex:search:index',

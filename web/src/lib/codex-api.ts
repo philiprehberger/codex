@@ -112,6 +112,12 @@ export type Heatmap = {
     cells: Array<{ capability_id: string; project_id: string; is_primary: boolean }>;
 };
 
+export type CapabilityCategoryMatrix = {
+    categories: Array<{ name: string; capability_count: number; project_count: number }>;
+    industries: Array<{ slug: string; name: string; project_count: number }>;
+    cells: Array<{ category: string; industry_slug: string; project_count: number; capability_count: number }>;
+};
+
 export type CapabilityListItem = {
     id: string;
     slug: string;
@@ -205,7 +211,7 @@ export type PackageDetail = Omit<PackageSummary, 'capabilities'> & {
     }>;
 };
 
-const STANDARD_TAGS = ['codex:heatmap', 'codex:reports:gaps', 'codex:reports:bullets', 'codex:search:index'];
+const STANDARD_TAGS = ['codex:heatmap', 'codex:capability-matrix', 'codex:reports:gaps', 'codex:reports:bullets', 'codex:search:index'];
 
 export async function listProjects(query: Record<string, string> = {}) {
     const search = new URLSearchParams(query).toString();
@@ -222,6 +228,13 @@ export async function getProject(slug: string) {
 
 export async function getHeatmap() {
     return codexFetch<{ data: Heatmap }>('/api/v1/capabilities/heatmap', { tags: STANDARD_TAGS });
+}
+
+export async function getCapabilityCategoryMatrix() {
+    return codexFetch<{ data: CapabilityCategoryMatrix }>(
+        '/api/v1/capabilities/category-matrix',
+        { tags: STANDARD_TAGS },
+    );
 }
 
 export async function listCapabilities() {

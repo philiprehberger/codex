@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\V1\CapabilityCategoryMatrixController;
 use App\Http\Controllers\Api\V1\HeatmapController;
 use App\Http\Controllers\Api\V1\ListCapabilitiesController;
 use App\Http\Controllers\Api\V1\ListPackagesController;
@@ -28,6 +29,7 @@ Route::prefix('v1')
         // Heavy aggregations — tighter limiter.
         Route::middleware(['throttle:codex.api-heavy'])->group(function () {
             Route::get('/capabilities/heatmap', HeatmapController::class)->name('capabilities.heatmap');
+            Route::get('/capabilities/category-matrix', CapabilityCategoryMatrixController::class)->name('capabilities.category-matrix');
             Route::get('/reports/gaps', ReportGapsController::class)->name('reports.gaps');
             Route::get('/reports/resume-bullets', ResumeBulletsController::class)->name('reports.resume-bullets');
             Route::get('/search/index', SearchIndexController::class)->name('search.index');
