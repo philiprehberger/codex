@@ -2,7 +2,13 @@ import { CapabilityMatrix } from '@/components/CapabilityMatrix';
 import { Heatmap } from '@/components/Heatmap';
 import { getCapabilityCategoryMatrix, getHeatmap } from '@/lib/codex-api';
 
-export const revalidate = 3600;
+// Dynamic so the per-request CSP nonce from middleware.ts actually
+// lands on Next.js's inline hydration scripts. Pre-rendering would
+// freeze the HTML with `nonce:"$undefined"`, which makes the page-
+// level CSP useless. The upstream API is cached server-side under
+// codex:capability-matrix + codex:heatmap, so each request is still
+// fast — the cost is React server-rendering per hit.
+export const dynamic = 'force-dynamic';
 export const metadata = {
     title: 'Heatmap — Codex',
     description: 'Capability × project matrix across the portfolio.',

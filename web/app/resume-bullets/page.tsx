@@ -1,7 +1,9 @@
 import { ResumeBulletList } from '@/components/ResumeBulletList';
 import { getResumeBullets } from '@/lib/codex-api';
 
-export const revalidate = 3600;
+// Dynamic — same rationale as /heatmap: per-request CSP nonce must
+// reach the inline hydration scripts. See web/middleware.ts.
+export const dynamic = 'force-dynamic';
 export const metadata = {
     title: 'Resume bullets — Codex',
     description: 'Aggregated bullets by capability, industry, and architecture.',
