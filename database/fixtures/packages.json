@@ -251,7 +251,7 @@
         "registry": "pub",
         "status": "active",
         "short_description": "Prebuilt animation primitives with timeline sequencing and spring physics",
-        "repo_url": "https://github.com/philiprehberger/dart-flutter-animation-kit",
+        "repo_url": "https://github.com/philiprehberger/flutter-animation-kit",
         "registry_url": null,
         "capability_slugs": [
             "ui-component-primitives"
@@ -265,7 +265,7 @@
         "registry": "pub",
         "status": "active",
         "short_description": "Visual snapshot testing for Flutter widgets with golden file comparison",
-        "repo_url": "https://github.com/philiprehberger/dart-flutter-snapshot-test",
+        "repo_url": "https://github.com/philiprehberger/flutter-snapshot-test",
         "registry_url": null,
         "capability_slugs": [
             "testing-utilities",
@@ -280,7 +280,7 @@
         "registry": "pub",
         "status": "active",
         "short_description": "Debug overlay showing state changes, rebuild counts, and transition history",
-        "repo_url": "https://github.com/philiprehberger/dart-flutter-state-inspector",
+        "repo_url": "https://github.com/philiprehberger/flutter-state-inspector",
         "registry_url": null,
         "capability_slugs": [
             "observability",
@@ -2599,7 +2599,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Fluent cron expression builder with human-readable methods",
-        "repo_url": "https://github.com/philiprehberger/php-cron-expression-builder",
+        "repo_url": "https://github.com/philiprehberger/cron-expression-builder",
         "registry_url": "https://packagist.org/packages/philiprehberger/cron-expression-builder",
         "capability_slugs": [
             "scheduled-jobs",
@@ -2615,7 +2615,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Validate required environment variables with type checking and defaults",
-        "repo_url": "https://github.com/philiprehberger/php-env-validator",
+        "repo_url": "https://github.com/philiprehberger/env-validator",
         "registry_url": "https://packagist.org/packages/philiprehberger/env-validator",
         "capability_slugs": [
             "rule-engine",
@@ -2630,7 +2630,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "HTTP client wrapper with automatic retries, exponential backoff, and jitter",
-        "repo_url": "https://github.com/philiprehberger/php-http-retry-client",
+        "repo_url": "https://github.com/philiprehberger/http-retry-client",
         "registry_url": "https://packagist.org/packages/philiprehberger/http-retry-client",
         "capability_slugs": [
             "rest-api",
@@ -2646,7 +2646,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Laravel middleware for API versioning with multi-source resolution from headers, Accept vendor types, and URL path segments",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-api-versioning",
+        "repo_url": "https://github.com/philiprehberger/laravel-api-versioning",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-api-versioning",
         "capability_slugs": [
             "rest-api",
@@ -2661,7 +2661,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Standardized cache key builder and tag-aware cache operations for Laravel with graceful fallback for non-tagging drivers",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-cache-toolkit",
+        "repo_url": "https://github.com/philiprehberger/laravel-cache-toolkit",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-cache-toolkit",
         "capability_slugs": [
             "caching"
@@ -2675,7 +2675,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Laravel middleware that generates or propagates correlation IDs for request tracing with automatic log context injection",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-correlation-id",
+        "repo_url": "https://github.com/philiprehberger/laravel-correlation-id",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-correlation-id",
         "capability_slugs": [
             "observability",
@@ -2690,7 +2690,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Chunked CSV import with row-level validation, error collection, dry-run mode, and queue support",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-csv-import",
+        "repo_url": "https://github.com/philiprehberger/laravel-csv-import",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-csv-import",
         "capability_slugs": [
             "reporting"
@@ -2704,7 +2704,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Database-agnostic SQL expression helper for date truncation, extraction, and differences across SQLite and MySQL",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-db-expressions",
+        "repo_url": "https://github.com/philiprehberger/laravel-db-expressions",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-db-expressions",
         "capability_slugs": [
             "date-time-utilities"
@@ -2718,7 +2718,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Registry-based data export system for Laravel with pluggable format support. Ships with CSV and JSON exporters",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-export",
+        "repo_url": "https://github.com/philiprehberger/laravel-export",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-export",
         "capability_slugs": [
             "reporting"
@@ -2732,7 +2732,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Lightweight feature flags with config and database drivers, percentage rollout, and scheduling",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-feature-flags",
+        "repo_url": "https://github.com/philiprehberger/laravel-feature-flags",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-feature-flags",
         "capability_slugs": [
             "rule-engine"
@@ -2746,7 +2746,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Configurable health check endpoint with built-in checks and Kubernetes probe support",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-healthcheck",
+        "repo_url": "https://github.com/philiprehberger/laravel-healthcheck",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-healthcheck",
         "capability_slugs": [
             "observability"
@@ -2760,7 +2760,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Artisan generator commands for services, DTOs, enums, actions, value objects, and interfaces",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-make-service",
+        "repo_url": "https://github.com/philiprehberger/laravel-make-service",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-make-service",
         "capability_slugs": [
             "cli-tools"
@@ -2774,7 +2774,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Track and display structured differences between Eloquent model versions with human-readable labels",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-model-diff",
+        "repo_url": "https://github.com/philiprehberger/laravel-model-diff",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-model-diff",
         "capability_slugs": [
             "diff-tracking",
@@ -2789,7 +2789,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Typed Result pattern for Laravel service-layer operations with named factory methods and specialized result types",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-operation-result",
+        "repo_url": "https://github.com/philiprehberger/laravel-operation-result",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-operation-result",
         "capability_slugs": [
             "error-handling"
@@ -2803,7 +2803,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Advanced rate limiting with sliding window, token bucket, and per-entity controls for Laravel",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-rate-limiter",
+        "repo_url": "https://github.com/philiprehberger/laravel-rate-limiter",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-rate-limiter",
         "capability_slugs": [
             "rate-limiting",
@@ -2818,7 +2818,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Response macros for consistent, standardized API responses in Laravel",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-response-macros",
+        "repo_url": "https://github.com/philiprehberger/laravel-response-macros",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-response-macros",
         "capability_slugs": [
             "rest-api"
@@ -2832,7 +2832,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Parse GitHub-style search queries into structured filters for Laravel Eloquent. Supports field:value, comparisons, exclusions, and relation filters.",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-search-query-parser",
+        "repo_url": "https://github.com/philiprehberger/laravel-search-query-parser",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-search-query-parser",
         "capability_slugs": [
             "search"
@@ -2846,7 +2846,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Laravel middleware for comprehensive security headers including CSP with nonce support, HSTS, and Permissions-Policy",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-security-headers",
+        "repo_url": "https://github.com/philiprehberger/laravel-security-headers",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-security-headers",
         "capability_slugs": [
             "observability",
@@ -2861,7 +2861,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Fluent SEO metadata service for Laravel with Open Graph, Twitter Card, and JSON-LD structured data support",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-seo",
+        "repo_url": "https://github.com/philiprehberger/laravel-seo",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-seo",
         "capability_slugs": [
             "seo-optimisation"
@@ -2875,7 +2875,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Type-safe, cached application settings stored in the database with a simple key-value API",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-settings",
+        "repo_url": "https://github.com/philiprehberger/laravel-settings",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-settings",
         "capability_slugs": [
             "configuration-loading"
@@ -2889,7 +2889,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Automatic slug generation for Eloquent models with scoped uniqueness, history, and transliteration",
-        "repo_url": "https://github.com/philiprehberger/php-laravel-slug-generator",
+        "repo_url": "https://github.com/philiprehberger/laravel-slug-generator",
         "registry_url": "https://packagist.org/packages/philiprehberger/laravel-slug-generator",
         "capability_slugs": [
             "id-generation"
@@ -3299,7 +3299,7 @@
         "registry": "packagist",
         "status": "active",
         "short_description": "Atomic file writes with temp-file swap and file locking",
-        "repo_url": "https://github.com/philiprehberger/php-safe-file-writer",
+        "repo_url": "https://github.com/philiprehberger/safe-file-writer",
         "registry_url": "https://packagist.org/packages/philiprehberger/safe-file-writer",
         "capability_slugs": [
             "error-handling",
@@ -7591,7 +7591,7 @@
         "registry": "npm",
         "status": "active",
         "short_description": "Parse, serialize, and manage HTTP cookies with full typing",
-        "repo_url": "https://github.com/philiprehberger/ts-cookie-ts",
+        "repo_url": "https://github.com/philiprehberger/ts-cookie",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/cookie-ts",
         "capability_slugs": [
             "http-middleware"
@@ -7633,7 +7633,7 @@
         "registry": "npm",
         "status": "active",
         "short_description": "Collision-resistant sortable unique IDs",
-        "repo_url": "https://github.com/philiprehberger/ts-cuid-ts",
+        "repo_url": "https://github.com/philiprehberger/ts-cuid",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/cuid-ts",
         "capability_slugs": [
             "id-generation"
@@ -7661,7 +7661,7 @@
         "registry": "npm",
         "status": "active",
         "short_description": "Typed debounce and throttle with cancel, flush, and pending state",
-        "repo_url": "https://github.com/philiprehberger/ts-debounce-ts",
+        "repo_url": "https://github.com/philiprehberger/ts-debounce",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/debounce-ts",
         "capability_slugs": [
             "rate-limiting"
@@ -7703,7 +7703,7 @@
         "registry": "npm",
         "status": "active",
         "short_description": "Type-safe dot-notation access and mutation for nested objects",
-        "repo_url": "https://github.com/philiprehberger/ts-dotpath-ts",
+        "repo_url": "https://github.com/philiprehberger/ts-dotpath",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/dotpath-ts",
         "capability_slugs": [
             "object-collection-ops"
@@ -7886,7 +7886,7 @@
         "registry": "npm",
         "status": "active",
         "short_description": "Decode and inspect JWTs — no verification, typed payload, tiny",
-        "repo_url": "https://github.com/philiprehberger/ts-jwt-decode-ts",
+        "repo_url": "https://github.com/philiprehberger/ts-jwt-decode",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/jwt-decode-ts",
         "capability_slugs": [
             "authentication"
@@ -7914,7 +7914,7 @@
         "registry": "npm",
         "status": "active",
         "short_description": "Pattern matching for TypeScript — switch on steroids",
-        "repo_url": "https://github.com/philiprehberger/ts-match-ts",
+        "repo_url": "https://github.com/philiprehberger/ts-match",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/match-ts",
         "capability_slugs": [
             "type-enum-utilities"
@@ -8357,7 +8357,7 @@
         "registry": "npm",
         "status": "active",
         "short_description": "Precise timing utilities — measure, benchmark, countdown",
-        "repo_url": "https://github.com/philiprehberger/ts-timer-ts",
+        "repo_url": "https://github.com/philiprehberger/ts-timer",
         "registry_url": "https://www.npmjs.com/package/@philiprehberger/timer-ts",
         "capability_slugs": [
             "observability"
