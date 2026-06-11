@@ -4,6 +4,10 @@
 .env.backup
 .env.deployment
 .env.production
+# The Next.js dashboard's .env.production holds public defaults (the
+# NEXT_PUBLIC_CODEX_API_HOST that gets baked into the client bundle),
+# not secrets — commit it so the deploy build picks up the right host.
+!web/.env.production
 .local/
 .phpactor.json
 .phpunit.result.cache
