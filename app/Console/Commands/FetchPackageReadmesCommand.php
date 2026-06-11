@@ -28,8 +28,13 @@ class FetchPackageReadmesCommand extends Command
 
     protected $description = 'Pull README markdown from GitHub for every package with a repo_url.';
 
-    public function handle(GitHubReadmeFetcher $fetcher, CacheInvalidator $invalidator): int
+    public function handle(CacheInvalidator $invalidator): int
     {
+        // Construct via fromConfig() so the optional CODEX_GITHUB_TOKEN
+        // is picked up. Container resolution of GitHubReadmeFetcher
+        // would default the token to null and silently fall back to
+        // the 60 req/hr unauthenticated rate limit.
+        $fetcher = GitHubReadmeFetcher::fromConfig();
         $query = Package::query()->whereNotNull('repo_url');
 
         if (is_string($slug = $this->option('slug')) && $slug !== '') {

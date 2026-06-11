@@ -29,7 +29,10 @@ export function middleware(request: NextRequest) {
         // inline hydration scripts. Plausible is the analytics origin.
         `script-src 'self' 'nonce-${nonce}' https://plausible.philiprehberger.com`,
         "style-src 'self'",
-        "img-src 'self' https://api.codex.philiprehberger.com data:",
+        // README markdown carries badges and screenshots — allow the
+        // common GitHub + badge hosts. Camo is GitHub's image proxy
+        // that rewrites external <img> srcs to a same-origin CDN.
+        "img-src 'self' https://api.codex.philiprehberger.com https://github.com https://*.githubusercontent.com https://img.shields.io https://badge.fury.io data:",
         "font-src 'self'",
         "connect-src 'self' https://api.codex.philiprehberger.com https://plausible.philiprehberger.com",
         "frame-ancestors 'none'",
