@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Models\Pivots\PackageCapabilityPivot;
+use App\Models\Pivots\PackageTechnologyPivot;
 use Database\Factories\PackageFactory;
 use Illuminate\Database\Eloquent\Concerns\HasUlids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -44,6 +45,23 @@ class Package extends Model
     {
         return $this->belongsToMany(Capability::class, 'package_capabilities')
             ->using(PackageCapabilityPivot::class)
+            ->withPivot('id', 'is_primary')
+            ->withTimestamps();
+    }
+
+    /**
+     * Technologies a package uses. Every package is implicitly tagged with
+     * its `language` tech, plus the CI / packaging tools used at release
+     * time (github-actions universally, plus npm / composer where the
+     * registry implies it). Added 2026-06-11 so the gap report's tech ×
+     * industry matrix reflects actual usage, not just demo-project usage.
+     *
+     * @return BelongsToMany<Technology, $this, PackageTechnologyPivot>
+     */
+    public function technologies(): BelongsToMany
+    {
+        return $this->belongsToMany(Technology::class, 'package_technologies')
+            ->using(PackageTechnologyPivot::class)
             ->withPivot('id', 'is_primary')
             ->withTimestamps();
     }

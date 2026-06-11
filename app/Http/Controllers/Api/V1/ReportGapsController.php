@@ -85,7 +85,17 @@ class ReportGapsController extends Controller
         ])->all();
     }
 
-    /** @return array<int, array<string, mixed>> */
+    /**
+     * Matrix of technology × industry, with project counts per cell. Packages
+     * don't carry industry tags (they're inherently developer-tools), so
+     * package_technologies counts are added to the `developer-tools` row
+     * for each technology — the only cell where they'd land if industries
+     * existed for packages. Without this addition, e.g. GitHub Actions would
+     * read "1" because only Shipyard tags it among projects, despite every
+     * package's release pipeline depending on it.
+     *
+     * @return array<int, array<string, mixed>>
+     */
     private function techIndustryCoverage(): array
     {
         $rows = DB::table('technologies AS t')
@@ -99,6 +109,7 @@ class ReportGapsController extends Controller
                 $j->on('p.id', '=', 'pt.project_id')->whereNull('p.deleted_at');
             })
             ->select([
+                't.id AS technology_id',
                 't.slug AS technology_slug',
                 't.name AS technology_name',
                 'i.slug AS industry_slug',
@@ -108,12 +119,27 @@ class ReportGapsController extends Controller
             ->groupBy('t.id', 't.slug', 't.name', 'i.id', 'i.slug', 'i.name')
             ->get();
 
-        return $rows->map(fn ($r) => [
-            'technology_slug' => $r->technology_slug,
-            'technology_name' => $r->technology_name,
-            'industry_slug' => $r->industry_slug,
-            'industry_name' => $r->industry_name,
-            'count' => (int) $r->count,
-        ])->all();
+        $packageCountsByTechId = DB::table('package_technologies AS pkt')
+            ->join('packages AS pk', function ($j) {
+                $j->on('pk.id', '=', 'pkt.package_id')->whereNull('pk.deleted_at');
+            })
+            ->select('pkt.technology_id', DB::raw('COUNT(DISTINCT pkt.package_id) AS n'))
+            ->groupBy('pkt.technology_id')
+            ->pluck('n', 'technology_id');
+
+        return $rows->map(function ($r) use ($packageCountsByTechId) {
+            $count = (int) $r->count;
+            if ($r->industry_slug === 'developer-tools' && isset($packageCountsByTechId[$r->technology_id])) {
+                $count += (int) $packageCountsByTechId[$r->technology_id];
+            }
+
+            return [
+                'technology_slug' => $r->technology_slug,
+                'technology_name' => $r->technology_name,
+                'industry_slug' => $r->industry_slug,
+                'industry_name' => $r->industry_name,
+                'count' => $count,
+            ];
+        })->all();
     }
 }
