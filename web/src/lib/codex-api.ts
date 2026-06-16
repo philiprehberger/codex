@@ -1,24 +1,20 @@
 // Codex API client.
 //
-// Server-rendered Next.js fetches the Laravel API at build / revalidate
-// time. Loopback URL on the EC2 box (CODEX_API_INTERNAL_URL=http://127.0.0.1)
-// + an injected Host header — without the header, Apache picks the
-// default vhost and SSR silently 404s.
+// SSR fetches the Laravel API at build / revalidate time over a
+// loopback that *looks* public — CODEX_API_INTERNAL_URL points at
+// http://api.codex.philiprehberger.com and /etc/hosts on the EC2
+// box pins that name to 127.0.0.1, so Apache routes the request to
+// the api.codex vhost. An earlier version faked this with a `Host:`
+// header on a 127.0.0.1 URL — Node 25's undici silently strips
+// custom Host headers, so don't put it back.
 //
 // All API access MUST route through codexFetch(). ESLint rule
-// `no-restricted-imports` blocks raw `fetch()` references in pages so
-// the Host-header discipline is enforced at the linter, not at review
-// time. See web/eslint.config.* (Phase 7 wire-up).
+// `no-restricted-imports` blocks raw `fetch()` references in pages.
 
-// Read env vars per-call (not at module load) so a test can swap them in
-// beforeEach without bouncing the test runner. Both have safe defaults
-// for production where the env is set at deploy time.
+// Read per-call (not at module load) so tests can swap envs in
+// beforeEach without bouncing the runner.
 function getInternalApiUrl(): string {
-    return process.env.CODEX_API_INTERNAL_URL ?? 'http://127.0.0.1';
-}
-
-function getPublicApiHost(): string {
-    return process.env.NEXT_PUBLIC_CODEX_API_HOST ?? 'api.codex.philiprehberger.com';
+    return process.env.CODEX_API_INTERNAL_URL ?? 'http://api.codex.philiprehberger.com';
 }
 
 export type RevalidateOptions = {
@@ -57,14 +53,7 @@ export async function codexFetch<T>(
 
     const response = await fetch(url, {
         method: 'GET',
-        headers: {
-            // Load-bearing — without this, Apache picks the wrong vhost
-            // and the loopback fetch silently 404s. Documented at
-            // ~/projects/income-ops/.scratch/plans/project_intelligence_
-            // codex_portfolio.md §"Internal vs public API URL".
-            Host: getPublicApiHost(),
-            Accept: 'application/json',
-        },
+        headers: { Accept: 'application/json' },
         next,
     });
 
@@ -280,11 +269,10 @@ export async function getCapabilityCategoryMatrix() {
     );
 }
 
-// Client-side drill-down fetcher. The modal that consumes this is a
-// client component, so the request runs in the browser — codexFetch's
-// loopback URL + Host-header trick doesn't apply here. CORS is already
-// allow-listed for codex.philiprehberger.com (config/cors.php on the
-// Laravel side), so a direct fetch to the public API works.
+// Client-side drill-down fetcher. The modal is a client component,
+// so the request runs in the browser. CORS is allow-listed for
+// codex.philiprehberger.com (config/cors.php on the Laravel side),
+// so a direct fetch to the public API works.
 export async function getDrillDown(query: DrillDownQuery): Promise<DrillDownResult> {
     const host = process.env.NEXT_PUBLIC_CODEX_API_HOST ?? 'api.codex.philiprehberger.com';
     const search = new URLSearchParams(query as Record<string, string>).toString();

@@ -14,7 +14,7 @@ describe('codex-api fetch wrapper', () => {
         vi.restoreAllMocks();
     });
 
-    it('targets the internal URL and injects the public Host header', async () => {
+    it('targets the configured internal URL with an Accept header', async () => {
         let capturedUrl: string | undefined;
         let capturedHeaders: Record<string, string> | undefined;
 
@@ -27,7 +27,6 @@ describe('codex-api fetch wrapper', () => {
         await codexFetch<{ data: string }>('/api/v1/projects');
 
         expect(capturedUrl).toBe('http://internal.test/api/v1/projects');
-        expect(capturedHeaders?.Host).toBe('api.codex.philiprehberger.com');
         expect(capturedHeaders?.Accept).toBe('application/json');
     });
 
