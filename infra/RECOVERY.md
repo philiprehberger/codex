@@ -10,7 +10,7 @@ When you're reading this in an incident: don't panic, take the path that matches
 
 1. SSH into the box:
    ```
-   ssh -i ~/.ssh/ps4_new ubuntu@54.190.150.0
+   ssh -i ~/.ssh/ps4_new ubuntu@35.80.110.71
    ```
 2. Inspect the failed release:
    ```
@@ -102,7 +102,7 @@ The two-hour signed-URL TTL means in-flight URLs minted before the rotation cont
 If the admin password is compromised:
 
 ```bash
-ssh ubuntu@54.190.150.0
+ssh ubuntu@35.80.110.71
 cd /var/www/codex/current
 php artisan codex:reset-admin-password --email=admin@philiprehberger.com
 # Enter the new password (min 16, mixed case, numbers, symbols, not pwned)
@@ -115,7 +115,7 @@ The reset is logged to `audit_log` with `action=admin_password_reset`. Notify an
 If 1Password AND the sealed paper recovery codes are both unrecoverable:
 
 ```bash
-ssh ubuntu@54.190.150.0
+ssh ubuntu@35.80.110.71
 cd /var/www/codex/current
 php artisan codex:reset-2fa --email=admin@philiprehberger.com --confirm
 ```

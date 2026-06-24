@@ -9,8 +9,8 @@ Surface them as you work through Phase 8 deploy.
 Add to your DNS provider:
 
 ```
-codex.philiprehberger.com.       A    54.190.150.0
-api.codex.philiprehberger.com.   A    54.190.150.0
+codex.philiprehberger.com.       A    35.80.110.71
+api.codex.philiprehberger.com.   A    35.80.110.71
 ```
 
 If a CAA record exists on `philiprehberger.com.`, confirm it includes Let's Encrypt:
@@ -206,7 +206,7 @@ After first deploy, walk this checklist:
 After first deploy, but BEFORE you log in via the panel:
 
 ```bash
-ssh ubuntu@54.190.150.0
+ssh ubuntu@35.80.110.71
 cd /var/www/codex/current
 php artisan codex:seed-admin --email=admin@philiprehberger.com
 # enter password (min 16, mixed case, numbers, symbols, not pwned)
@@ -219,7 +219,7 @@ php artisan codex:seed-admin --email=admin@philiprehberger.com
 Once everything is live, manually run the restore drill:
 
 ```bash
-ssh ubuntu@54.190.150.0
+ssh ubuntu@35.80.110.71
 cd /var/www/codex/current
 ./scripts/test-restore.sh
 ```

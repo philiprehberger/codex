@@ -4,7 +4,7 @@
 # Fast checks before any deploy attempt. Failing here is cheap; failing
 # halfway through deploy is expensive. Per Phase 8 §1 the preflight
 # verifies:
-#   1. DNS A records on both hosts resolve to 54.190.150.0
+#   1. DNS A records on both hosts resolve to 35.80.110.71
 #   2. CAA records on the apex allow Let's Encrypt
 #   3. The next free PM2 port is known (writes to .deploy-port)
 #   4. .env.deployment exists and has every required key
@@ -15,7 +15,7 @@ set -euo pipefail
 
 DASHBOARD_HOST="codex.philiprehberger.com"
 API_HOST="api.codex.philiprehberger.com"
-EXPECTED_IP="54.190.150.0"
+EXPECTED_IP="35.80.110.71"
 APEX="philiprehberger.com"
 
 err() { echo "✗ $*" >&2; exit 1; }

@@ -92,7 +92,7 @@ Matches `~/projects/income-ops/CLAUDE.md`:
 ## Deployment
 
 - **Both halves build locally and rsync/atomic-release to the EC2 host**
-  (`54.190.150.0`). No CI-hosted builds, no Vercel.
+  (`35.80.110.71`). No CI-hosted builds, no Vercel.
 - **Apache + Let's Encrypt** on `codex.philiprehberger.com` and
   `api.codex.philiprehberger.com`. CAA records pin Let's Encrypt at the apex.
 - **PM2** for the Next.js half (`codex-web`, `instances: 1` pinned because
